@@ -6,8 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import BadgeComponent from './BadgeComponent';
-import ShortenedDescription from './ShortenedDescription';
-
 import './App.css';
 
 const client = contentful.createClient({
@@ -60,12 +58,7 @@ function Projects() {
               <Card.Body>
                 <Card.Title>{project.fields.projectTitle}</Card.Title>
                 <Card.Text>
-                  <ShortenedDescription
-                    description={
-                      project.fields.description.content[0].content[0].value
-                    }
-                    maxLength={150}
-                  />
+                  {project.fields.shortDescription}
                 </Card.Text>
                 <div>
                   {project.fields.techStack.map((tech, index) => (
