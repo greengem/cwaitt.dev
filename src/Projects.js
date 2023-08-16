@@ -49,7 +49,7 @@ function Projects() {
                   ) : (
                     <Card.Img
                       variant="top"
-                      src="https://placehold.co/600x400"
+                      src="https://picsum.photos/600/400"
                       alt="Placeholder"
                     />
                   )}

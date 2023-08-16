@@ -42,7 +42,7 @@ function SidebarLatestPost() {
       {latestPost?.thumbnailImage ? (
         <Card.Img variant="top" src={latestPost.thumbnailImage} />
       ) : (
-        <Card.Img variant="top" src="https://placehold.co/900x400" /> // Placeholder image
+        <Card.Img variant="top" src="https://picsum.photos/800/400" /> // Placeholder image
       )}
       <Card.Body>
         {latestPost && (

@@ -126,7 +126,7 @@ function ProjectDetail() {
                   />
                 ) : (
                   <img
-                    src="https://placehold.co/900x400"
+                    src="https://picsum.photos/800/400"
                     alt="Placeholder"
                   />
                 )}
