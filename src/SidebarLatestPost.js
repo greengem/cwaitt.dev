@@ -4,8 +4,8 @@ import Button from 'react-bootstrap/Button';
 import * as contentful from 'contentful';
 
 const client = contentful.createClient({
-  space: 'o21ic9w5xv91',
-  accessToken: 'dXgnguRv2RxbbXF5ZvPRIwfaG8WIWATY0zdryVqjy5k',
+  space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
 function SidebarLatestPost() {
@@ -42,7 +42,7 @@ function SidebarLatestPost() {
       {latestPost?.thumbnailImage ? (
         <Card.Img variant="top" src={latestPost.thumbnailImage} />
       ) : (
-        <Card.Img variant="top" src="https://picsum.photos/800/400" /> // Placeholder image
+        <Card.Img variant="top" src="https://placehold.co/600x400" /> // Placeholder image
       )}
       <Card.Body>
         {latestPost && (
