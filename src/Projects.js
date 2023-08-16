@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import BadgeComponent from './BadgeComponent';
-import ThreeJSAnimation from './ThreeJSAnimation'; // Import the new ThreeJSAnimation component
 import './App.css';
 
 const client = contentful.createClient({
@@ -35,7 +34,6 @@ function Projects() {
 
   return (
     <Container className="mt-5">
-      <ThreeJSAnimation /> {/* Use the ThreeJSAnimation component */}
       <h2>Portfolio</h2>
       <Row className="row-cols-1 row-cols-md-3 g-4">
         {projects.map((project) => (
