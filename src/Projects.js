@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import BadgeComponent from './BadgeComponent';
-import * as THREE from 'three';
+import ThreeJSAnimation from './ThreeJSAnimation'; // Import the new ThreeJSAnimation component
 import './App.css';
 
 const client = contentful.createClient({
@@ -33,45 +33,9 @@ function Projects() {
     fetchProjects();
   }, []);
 
-
-  useEffect(() => {
-    console.log("Setting up animation...");
-    const setupAnimation = () => {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      const animationContainer = document.getElementById('animation-container');
-      animationContainer.appendChild(renderer.domElement);
-
-      const geometry = new THREE.BoxGeometry();
-      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      const cube = new THREE.Mesh(geometry, material);
-      scene.add(cube);
-
-      camera.position.z = 5;
-
-      const animate = () => {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-      };
-      animate();
-
-      return () => {
-        animationContainer.removeChild(renderer.domElement); // Remove canvas from the container
-        renderer.dispose();
-      };
-    };
-
-    setupAnimation();
-  }, []);
-
-
   return (
     <Container className="mt-5">
-      <div id="animation-container"></div>
+      <ThreeJSAnimation /> {/* Use the ThreeJSAnimation component */}
       <h2>Portfolio</h2>
       <Row className="row-cols-1 row-cols-md-3 g-4">
         {projects.map((project) => (
