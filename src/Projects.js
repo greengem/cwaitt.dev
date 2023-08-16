@@ -50,7 +50,7 @@ function Projects() {
                   ) : (
                     <Card.Img
                       variant="top"
-                      src="https://picsum.photos/600/400"
+                      src="https://placehold.co/600x400"
                       alt="Placeholder"
                     />
                   )}
