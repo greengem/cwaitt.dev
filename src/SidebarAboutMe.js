@@ -11,7 +11,7 @@ function SidebarAboutMe() {
         <Card.Text>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores.</Card.Text>
       </Card.Body>
       <Card.Footer>
-        <a href='https://www.linkedin.com/in/chriswaitt/'><Linkedin className='me-2' /></a> <a href='https://github.com/greengem'><Github /></a>
+        <a href='https://www.linkedin.com/in/chriswaitt/' target="_blank"><Linkedin className='me-2' /></a> <a href='https://github.com/greengem' target="_blank"><Github /></a>
       </Card.Footer>
     </Card>
   );
