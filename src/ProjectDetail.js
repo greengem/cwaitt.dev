@@ -116,8 +116,6 @@ function ProjectDetail() {
         <Col className="col-lg-8 col-md-12">
           <article>
             <header>
-              {/* Display project image, title, and post/update date */}
-              {/* Display project image, title, and post/update date */}
               <figure>
                 {project.fields.featuredImage ? (
                   <img
