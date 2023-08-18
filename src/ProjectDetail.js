@@ -113,7 +113,7 @@ function ProjectDetail() {
   return (
     <Container className="mt-5">
       <Row>
-        <Col className="col-lg-8 col-md-12">
+      <Col lg={8}>
           <article>
             <header>
               <figure>
@@ -150,7 +150,7 @@ function ProjectDetail() {
             </section>
           </article>
         </Col>
-        <Col className="col-lg-4 col-md-12">
+        <Col lg={4}>
           {/* Display the sidebar component */}
           <AppSidebar />
         </Col>
