@@ -35,7 +35,7 @@ function Projects() {
   return (
     <Container className="mt-5">
       <h2>Portfolio</h2>
-      <Row className="row-cols-1 row-cols-md-3 g-4">
+      <Row xs={1} sm={1} md={2} lg={3} className="g-4">
         {projects.map((project) => (
           <Col key={project.sys.id}>
             <Card className="h-100">
