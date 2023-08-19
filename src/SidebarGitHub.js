@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as contentful from 'contentful';
 import Card from 'react-bootstrap/Card';
-import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
+import Button from 'react-bootstrap/Button';
+import { Github, StarFill, BinocularsFill, Code } from 'react-bootstrap-icons';
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -45,23 +46,33 @@ function SidebarGitHub() {
     <>
       {githubData && (
         <Card className="mb-4">
-          <Card.Header>GitHub</Card.Header>
+          <Card.Header>Code</Card.Header>
           <Card.Body>
             <Card.Title>
               <div className="github-title">
-                <span className="project-title"><Github className="me-1" /> {githubData.name}</span>
+                <Github className="me-1" /> {githubData.name}
               </div>
             </Card.Title>
             <p>{githubData.description}</p>
             <div className="d-grid gap-2">
-            <a
+            <Button
               href={githubData.html_url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
             >
               <Github /> View on GitHub
-            </a>
+            </Button>
+            <Button
+              size="sm"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              disabled
+            >
+              Live Demo (Unavailable)
+            </Button>
             </div>
             </Card.Body>
             <Card.Footer>
