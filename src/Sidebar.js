@@ -1,9 +1,8 @@
 // Sidebar.js
 import React from 'react';
-import SidebarGitHub from './SidebarGitHub'; // Import the new component
+import SidebarGitHub from './SidebarGitHub';
 import SidebarAboutMe from './SidebarAboutMe';
-import SidebarLatestPost from './SidebarLatestPost'; // Update the file path if needed
-
+import SidebarLatestPost from './SidebarLatestPost';
 
 function AppSidebar() {
   return (
