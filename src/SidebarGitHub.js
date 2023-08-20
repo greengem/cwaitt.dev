@@ -77,7 +77,7 @@ function SidebarGitHub() {
                 <Github /> View on GitHub
               </Button>
               <Button
-                href="/projectdemos/DRG-DD-API"
+                href="/demos/DRG-DD-API"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
