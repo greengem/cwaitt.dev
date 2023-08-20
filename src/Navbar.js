@@ -22,8 +22,8 @@ function AppNavbar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#">About</Nav.Link>
             <Nav.Link href="#">Contact</Nav.Link>
-            <Nav.Link href="https://www.linkedin.com/in/chriswaitt/">Linkedin</Nav.Link>
-            <Nav.Link href="https://github.com/greengem">Github</Nav.Link>
+            <Nav.Link href="https://www.linkedin.com/in/chriswaitt/" target='_blank' rel='noopener noreferrer'>Linkedin</Nav.Link>
+            <Nav.Link href="https://github.com/greengem" target='_blank' rel='noopener noreferrer'>Github</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
