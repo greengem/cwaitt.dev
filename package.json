@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build/* ../../public_html/",
+    "build": "react-scripts build && rm -rf ../../public_html/* && mv build/* ../../public_html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
