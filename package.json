@@ -1,6 +1,7 @@
 {
   "name": "contentful-react-portfolio",
   "version": "0.1.0",
+  "homepage": "https://cwaitt.dev",
   "private": true,
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.1",
