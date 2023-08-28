@@ -4,15 +4,17 @@ import AppNavbar from './Navbar';
 import AppFooter from './Footer';
 import Projects from './Projects';
 import ProjectDetail from './ProjectDetail';
-//import ThreeJSAnimation from './ThreeJSAnimation';
 import './App.css';
+import AppHero from './Hero';
+import AppAboutMe from './AboutMe';
 
 function App() {
   return (
     <Router>
       <div>
         <AppNavbar />
-        {/*<ThreeJSAnimation />*/}
+        <AppHero />
+        <AppAboutMe />
         <Routes>
           <Route path="/" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
