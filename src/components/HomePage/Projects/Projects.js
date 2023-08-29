@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import * as contentful from 'contentful';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
+
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
 import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
+
 import './Projects.css';
 
 const client = contentful.createClient({
@@ -53,14 +56,19 @@ function Projects() {
                     />
                   )}
               <Card.ImgOverlay>
-                <Card.Title>{project.fields.projectTitle}</Card.Title>
-                {/*<Card.Text>
-                  {project.fields.shortDescription}
+                <Card.Title>
+                <Link to={`/projects/${project.sys.id}`}>
+                  {project.fields.projectTitle}
+                  </Link>
+                  </Card.Title>
+                <Card.Text>
+                  {/*{project.fields.shortDescription}
                   </Card.Text>*/}
-                  <Card.Text>
+                  <div className='tech-stack-labels'>
                   {project.fields.techStack.map((tech, index) => (
                     <BadgeComponent key={index} tech={tech} />
                   ))}
+                  </div>
                 </Card.Text>
               </Card.ImgOverlay>
             </Card>
