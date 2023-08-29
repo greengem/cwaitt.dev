@@ -5,13 +5,14 @@ import * as contentful from 'contentful';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BadgeComponent from './BadgeComponent';
-import AppSidebar from './Sidebar';
+import BadgeComponent from '../Common/BadgeComponent/BadgeComponent';
+import AppSidebar from './Sidebar/Sidebar';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Spinner from 'react-bootstrap/Spinner';
+import './ProjectDetail.css';
 
 // Create a Contentful client
 const client = contentful.createClient({

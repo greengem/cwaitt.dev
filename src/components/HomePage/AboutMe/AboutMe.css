@@ -1,0 +1,19 @@
+section.about-me{
+}
+
+section.about-me .about-me-photo{
+    position: relative;
+    background-image: url('../../../assets/img/Profile.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.about-me .about-me-text{
+    padding: 100px 40px;
+    background-color: blueviolet;
+    color: #f0f0f0;
+
+}

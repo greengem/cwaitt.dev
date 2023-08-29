@@ -5,8 +5,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import BadgeComponent from './BadgeComponent';
-import './App.css';
+import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
+import './Projects.css';
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -33,8 +33,9 @@ function Projects() {
   }, []);
 
   return (
+    <section className='section-portfolio'>
     <Container className="mt-5">
-      <h2>Portfolio</h2>
+      <h1>Portfolio</h1>
       <Row xs={1} sm={1} md={2} lg={3} className="g-4">
         {projects.map((project) => (
           <Col key={project.sys.id}>
@@ -58,9 +59,9 @@ function Projects() {
               </Link>
               <Card.Body>
                 <Card.Title>{project.fields.projectTitle}</Card.Title>
-                <Card.Text>
+                {/*<Card.Text>
                   {project.fields.shortDescription}
-                </Card.Text>
+                  </Card.Text>*/}
                 <div>
                   {project.fields.techStack.map((tech, index) => (
                     <BadgeComponent key={index} tech={tech} />
@@ -72,6 +73,7 @@ function Projects() {
         ))}
       </Row>
     </Container>
+    </section>
   );
 }
 

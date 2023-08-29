@@ -1,7 +1,11 @@
-article img{
-  max-width: 100%;
-}
+
 .page-loading{
   text-align: center;
   padding-top: 200px;
+}
+
+
+
+section h1{
+  margin-bottom: 50px;
 }

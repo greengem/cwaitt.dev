@@ -1,8 +1,8 @@
 // Sidebar.js
 import React from 'react';
-import SidebarGitHub from './SidebarGitHub';
-import SidebarAboutMe from './SidebarAboutMe';
-import SidebarLatestPost from './SidebarLatestPost';
+import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
+import SidebarAboutMe from './SidebarAboutMe/SidebarAboutMe';
+import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
 
 function AppSidebar() {
   return (
