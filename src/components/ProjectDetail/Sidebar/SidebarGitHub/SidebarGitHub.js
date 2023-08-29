@@ -12,6 +12,12 @@ const client = contentful.createClient({
   accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
+// Function to format a date string
+function formatDate(dateString) {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+}
+
 // Define the SidebarGitHub component
 function SidebarGitHub() {
   // State variables to store GitHub and commit information
@@ -80,17 +86,22 @@ function SidebarGitHub() {
             {/* Display GitHub repository description */}
             <p className='mb-0'>{githubData.description}</p>
 
-            {/* Display information about the latest commit */}
-            {latestCommit.commit && (
-              <p>
-                <small className='text-muted'>
-                  Latest commit {latestCommit.commit.committer.date}: {latestCommit.commit.message}.{' '}
-                  <a href={latestCommit.html_url} target='_blank' rel="noopener noreferrer">
-                    View
-                  </a>
-                </small>
-              </p>
-            )}
+{/* Display information about the latest commit */}
+{latestCommit.commit && (
+  <p>
+    <small className='text-muted'>
+    Latest commit {formatDate(latestCommit.commit.committer.date)}:{' '}
+      {latestCommit.commit.message.length > 100 // Adjust the desired length
+        ? `${latestCommit.commit.message.substring(0, 100)}...`
+        : latestCommit.commit.message
+      }.{' '}
+      <a href={latestCommit.html_url} target='_blank' rel="noopener noreferrer">
+        View
+      </a>
+    </small>
+  </p>
+)}
+
 
             {/* Buttons to view the repository on GitHub and a live demo (if available) */}
             <div className="d-grid gap-2">
