@@ -1,17 +1,25 @@
 // Import necessary dependencies
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import * as contentful from 'contentful';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import BadgeComponent from '../Common/BadgeComponent/BadgeComponent';
+
 import AppSidebar from './Sidebar/Sidebar';
+
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Spinner from 'react-bootstrap/Spinner';
+
+import BadgeComponent from '../Common/BadgeComponent/BadgeComponent';
+
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import Spinner from 'react-bootstrap/Spinner';
+
 import './ProjectDetail.css';
 
 // Create a Contentful client
@@ -118,7 +126,7 @@ function ProjectDetail() {
           <article>
             <header>
               <figure>
-                {project.fields.featuredImage ? (
+                {/*project.fields.featuredImage ? (
                   <img
                     src={project.fields.featuredImage.fields.file.url}
                     alt={project.fields.projectTitle}
@@ -128,7 +136,7 @@ function ProjectDetail() {
                     src="https://placehold.co/1080x400"
                     alt="Placeholder"
                   />
-                )}
+                )*/}
               </figure>
               <h1>{project.fields.projectTitle}</h1>
               <div className="text-muted fst-italic post-date">
