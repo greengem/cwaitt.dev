@@ -18,13 +18,17 @@ section.section-portfolio .custom-card {
 section.section-portfolio .custom-card:hover {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
 }
+
+
 section.section-portfolio .custom-card .card-img-top{
-  filter: blur(3px);
-  transition: filter 0.3s ease-in-out; 
+
 }
+
 section.section-portfolio .custom-card:hover .card-img-top{
-  filter: blur(0);
 }
-section.section-portfolio .custom-card .card-img-overlay:hover::before {
-  
+
+
+.tech-stack-labels{
+  position: absolute;
+  bottom: 10px;
 }

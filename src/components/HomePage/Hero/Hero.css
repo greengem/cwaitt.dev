@@ -9,22 +9,28 @@
     align-items: center;
     justify-content: center;
   }
-
-  .overlay {
+  
+  .hero-overlay {
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
     top: 0;
-    
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent overlay */
-    z-index: 1; /* Place the overlay above the background */
+    pointer-events: none; /* Allow clicks to pass through the overlay */
+  }
+
+  [data-bs-theme='dark'] .hero-overlay{
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust overlay color and opacity */
   }
   
   .hero-content {
     position: relative;
-    color: #000;
-    z-index: 2; /* Place the content above the overlay */
+    color: rgb(33, 37, 41);
+    z-index: 2;
+  }
+  [data-bs-theme='dark'] .hero-content {
+    color: #f0f0f0;
   }
 
   .hero-content h1 {

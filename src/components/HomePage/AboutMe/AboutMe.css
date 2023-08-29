@@ -1,9 +1,6 @@
-section.about-me{
-}
-
 section.about-me .about-me-photo{
     position: relative;
-    background-image: url('../../../assets/img/Profile.jpeg');
+    background-image: url('../../../assets/img/AboutMePhoto.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -11,9 +8,14 @@ section.about-me .about-me-photo{
     justify-content: center;
 }
 
+
 section.about-me .about-me-text{
     padding: 100px 40px;
+    
+
+}
+
+[data-bs-theme='light'] section.about-me .about-me-text{
     background-color: blueviolet;
     color: #f0f0f0;
-
 }
