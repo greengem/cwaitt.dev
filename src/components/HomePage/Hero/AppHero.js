@@ -11,7 +11,7 @@ function AppHero() {
         <div className="hero-content">
           <Container>
             <h1>Hi, I'm Chris Waitt</h1>
-            <h2>Frontend Developer / UIUX Designer</h2>
+            <h2>Frontend Developer / Designer</h2>
             <h1>
               <span className='me-4'><a href='https://github.com/greengem'><Github /></a></span>
               <span><a href='https://www.linkedin.com/in/chriswaitt/'><Linkedin /></a></span>

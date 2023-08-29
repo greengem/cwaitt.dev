@@ -38,7 +38,9 @@ function Projects() {
       <Row xs={1} sm={1} md={2} lg={3} className="g-4">
         {projects.map((project) => (
           <Col key={project.sys.id}>
-            <Card className="h-100 custom-card">
+            <Card className="h-100">
+              <Link to={`/projects/${project.sys.id}`}>
+                <div className="card-img-container">
                   {project.fields.thumbnailImage ? (
                     <Card.Img
                       variant="top"
@@ -52,17 +54,19 @@ function Projects() {
                       alt="Placeholder"
                     />
                   )}
-              <Card.ImgOverlay>
+                </div>
+              </Link>
+              <Card.Body>
                 <Card.Title>{project.fields.projectTitle}</Card.Title>
                 {/*<Card.Text>
                   {project.fields.shortDescription}
                   </Card.Text>*/}
-                  <Card.Text>
+                <div>
                   {project.fields.techStack.map((tech, index) => (
                     <BadgeComponent key={index} tech={tech} />
                   ))}
-                </Card.Text>
-              </Card.ImgOverlay>
+                </div>
+              </Card.Body>
             </Card>
           </Col>
         ))}
