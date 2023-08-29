@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+
+import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
-import { MoonStarsFill, SunFill } from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
+
+import { MoonStarsFill, Gem } from 'react-bootstrap-icons';
+
 
 function AppNavbar() {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,17 +32,14 @@ useEffect(() => {
   return (
     <Navbar className='navbar sticky-top bg-body-tertiary'>
       <Container>
-        <Navbar.Brand href="/">Site Title</Navbar.Brand>
+        <Navbar.Brand href="/"><Gem /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="https://www.linkedin.com/in/chriswaitt/" target='_blank' rel='noopener noreferrer'>Linkedin</Nav.Link>
             <Nav.Link href="https://github.com/greengem" target='_blank' rel='noopener noreferrer'>Github</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <SunFill className='me-2' />
-        
         <Form.Check
           type="switch"
           id="darkmode-switch"
