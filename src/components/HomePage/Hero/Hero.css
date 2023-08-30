@@ -12,7 +12,7 @@
   
   .hero-overlay {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0);
     top: 0;
     right: 0;
     bottom: 0;
@@ -26,11 +26,9 @@
   
   .hero-content {
     position: relative;
-    color: rgb(33, 37, 41);
     z-index: 2;
   }
   [data-bs-theme='dark'] .hero-content {
-    color: #f0f0f0;
   }
 
   .hero-content h1 {
@@ -44,3 +42,4 @@
   .hero img{
     max-width: 100%;
   }
+ 
