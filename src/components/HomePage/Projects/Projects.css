@@ -1,16 +1,8 @@
 section.section-portfolio{
   padding: 100px 0;
-  position: relative;
-  background-image: url('../../../assets/img/hero2.jpeg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 section.section-portfolio .custom-card {
-  position: relative;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -28,7 +20,8 @@ section.section-portfolio .custom-card:hover .card-img-top{
 }
 
 
-.tech-stack-labels{
-  position: absolute;
-  bottom: 10px;
+section.section-portfolio .custom-card .card-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
