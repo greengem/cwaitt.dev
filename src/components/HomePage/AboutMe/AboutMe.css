@@ -11,11 +11,14 @@ section.about-me .about-me-photo{
 
 section.about-me .about-me-text{
     padding: 100px 40px;
-    
-
 }
 
 [data-bs-theme='light'] section.about-me .about-me-text{
     background-color: blueviolet;
     color: #f0f0f0;
 }
+[data-bs-theme='dark'] section.about-me .about-me-text{
+    background-color: #121416;
+    color: #f0f0f0;
+}
+
