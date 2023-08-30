@@ -34,7 +34,7 @@ function Projects() {
 
   return (
     <section className='section-portfolio'>
-      <Container className="mt-5">
+      <Container>
         <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRightBig">
           <h1>Projects</h1>
         </AnimationOnScroll>

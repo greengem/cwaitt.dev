@@ -10,7 +10,7 @@ section.about-me .about-me-photo{
 
 
 section.about-me .about-me-text{
-    padding: 100px 40px;
+    padding: 80px 40px;
 }
 
 [data-bs-theme='light'] section.about-me .about-me-text{
