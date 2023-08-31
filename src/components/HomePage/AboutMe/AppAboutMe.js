@@ -11,7 +11,8 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 function AppAboutMe() {
   return (
     <section className='about-me'>
-      <Row xs={1} sm={1} md={1} lg={2}>
+      <Container fluid>
+      <Row>
         <Col lg={6} className='about-me-photo'></Col>
         <Col lg={6} className='about-me-text'>
           <Container>
@@ -36,6 +37,7 @@ function AppAboutMe() {
           </Container>
         </Col>
       </Row>
+      </Container>
     </section>
   );
 }
