@@ -30,7 +30,7 @@ useEffect(() => {
 
 
   return (
-    <Navbar className='navbar sticky-top bg-body-tertiary'>
+    <Navbar className='navbar navbar-expand-lg navbar-light'>
       <Container>
         <Navbar.Brand href="/"><Gem /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
