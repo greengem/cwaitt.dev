@@ -1,45 +1,35 @@
 /* Hero.css */
-.hero {
-    position: relative;
-    background-image: url('../../../assets/img/hero2.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none; /* Allow clicks to pass through the overlay */
-  }
+.hero-container {
+  position: relative;
+  background-image: url('../../../assets/img/hero2.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  [data-bs-theme='dark'] .hero-overlay{
-    background-color: rgba(0, 0, 0, 0.8); /* Adjust overlay color and opacity */
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-  [data-bs-theme='dark'] .hero-content {
-  }
+.hero-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none; /* Allow clicks to pass through the overlay */
+}
 
-  .hero-content h1 {
-    font-size: 6rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.25rem;
-  }
-  .hero img{
-    max-width: 100%;
-  }
- 
+[data-bs-theme='dark'] .hero-overlay{
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust overlay color and opacity */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
