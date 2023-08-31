@@ -1,5 +1,47 @@
-$primary: #BF349A;
-$secondary: #8C2771;
-$neutral: #E7DCF2;
-$accent1: #2ABFVF;
-$accent2: #29A6A6;
+/* VAPORWAVE 2 THAT BBY PICKED */
+$primary: rgba(191, 52, 154, 1);
+$secondary: rgba(140, 39, 113, 1);
+$neutral: rgba(231, 220, 242, 1);
+$accent1: rgba(42, 191, 191, 1);
+$accent2: rgba(41, 166, 166, 1);
+
+.navbar-light {
+    background-color: $primary;
+}
+.navbar-nav .nav-link {
+    color: $neutral;
+}
+.navbar .navbar-brand, .navbar{
+    color: $neutral;
+}
+body{
+    background-color: $secondary;
+    color: $neutral;
+}
+section.hero-container{
+    background-color: $neutral;
+    color: $secondary;
+}
+section.about-me{
+    //background-color: $accent1;
+}
+section.section-portfolio{
+    background-color: $neutral;
+}
+section.section-portfolio h1{
+    color: $primary;
+}
+section.section-portfolio .card{
+    background-color: $accent1;
+}
+
+section.section-portfolio .card-footer {
+    background-color: $accent2;
+}
+
+.sidebar .card{
+    background-color: $neutral;
+}
+.btn-primary{
+    background-color: $primary;
+}

@@ -1,13 +1,14 @@
 /* Hero.css */
 .hero-container {
   position: relative;
-  background-image: url('../../../assets/img/hero2.jpeg');
+  /*background-image: url('../../../assets/img/hero2.jpeg');*/
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .hero-overlay {

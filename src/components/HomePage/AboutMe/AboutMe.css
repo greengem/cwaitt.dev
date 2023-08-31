@@ -15,7 +15,7 @@ section.about-me .about-me-text{
 }
 
 [data-bs-theme='light'] section.about-me .about-me-text{
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
     color: #f0f0f0;
 }
 [data-bs-theme='dark'] section.about-me .about-me-text{
