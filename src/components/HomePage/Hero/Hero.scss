@@ -2,7 +2,6 @@
 .hero-container {
   position: relative;
   /*background-image: url('../../../assets/img/hero4.jpeg');*/
-  background-color: #fff;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -39,26 +38,6 @@
 .hero-content h1 {
   font-size: 6rem;
   margin-bottom: 1rem;
-}
-
-[data-bs-theme='dark'] .custom-shape-divider-top-1693831144 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-[data-bs-theme='dark'] .custom-shape-divider-top-1693831144 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
-
-[data-bs-theme='dark'] .custom-shape-divider-top-1693831144 .shape-fill {
-  fill: #FFFFFF;
 }
 
 [data-bs-theme='light'] .custom-shape-divider-top-1693831651 {
