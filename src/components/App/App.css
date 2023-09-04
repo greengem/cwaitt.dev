@@ -1,4 +1,6 @@
-
+body{
+  font-family: 'Roboto', sans-serif !important;
+}
 .page-loading{
   text-align: center;
   padding-top: 200px;
@@ -6,4 +8,8 @@
 
 section h1{
   margin-bottom: 50px;
+}
+
+.App {
+  position: relative;
 }
