@@ -2,15 +2,18 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import './Hero.css';
 import './HeroGlitch.css';
+import Button from 'react-bootstrap/Button';
 
 function AppHero() {
   return (
-    <section className='hero-container'>
+    <section id='hero' className='hero-container'>
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <Container>
-          <h1 className="hero glitch layers" data-text="Hi, I'm Chris Waitt"><span>Hi, I'm Chris Waitt</span></h1>
-          <h2>Architecting Futuristic Web Experiences</h2>
+          <h1 className="hero glitch layers" data-text="Hello, I'm Chris Waitt"><span>Hello, I'm Chris Waitt</span></h1>
+          <h2>Turning Ideas into Stunning Web Interfaces</h2>
+          <p>Front-End Developer | UI/UX Enthusiast</p>
+          <Button variant="dark" href="#portfolio">View My Work</Button>
         </Container>
       </div>
       <div className="custom-shape-divider-top-1693831144">

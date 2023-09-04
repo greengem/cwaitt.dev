@@ -36,7 +36,7 @@ function Projects() {
   }, []);
 
   return (
-    <section className='section-portfolio'>
+    <section id='portfolio' className='section-portfolio'>
       <Container>
         <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRightBig">
           <h1>Projects</h1>

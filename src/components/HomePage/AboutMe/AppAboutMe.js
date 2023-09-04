@@ -9,7 +9,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function AppAboutMe() {
   return (
-    <section className='about-me'>
+    <section id='about' className='about-me'>
       <Container fluid>
       <Row>
         <Col lg={6} className='about-me-photo'></Col>
