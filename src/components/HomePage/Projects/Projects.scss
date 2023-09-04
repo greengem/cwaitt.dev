@@ -1,5 +1,6 @@
 section.section-portfolio{
-  padding: 80px 0;
+  padding: 160px 0;
+  position: relative;
 }
 
 section.section-portfolio .custom-card {
@@ -11,17 +12,28 @@ section.section-portfolio .custom-card:hover {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-section.section-portfolio .custom-card .card-img-top{
-
-}
-
-section.section-portfolio .custom-card:hover .card-img-top{
-}
-
-
 section.section-portfolio .custom-card .card-title{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.custom-shape-divider-top-1693844874 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1693844874 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1693844874 .shape-fill {
+  fill: #E0E0E0;
 }

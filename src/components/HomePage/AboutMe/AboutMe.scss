@@ -1,8 +1,10 @@
 $accent1: #ef37a1;
 
 section.about-me{
-    color: #000;
-    padding: 80px 0;
+    position: relative;
+    color: #333;
+    background-color: #e0e0e0;
+    padding: 160px 0;
 }
 section.about-me .about-me-left .about-me-photo{
     display: flex;
@@ -35,4 +37,24 @@ section.about-me .about-me-photo img{
 [data-bs-theme='dark'] section.about-me .about-me-text{
 
     color: #f0f0f0;
+}
+.custom-shape-divider-top-1693844900 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1693844900 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1693844900 .shape-fill {
+    fill: #FFFFFF;
 }
