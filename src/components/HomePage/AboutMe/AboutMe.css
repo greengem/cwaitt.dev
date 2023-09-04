@@ -1,4 +1,22 @@
-section.about-me .about-me-photo{
+section.about-me{
+    background-color: rgb(196, 196, 196);
+    color: #000;
+    padding: 80px 0;
+}
+section.about-me .about-me-left .about-me-photo{
+    display: flex;
+    align-items: center; /* Vertically center the image */
+    overflow: hidden; /* Crop the image */
+    height: 100%; /* Set a fixed height for the column */
+}
+
+section.about-me .about-me-photo img{
+    width: 100%; /* Make sure the image covers the entire column width */
+    height: 100%; /* Ensure the image takes up the full column height */
+    object-fit: cover; /* Maintain aspect ratio and cover the column */
+}
+
+/*section.about-me .about-me-photo{
     position: relative;
     background-image: url('../../../assets/img/AboutMePhoto.jpeg');
     background-size: cover;
@@ -7,18 +25,10 @@ section.about-me .about-me-photo{
     align-items: center;
     justify-content: center;
     min-height: 400px;
-}
+}*/
 
-
-section.about-me .about-me-text{
-    padding: 80px 40px;
-}
-
-[data-bs-theme='light'] section.about-me .about-me-text{
-    background-color: rgb(196, 196, 196);
-    color: #000;
-}
 [data-bs-theme='dark'] section.about-me .about-me-text{
-    background-color: #121416;
+
     color: #f0f0f0;
 }
+
