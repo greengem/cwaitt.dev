@@ -46,7 +46,7 @@ useEffect(() => {
           checked={darkMode}
           onChange={() => setDarkMode(!darkMode)}
         />
-        <MoonStarsFill />
+        <MoonStarsFill className='navbar-moon' />
       </Container>
     </Navbar>
   );
