@@ -21,12 +21,14 @@ function AppAboutMe() {
 </div>
       <Container>
       <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-              <h1>About</h1>
-            </AnimationOnScroll>
+        <h1>About</h1>
+        </AnimationOnScroll>
       <Row>
         <Col lg={6} className='about-me-left'>
           <div className='about-me-photo'>
+          <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
             <Image src='https://picsum.photos/1080/720'  rounded />
+          </AnimationOnScroll>
           </div>
         </Col>
         <Col lg={6} className='about-me-text'>
