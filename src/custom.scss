@@ -40,7 +40,7 @@ $accent1: #ef37a1;
     -webkit-mask: var(--mask);
     mask: var(--mask);
     border-radius: 50%;
-    animation: sparkle 5s linear forwards;
+    animation: sparkle 3s linear forwards;
   }
   @keyframes sparkle {
     0% { transform: scale(0); }
