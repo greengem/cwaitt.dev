@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
-import './Projects.css';
+import './Projects.scss';
 
 // Create a Contentful client
 const client = contentful.createClient({
