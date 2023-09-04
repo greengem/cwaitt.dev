@@ -6,7 +6,7 @@ const SpotifyPlaylist = () => {
       <iframe 
         title='my-spotify-player'
         className="spotify-embed"
-        src="https://open.spotify.com/embed/playlist/2Al9G2jrWkwDlRFMZaw1GX?utm_source=generator&theme=1" 
+        src="https://open.spotify.com/embed/playlist/2Al9G2jrWkwDlRFMZaw1GX?utm_source=generator&theme=0" 
         width="100%" 
         height="152" 
         frameBorder="0" 

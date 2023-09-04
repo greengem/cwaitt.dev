@@ -5,41 +5,50 @@ $neutral: rgba(231, 220, 242, 1);
 $accent1: rgba(42, 191, 191, 1);
 $accent2: rgba(41, 166, 166, 1);
 
-.navbar-light {
-    background-color: $primary;
+[data-bs-theme='dark']  .navbar-light {
+    background-color: #fff;
 }
-.navbar-nav .nav-link {
-    color: $neutral;
+
+[data-bs-theme='dark'] .navbar-nav .nav-link, [data-bs-theme='dark'] .navbar .navbar-brand, .navbar {
+    color: #000;
 }
+
+[data-bs-theme='light']  .navbar-light {
+    background-color: #000;
+}
+[data-bs-theme='light'] .navbar-nav .nav-link, [data-bs-theme='light'] .navbar .navbar-brand, .navbar {
+    color: #fff;
+}
+
 .navbar .navbar-brand, .navbar{
-    color: $neutral;
+    //color: $neutral;
 }
 body{
-    background-color: $secondary;
-    color: $neutral;
+    //background-color: $secondary;
+    //color: $neutral;
 }
 section.hero-container{
-    background-color: $neutral;
-    color: $secondary;
+   // background-color: $neutral;
+   // color: $secondary;
 }
 
 section.section-portfolio{
-    background-color: $neutral;
+    //background-color: $neutral;
 }
 section.section-portfolio h1{
-    color: $primary;
+    //color: $primary;
 }
 section.section-portfolio .card{
-    background-color: $accent1;
+    //background-color: $accent1;
 }
 
 section.section-portfolio .card-footer {
-    background-color: $accent2;
+    //background-color: $accent2;
 }
 
 .sidebar .card{
-    background-color: $neutral;
+    //background-color: $neutral;
 }
 .btn-primary{
-    background-color: $primary;
+    //background-color: $primary;
 }
