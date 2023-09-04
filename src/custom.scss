@@ -1,21 +1,21 @@
 $accent1: #ef37a1;
 
-[data-bs-theme='dark']  .navbar-light {
-    background-color: #fff;
-}
-
-[data-bs-theme='dark'] .navbar-nav .nav-link, [data-bs-theme='dark'] .navbar .navbar-brand, .navbar {
-    color: #000;
-}
-
-[data-bs-theme='light']  .navbar-light {
+.navbar-light {
     background-color: #000;
 }
-[data-bs-theme='light'] .navbar-nav .nav-link, [data-bs-theme='light'] .navbar .navbar-brand, .navbar {
+.navbar-nav .nav-link, 
+.navbar .navbar-brand, 
+.navbar {
     color: #fff;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar .navbar-brand:hover 
+{
+    color: $accent1;
 }
 
 .form-check-input:checked{
     background-color: #000;
-    border-color: #000;
+    border-color: $accent1;
 }

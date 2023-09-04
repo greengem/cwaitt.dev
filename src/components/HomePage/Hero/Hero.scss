@@ -1,7 +1,7 @@
 /* Hero.css */
 .hero-container {
   position: relative;
-  /*background-image: url('../../../assets/img/hero2.jpeg');*/
+  /*background-image: url('../../../assets/img/hero4.jpeg');*/
   background-color: #fff;
   background-size: cover;
   background-position: center;
@@ -81,23 +81,7 @@
   fill: #000000;
 }
 
-.custom-shape-divider-bottom-1693835270 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1693835270 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
-
-.custom-shape-divider-bottom-1693835270 .shape-fill {
-  fill: #C4C4C4;
+#hero .btn{
+  background-color: #ef37a1;
+  border-color: #ef37a1;
 }
