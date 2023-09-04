@@ -54,7 +54,8 @@ function Projects() {
             <Col key={project.sys.id}>
               <AnimationOnScroll
                 animateOnce={true}
-                animateIn={index % 2 === 0 ? "animate__fadeInLeftBig" : "animate__fadeInRightBig"}
+                animateIn={"animate__fadeInRightBig"}
+                delay={index % 2 === 0 ? "0" : "500"}
               >
                 <Card className="h-100 custom-card">
                   <Link to={`/projects/${project.sys.id}`}>
