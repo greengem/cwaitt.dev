@@ -44,17 +44,12 @@ function Projects() {
     <section id='portfolio' className='section-portfolio'>
       <ProjectsWave />
       <Container>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRightBig">
+        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
           <h1>Projects</h1>
         </AnimationOnScroll>
         <Row xs={1} sm={1} md={2} lg={2} className="g-4">
           {projects.map((project, index) => (
             <Col key={project.sys.id}>
-              <AnimationOnScroll
-                animateOnce={true}
-                animateIn={"animate__fadeInRightBig"}
-                delay={index % 2 === 0 ? "0" : "500"}
-              >
                 <Card className="h-100 custom-card">
                   <Link to={`/projects/${project.sys.id}`}>
                     {project.fields.thumbnailImage ? (
@@ -83,7 +78,6 @@ function Projects() {
                     </div>
                   </Card.Footer>
                 </Card>
-              </AnimationOnScroll>
             </Col>
           ))}
         </Row>
