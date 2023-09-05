@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
+//import Form from 'react-bootstrap/Form';
 
-import { MoonStarsFill, Gem } from 'react-bootstrap-icons';
+import { /*MoonStarsFill,*/ Gem } from 'react-bootstrap-icons';
 
 
 function AppNavbar() {
@@ -40,13 +40,14 @@ useEffect(() => {
             <Nav.Link href="https://github.com/greengem" target='_blank' rel='noopener noreferrer'>Github</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        {/*
         <Form.Check
           type="switch"
           id="darkmode-switch"
           checked={darkMode}
           onChange={() => setDarkMode(!darkMode)}
         />
-        <MoonStarsFill className='navbar-moon' />
+  <MoonStarsFill className='navbar-moon' />*/}
       </Container>
     </Navbar>
   );
