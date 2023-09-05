@@ -150,8 +150,8 @@ function ProjectDetail() {
               <div className='mb-4'>
                 {/* Display badges for the project's tech stack */}
                 {project.fields.techStack.map((tech, index) => (
-  <span className={`badge ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>{tech}</span>
-))}
+                  <span key={index} className={`badge ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>{tech}</span>
+                ))}
               </div>
             </header>
             <section className="mb-4">
