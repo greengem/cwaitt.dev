@@ -38,6 +38,8 @@ useEffect(() => {
           <Nav className="ml-auto">
             <Nav.Link href="https://www.linkedin.com/in/chriswaitt/" target='_blank' rel='noopener noreferrer'>Linkedin</Nav.Link>
             <Nav.Link href="https://github.com/greengem" target='_blank' rel='noopener noreferrer'>Github</Nav.Link>
+            <Nav.Link href="/#projects">Projects</Nav.Link>
+            <Nav.Link href="/#about">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         {/*
