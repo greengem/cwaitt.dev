@@ -47,3 +47,15 @@ $accent1: #ef37a1;
     25% { opacity: 1; }
     100% { opacity: 0; }
   }
+
+
+  #footer{
+    background-color: #000;
+    color: $accent1;
+    padding-top: 60px;
+  }
+  #footer .nav-item a, 
+  #footer a, 
+  {
+    color: $accent1;
+  }
