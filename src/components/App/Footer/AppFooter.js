@@ -6,7 +6,7 @@ import { Gem } from 'react-bootstrap-icons';
 function AppFooter() {
   return (
     <section id='footer'>
-      <Container fluid>
+      <Container>
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3">
           <p className="col-md-4 mb-0">© 2023 Chris Waitt</p>
 
