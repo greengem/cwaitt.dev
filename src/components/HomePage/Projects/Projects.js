@@ -6,7 +6,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
+//import Badge from 'react-bootstrap/Badge';
+//import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
 import './Projects.scss';
 
 // Create a Contentful client
@@ -79,9 +80,12 @@ function Projects() {
                   </Card.Body>
                   <Card.Footer>
                     <div className='tech-stack-labels'>
-                      {project.fields.techStack.map((tech, index) => (
-                        <BadgeComponent key={index} tech={tech} />
-                      ))}
+                    {project.fields.techStack.map((tech, index) => (
+  <span className={`badge ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>{tech}</span>
+))}
+
+
+                      
                     </div>
                   </Card.Footer>
                 </Card>
