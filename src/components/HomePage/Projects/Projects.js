@@ -10,7 +10,7 @@ import Card from 'react-bootstrap/Card';
 //import BadgeComponent from '../../Common/BadgeComponent/BadgeComponent';
 import './Projects.scss';
 
-import ProjectsWave from '../../Common/Waves/ProjectsWave';
+//import ProjectsWave from '../../Common/Waves/ProjectsWave';
 import FooterWave from '../../Common/Waves/FooterWave';
 
 // Create a Contentful client
@@ -42,7 +42,7 @@ function Projects() {
 
   return (
     <section id='portfolio' className='section-portfolio'>
-      <ProjectsWave />
+
       <Container>
         <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
           <h1>Projects</h1>

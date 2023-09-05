@@ -6,14 +6,13 @@ import './AboutMe.scss';
 import SpotifyPlaylist from './Spotify/SpotifyPlaylist';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Image from 'react-bootstrap/Image';
-import AboutWave from '../../Common/Waves/AboutWave';
+//import AboutWave from '../../Common/Waves/AboutWave';
 
 
 
 function AppAboutMe() {
   return (
     <section id='about' className='about-me'>
-      <AboutWave />
       <Container>
       <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
         <h1>About</h1>
