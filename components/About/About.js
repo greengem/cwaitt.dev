@@ -11,7 +11,7 @@ function AppAbout() {
   return (
     <section className={styles['about-container']}>
         <Container>
-            <h1>About</h1>
+            <h1 className='section-h1'>About</h1>
             <Row>
                 <Col lg={6} className='about-left'>
                     <div className={styles['about-photo-container']}>

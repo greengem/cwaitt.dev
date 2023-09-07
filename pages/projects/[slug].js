@@ -47,7 +47,7 @@ function Project({ project, latestPost }) {
                 <Col lg={8}>
                     <article>
                         <header>
-                            <h1>{projectTitle}</h1>
+                            <h1 className='section-h1'>{projectTitle}</h1>
     
                             <div className='mb-4'>
                                 <TechStackBadges techs={techStack} />

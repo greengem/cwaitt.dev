@@ -7,7 +7,7 @@ export default function Projects({ projects }) {
   return (
     <section id='projects'>
       <Container className='mt-5'>
-        <h1>My Projects</h1>
+        <h1 className='section-h1'>My Projects</h1>
         <div className='g-4 row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1'>
           {projects.map(project => (
             <ProjectCard project={project} key={project.sys.id} />

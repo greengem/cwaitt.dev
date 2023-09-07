@@ -1,16 +1,19 @@
 import { fetchProjectsByTechStack, fetchAllTechStacks } from '../../lib/contentful';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import Container from 'react-bootstrap/Container';
 
 export default function TechStackPage({ tech, projects }) {
   return (
-    <div>
-      <h1>Projects using {tech}</h1>
-      <div>
+    <section id='projects'>
+      <Container className='mt-5'>
+      <h1 className='section-h1'>Projects using {tech}</h1>
+      <div className='g-4 row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1'>
         {projects.map(project => (
           <ProjectCard key={project.sys.id} project={project} />
         ))}
       </div>
-    </div>
+      </Container>
+    </section>
   );
 }
 

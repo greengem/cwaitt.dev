@@ -28,3 +28,7 @@ $font-main: 'Arial', sans-serif;
 .bg-accent {
     background-color: map-get($active-scheme, accent);
 }
+
+.section-h1{
+    margin-bottom: 40px;
+}
