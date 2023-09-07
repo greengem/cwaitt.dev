@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-/**
- * AppAboutSpotify component.
- * 
- * This component embeds a Spotify player to showcase a playlist.
- * It uses an iframe to load the player and the playlist is specified
- * by the src attribute of the iframe.
- * 
- * The Spotify embed is wrapped in a div with the class "spotify-embed-container"
- * for potential styling purposes.
- */
 function AppAboutSpotify() {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    // Check if the iframe has already loaded when component mounts
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.classList.add('loaded');
+    }
+    
+    const handleLoad = () => {
+      iframeRef.current.classList.add('loaded');
+    };
+
+    // Attach the load event
+    iframeRef.current.addEventListener('load', handleLoad);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      iframeRef.current.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
   return (
     <div className="spotify-embed-container">
         <iframe 
+            ref={iframeRef}
             title='my-spotify-player'
             className="spotify-embed"
             src="https://open.spotify.com/embed/playlist/2Al9G2jrWkwDlRFMZaw1GX?utm_source=generator&theme=0" 

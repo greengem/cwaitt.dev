@@ -40,3 +40,12 @@ $font-main: 'Arial', sans-serif;
     width: 100%;
     height: auto;
 }
+
+.spotify-embed-container iframe{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.spotify-embed-container iframe.loaded {
+    opacity: 1;
+}
