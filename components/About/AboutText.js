@@ -3,9 +3,13 @@ import React from 'react';
 function AppAboutText() {
   return (
     <div className='about-text-block'>
-        <p>Hey, I&apos;m <strong>Chris</strong>—an <em>enthusiastic</em> web developer with a flair for transforming tech dreams into reality. 🚀 My journey started during my record label days when I faced the digital dilemma without a developer budget. In true <em>necessity-breeds-ingenuity</em> fashion, I charted a DIY path into <strong>HTML</strong>, <strong>CSS</strong>, and beyond. 💻</p>
+        <p>Hello! I'm <strong>Chris</strong>, a <em>passionate</em> web developer dedicated to turning tech visions into tangible masterpieces. 🚀 My foray into development began during my stint in the music industry. Faced with digital challenges and a shoestring budget, I embarked on a self-taught journey, diving deep into <strong>HTML</strong>, <strong>CSS</strong>, and more. 💡</p>
 
-        <p>From piecing together my first websites to unlocking the wizardry of <strong>JavaScript</strong>, I realized coding was my unexpected jam. These days, I&apos;m all about <em>frontend finesse</em>, <em>responsive design</em>, and <strong>web accessibility</strong>. Whether I&apos;m crafting slick interfaces, dancing with standards, or engineering scalable backends, it&apos;s a blend of <em>technical chops</em> and <em>creative panache</em>. 🎨 Beyond coding, you might find me <strong>cruising London&apos;s canals</strong>, <em>composing tunes</em> that hit the right notes, or squeezing in some <strong>PC gaming</strong>. If you&apos;re up for geeking out or plotting exciting tech escapades, let&apos;s connect! 🤝</p>
+        <p>From assembling my initial websites to mastering the intricacies of <strong>JavaScript</strong>, I uncovered an unexpected love for coding. Nowadays, my sights are set on achieving <em>frontend perfection</em>, championing <em>responsive design</em>, and advocating for <strong>web accessibility</strong>. Whether I'm sculpting intuitive interfaces 🎨, keeping pace with web standards ⚙️, or orchestrating robust backends 🖥️, I marry <em>technical prowess</em> with <em>artistic flair</em>.</p>
+
+        <p>When I'm not pushing pixels, you can catch me <strong>cycling along London's canals</strong> 🚴 (not swimming in them, although I do love a good swim elsewhere 🏊‍♂️). I also have a penchant for <em>crafting melodies</em> 🎵 and diving deep into <strong>PC gaming</strong> 🎮. Fancy a tech talk or a collaborative venture? Let's get the conversation flowing! 🤝</p>
+
+
     </div>
   );
 }
