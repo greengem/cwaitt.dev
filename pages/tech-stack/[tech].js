@@ -18,7 +18,7 @@ export default function TechStackPage({ tech, projects }) {
     <section id='projects'>
       <Container className='mt-5'>
         <h1 className='section-h1'>Projects using {tech}</h1>
-        <Row lg={2} md={2} sm={1} className='g-4'>
+        <Row className='g-4'>
           {projects.map(project => (
             <ProjectCard key={project.sys.id} project={project} />
           ))}

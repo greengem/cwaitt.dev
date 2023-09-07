@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 
 function ProjectCard({ project }) {
   return (
-    <Col>
+    <Col sm={12} md={6}>
       <Card className="card h-100">
         <Link href={`/projects/${project.fields.slug}`}>
           {project.fields.featuredImage && (
