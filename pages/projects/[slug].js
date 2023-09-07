@@ -1,14 +1,22 @@
-import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
+// External dependencies
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import AppSidebar from '../../components/Sidebar/Sidebar.js';
-import Image from 'next/image'
-
+import Image from 'next/image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+// Internal dependencies
+import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
+import AppSidebar from '../../components/Sidebar/Sidebar.js';
+
+/**
+ * Component for rendering tech stack badges.
+ * 
+ * @param {Array} techs - List of tech stacks used in the project.
+ * @returns JSX.Element
+ */
 function TechStackBadges({ techs }) {
     return techs.map((tech, index) => (
         <span key={index} className={`badge me-1 ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>
@@ -17,17 +25,27 @@ function TechStackBadges({ techs }) {
     ));
 }
 
+/**
+ * Main Project component to display details of a specific project.
+ * 
+ * @param {Object} project - Contains details of the project.
+ * @param {Object} latestPost - Contains details of the latest blog post.
+ * @returns JSX.Element
+ */
 function Project({ project, latestPost }) {
     const { projectTitle, techStack, description, gitHubLink, demoUrl } = project.fields;
+
+    // Options for rendering embedded assets from Contentful rich-text fields.
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => (
                 <Image 
-                    src={`https:${node.data.target.fields.file.url}?fit=fill&w=1712&h=1284`} alt={node.data.target.fields.title}
+                    src={`https:${node.data.target.fields.file.url}?fit=fill&w=1712&h=1284`} 
+                    alt={node.data.target.fields.title}
                     height={1284}
                     width={1712}
                     className='blog-image-embed'
-                    />
+                />
             ),
             'embedded-entry-block': (node) => {
                 const { language, code } = node.data.target.fields;
@@ -53,7 +71,6 @@ function Project({ project, latestPost }) {
                     <article>
                         <header>
                             <h1 className='section-h1'>{projectTitle}</h1>
-    
                             <div className='mb-4'>
                                 <TechStackBadges techs={techStack} />
                             </div>
@@ -64,12 +81,12 @@ function Project({ project, latestPost }) {
                     </article>
                 </Col>
                 <Col lg={4}><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></Col>
-
             </Row>
         </Container>
     );
 }
 
+// Function to generate static paths for all projects.
 export async function getStaticPaths() {
     const slugs = await fetchAllProjectSlugs();
     const paths = slugs.map(slug => ({ params: { slug } }));
@@ -80,6 +97,7 @@ export async function getStaticPaths() {
     };
 }
 
+// Function to fetch data for a specific project and provide it as props.
 export async function getStaticProps({ params }) {
     const project = await fetchProjectBySlug(params.slug);
     const latestPost = await fetchLatestProject();
@@ -92,6 +110,5 @@ export async function getStaticProps({ params }) {
         revalidate: 60,
     };
 }
-
 
 export default Project;
