@@ -49,3 +49,11 @@ $font-main: 'Arial', sans-serif;
 .spotify-embed-container iframe.loaded {
     opacity: 1;
 }
+
+.navbar-brand{
+    color: map-get($active-scheme, accent);
+}
+.Hero_hero-container__Epfue .btn-dark{
+    background-color: #ef37a1;
+    border-color: #ef37a1;
+}
