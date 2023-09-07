@@ -4,23 +4,25 @@ function AppAboutSpotify() {
   const iframeRef = useRef(null);
 
   useEffect(() => {
+    const currentIframe = iframeRef.current;
+
     // Check if the iframe has already loaded when component mounts
-    if (iframeRef.current && iframeRef.current.contentWindow) {
-      iframeRef.current.classList.add('loaded');
+    if (currentIframe && currentIframe.contentWindow) {
+      currentIframe.classList.add('loaded');
     }
     
     const handleLoad = () => {
-      iframeRef.current.classList.add('loaded');
+      currentIframe.classList.add('loaded');
     };
 
     // Attach the load event
-    iframeRef.current.addEventListener('load', handleLoad);
+    currentIframe.addEventListener('load', handleLoad);
 
     // Cleanup the event listener on component unmount
     return () => {
-      // Check if iframeRef.current exists before removing event listener
-      if (iframeRef.current) {
-        iframeRef.current.removeEventListener('load', handleLoad);
+      // Check if currentIframe exists before removing event listener
+      if (currentIframe) {
+        currentIframe.removeEventListener('load', handleLoad);
       }
     };
   }, []);
@@ -34,7 +36,6 @@ function AppAboutSpotify() {
             src="https://open.spotify.com/embed/playlist/2Al9G2jrWkwDlRFMZaw1GX?utm_source=generator&theme=0" 
             width="100%" 
             height="152" 
-            frameBorder="0" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
         ></iframe>
