@@ -18,9 +18,6 @@ function TechStackBadges({ techs }) {
 
 function Project({ project }) {
     const { projectTitle, techStack, description, shortDescription } = project.fields;
-    //const { createdAt, updatedAt } = project.sys;
-
-    const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
 
     const options = {
         renderNode: {
