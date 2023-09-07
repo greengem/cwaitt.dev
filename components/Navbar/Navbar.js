@@ -14,6 +14,9 @@ function AppNavbar() {
                     <li className="nav-item">
                         <Link className='nav-link' href="/projects">Projects</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className='nav-link' href="/tech-stack">Tech</Link>
+                    </li>
                 </ul>
             </div>
         </div>
