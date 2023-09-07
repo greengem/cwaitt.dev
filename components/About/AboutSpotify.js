@@ -18,7 +18,10 @@ function AppAboutSpotify() {
 
     // Cleanup the event listener on component unmount
     return () => {
-      iframeRef.current.removeEventListener('load', handleLoad);
+      // Check if iframeRef.current exists before removing event listener
+      if (iframeRef.current) {
+        iframeRef.current.removeEventListener('load', handleLoad);
+      }
     };
   }, []);
 
