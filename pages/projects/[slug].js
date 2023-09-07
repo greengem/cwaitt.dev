@@ -19,16 +19,13 @@ function TechStackBadges({ techs }) {
 
 function Project({ project, latestPost }) {
     const { projectTitle, techStack, description, gitHubLink } = project.fields;
-
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => (
                 <Image 
-                    src={`https:${node.data.target.fields.file.url}`} alt={node.data.target.fields.title}
-                    height={0}
-                    width={0}
-                    
-                    style={{ width: '100%', height: 'auto' }}
+                    src={`https:${node.data.target.fields.file.url}?fit=fill&w=1712&h=1284`} alt={node.data.target.fields.title}
+                    height={1284}
+                    width={1712}
                     />
             ),
             'embedded-entry-block': (node) => {
