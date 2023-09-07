@@ -1,11 +1,12 @@
-import Link from 'next/link';
 import React from 'react';
 import SidebarAboutMe from './SidebarAboutMe/SidebarAboutMe';
+import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
 
-function AppSidebar() {
+function AppSidebar({ gitHubLink }) {
   return (
     <div className="sidebar">
         <SidebarAboutMe />
+        <SidebarGitHub gitHubLink={gitHubLink} />
     </div>
   );
 }

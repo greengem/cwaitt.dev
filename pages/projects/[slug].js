@@ -17,7 +17,7 @@ function TechStackBadges({ techs }) {
 }
 
 function Project({ project }) {
-    const { projectTitle, techStack, description, shortDescription } = project.fields;
+    const { projectTitle, techStack, description, gitHubLink } = project.fields;
 
     const options = {
         renderNode: {
@@ -58,7 +58,7 @@ function Project({ project }) {
                         </section>
                     </article>
                 </Col>
-                <Col lg={4}><AppSidebar /></Col>
+                <Col lg={4}><AppSidebar gitHubLink={gitHubLink} /></Col>
             </Row>
         </Container>
     );
