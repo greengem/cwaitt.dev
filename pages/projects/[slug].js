@@ -2,6 +2,7 @@ import { fetchProjectBySlug, fetchAllProjectSlugs } from '../../lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import AppSidebar from '../../components/Sidebar/Sidebar.js';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -60,9 +61,7 @@ function Project({ project }) {
                         </section>
                     </article>
                 </Col>
-                <Col lg={4}>
-                    Sidebar (Consider adding a component or content here)
-                </Col>
+                <Col lg={4}><AppSidebar /></Col>
             </Row>
         </Container>
     );
