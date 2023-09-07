@@ -18,7 +18,7 @@ function TechStackBadges({ techs }) {
 }
 
 function Project({ project, latestPost }) {
-    const { projectTitle, techStack, description, gitHubLink } = project.fields;
+    const { projectTitle, techStack, description, gitHubLink, demoUrl } = project.fields;
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => (
@@ -26,6 +26,7 @@ function Project({ project, latestPost }) {
                     src={`https:${node.data.target.fields.file.url}?fit=fill&w=1712&h=1284`} alt={node.data.target.fields.title}
                     height={1284}
                     width={1712}
+                    className='blog-image-embed'
                     />
             ),
             'embedded-entry-block': (node) => {
@@ -62,7 +63,8 @@ function Project({ project, latestPost }) {
                         </section>
                     </article>
                 </Col>
-                <Col lg={4}><AppSidebar gitHubLink={project.fields.gitHubLink} latestPost={latestPost} /></Col>
+                <Col lg={4}><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></Col>
+
             </Row>
         </Container>
     );

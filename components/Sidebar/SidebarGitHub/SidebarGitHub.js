@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
 import { Badge } from 'react-bootstrap';
 
-function SidebarGitHub({ gitHubLink }) {
+function SidebarGitHub({ gitHubLink, demoUrl }) {
   const [githubData, setGithubData] = useState(null);
   const [latestCommit, setLatestCommit] = useState(null);
 
@@ -39,14 +39,26 @@ function SidebarGitHub({ gitHubLink }) {
         <Card.Title><Github className="me-1" /> {githubData.name}</Card.Title>
         <p><small className='text-muted'>Latest commit: {latestCommit.commit.message}</small></p>
         <div className="d-grid gap-2">
-          <Button 
-            href={gitHubLink}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Github /> View on GitHub
-          </Button>
-        </div>
+  <Button 
+    variant='dark'
+    href={gitHubLink}
+    target='_blank'
+    rel='noopener noreferrer'
+  >
+    <Github /> View on GitHub
+  </Button>
+
+  {demoUrl && (
+    <Button
+      href={demoUrl}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      View Demo
+    </Button>
+  )}
+</div>
+
       </Card.Body>
       <Card.Footer>
           <Badge bg="primary" className='me-1'>{githubData.language}</Badge>
