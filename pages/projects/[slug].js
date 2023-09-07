@@ -1,4 +1,4 @@
-import { fetchProjectBySlug, fetchAllProjectSlugs } from '../../lib/contentful';
+import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
@@ -16,7 +16,7 @@ function TechStackBadges({ techs }) {
     ));
 }
 
-function Project({ project }) {
+function Project({ project, latestPost }) {
     const { projectTitle, techStack, description, gitHubLink } = project.fields;
 
     const options = {
@@ -58,7 +58,7 @@ function Project({ project }) {
                         </section>
                     </article>
                 </Col>
-                <Col lg={4}><AppSidebar gitHubLink={gitHubLink} /></Col>
+                <Col lg={4}><AppSidebar gitHubLink={project.fields.gitHubLink} latestPost={latestPost} /></Col>
             </Row>
         </Container>
     );
@@ -76,12 +76,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const project = await fetchProjectBySlug(params.slug);
+    const latestPost = await fetchLatestProject();
+
     return {
         props: {
             project,
+            latestPost: latestPost.fields
         },
         revalidate: 60,
     };
 }
+
 
 export default Project;
