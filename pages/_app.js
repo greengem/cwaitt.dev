@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import React from 'react';
 import AppNavbar from '../components/Navbar/Navbar';
 import AppFooter from '../components/Footer/Footer';
