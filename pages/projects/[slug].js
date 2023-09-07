@@ -3,6 +3,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import AppSidebar from '../../components/Sidebar/Sidebar.js';
+import Image from 'next/image'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -22,7 +23,13 @@ function Project({ project, latestPost }) {
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => (
-                <img src={`https:${node.data.target.fields.file.url}`} alt={node.data.target.fields.title} />
+                <Image 
+                    src={`https:${node.data.target.fields.file.url}`} alt={node.data.target.fields.title}
+                    height={0}
+                    width={0}
+                    
+                    style={{ width: '100%', height: 'auto' }}
+                    />
             ),
             'embedded-entry-block': (node) => {
                 const { language, code } = node.data.target.fields;
