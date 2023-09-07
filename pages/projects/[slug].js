@@ -1,7 +1,7 @@
 // External dependencies
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Image from 'next/image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -53,8 +53,7 @@ function Project({ project, latestPost }) {
                     <div className="code-block">
                         <SyntaxHighlighter 
                             language={language} 
-                            style={tomorrowNight}
-                            showLineNumbers
+                            style={dark}
                         >
                             {code}
                         </SyntaxHighlighter>
