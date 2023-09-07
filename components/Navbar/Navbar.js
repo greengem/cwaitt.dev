@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
+import { Gem } from 'react-bootstrap-icons';
 
 function AppNavbar() {
   return (
     <nav className="navbar bg-dark border-bottom border-body navbar-expand-lg" data-bs-theme="dark">
         <div className='container'>
-            <Link href="/" className='navbar-brand'>Home</Link>
+            <Link href="/" className='navbar-brand'><Gem /></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
