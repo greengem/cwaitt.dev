@@ -6,6 +6,7 @@ import AppAboutSpotify from './AboutSpotify.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Image from 'next/image'
 
 function AppAbout() {
   return (
@@ -15,7 +16,12 @@ function AppAbout() {
             <Row>
                 <Col lg={6} className='about-left'>
                     <div className={styles['about-photo-container']}>
-                        <img className={styles['about-photo']} src='https://picsum.photos/1080/820' />
+                        <Image 
+                            className={styles['about-photo']} 
+                            src='/images/Profile.jpeg'
+                            width={1512}
+                            height={2016}
+                            alt='photo of me' />
                     </div>
                 </Col>
                 <Col lg={6} className='about-right'>

@@ -1,7 +1,5 @@
 .hero-container {
     position: relative;
-    background-size: cover;
-    background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
