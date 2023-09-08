@@ -13,7 +13,6 @@ function AppHero() {
               <h2>Turning Ideas into Stunning Web Interfaces</h2>
               <p>Front-End Developer | UI/UX Enthusiast</p>
               <Link href="/projects" className='btn btn-dark'>View My Work</Link>
-              <p>Webhook is working 3!</p>
             </div>
         </div>
     </section>
