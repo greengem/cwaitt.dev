@@ -6,8 +6,8 @@ import Card from 'react-bootstrap/Card';
 
 function ProjectCard({ project }) {
   return (
-    <Col sm={12} md={6}>
-      <Card className="card h-100">
+    <div className='col col-sm-12 col-md-6'>
+      <div className="card h-100">
         <Link href={`/projects/${project.fields.slug}`}>
           {project.fields.featuredImage && (
             <Image
@@ -19,19 +19,19 @@ function ProjectCard({ project }) {
             />
           )}
         </Link>
-        <Card.Body>
-          <Card.Title>{project.fields.projectTitle}</Card.Title>
-          <Card.Text>{project.fields.shortDescription}</Card.Text>
-        </Card.Body>
-        <Card.Footer>
+        <div className='card-body'>
+          <h5 class="card-title">{project.fields.projectTitle}</h5>
+          <p class="card-text">{project.fields.shortDescription}</p>
+        </div>
+        <div class="card-footer">
           <div className='tech-stack-labels'>
             {project.fields.techStack.map((tech, index) => (
               <span key={index} className={`badge me-1 ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>{tech}</span>
             ))}
           </div>
-        </Card.Footer>
-      </Card>
-    </Col>
+        </div>
+      </div>
+    </div>
   );
 }
 
