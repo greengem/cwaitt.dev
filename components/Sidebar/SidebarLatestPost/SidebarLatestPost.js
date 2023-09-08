@@ -16,8 +16,8 @@ function SidebarLatestPost({ post }) {
           />
         </Link>
         <div className='card-body'>
-        <h5 class="card-title">Latest Project: {post.projectTitle}</h5>
-        <p class="card-text">{post.shortDescription}</p>
+        <h5 className="card-title">Latest Project: {post.projectTitle}</h5>
+        <p className="card-text">{post.shortDescription}</p>
           </div>
     </div>
   );

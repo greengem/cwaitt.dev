@@ -10,7 +10,7 @@ export default function TechStackListing({ techStacks }) {
           <div key={tech} className='col col-lg-3 g-4'>
           <div className='card'>
             <div className='card-body'>
-            <h5 class="card-title">{tech}</h5>
+            <h5 className="card-title">{tech}</h5>
             <Link href={`/tech-stack/${tech}`} className='btn btn-primary'>View Posts</Link>
             </div>
           </div>
