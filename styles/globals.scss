@@ -89,3 +89,25 @@ $font-main: 'Arial', sans-serif;
     font-size: 6rem;
     margin-bottom: 1rem;
 }
+
+
+/* ABOUT */
+.about-container{
+    position: relative;
+    color: #333;
+    background-color: #e0e0e0;
+    padding: 160px 0;
+}
+
+.about-photo-container{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.about-photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

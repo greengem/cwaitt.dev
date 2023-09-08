@@ -6,13 +6,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 // Internal dependencies
-import styles from './About.module.css';
 import AppAboutText from './AboutText.js';
 import AppAboutSpotify from './AboutSpotify.js';
 
 function AppAbout() {
   return (
-    <section className={styles['about-container']}>
+    <section className='about-container'>
         <Container>
             {/* Heading */}
             <h1 className='section-h1'>About</h1>
@@ -20,9 +19,9 @@ function AppAbout() {
             <Row>
                 {/* Profile Image */}
                 <Col lg={6} className='about-left'>
-                    <div className={styles['about-photo-container']}>
+                    <div className='about-photo-container'>
                         <Image 
-                            className={styles['about-photo']} 
+                            className='about-photo'
                             src='/images/Profile.jpeg'
                             width={1512}
                             height={2016}
