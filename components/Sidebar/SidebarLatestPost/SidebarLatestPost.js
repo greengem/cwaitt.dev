@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image'
-import Card from 'react-bootstrap/Card';
 
 function SidebarLatestPost({ post }) {
   if (!post) return <p>Loading latest project...</p>;
 
   return (
-    <Card>
+    <div className='card'>
       <Link href={`/projects/${post.slug}`}>
         <Image
           src={`https:${post.featuredImage.fields.file.url}?fit=fill&w=828&h=621`}
@@ -16,11 +15,11 @@ function SidebarLatestPost({ post }) {
           className='card-img-top'
           />
         </Link>
-        <Card.Body>
-          <Card.Title>Latest Project: {post.projectTitle}</Card.Title>
-          <Card.Text>{post.shortDescription}</Card.Text>
-          </Card.Body>
-    </Card>
+        <div className='card-body'>
+        <h5 class="card-title">Latest Project: {post.projectTitle}</h5>
+        <p class="card-text">{post.shortDescription}</p>
+          </div>
+    </div>
   );
 }
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
 import { Badge } from 'react-bootstrap';
@@ -33,12 +32,12 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
   if (!githubData || !latestCommit) return null;
 
   return (
-    <Card className="mb-4">
-      <Card.Header>Code</Card.Header>
-      <Card.Body>
-        <Card.Title><Github className="me-1" /> {githubData.name}</Card.Title>
-        <p><small className='text-muted'>Latest commit: {latestCommit.commit.message}</small></p>
-        <div className="d-grid gap-2">
+    <div className="card mb-4">
+      <div class="card-header">Code</div>
+      <div class="card-body">
+      <h5 class="card-title"><Github className="me-1" /> {githubData.name}</h5>
+      <p><small className='text-muted'>Latest commit: {latestCommit.commit.message}</small></p>
+      <div className="d-grid gap-2">
   <Button 
     variant='dark'
     href={gitHubLink}
@@ -59,16 +58,16 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
   )}
 </div>
 
-      </Card.Body>
-      <Card.Footer>
+      </div>
+      <div className='card-footer'>
           <Badge bg="primary" className='me-1'>{githubData.language}</Badge>
           <Badge bg="warning" className='me-1'><StarFill /> {githubData.stargazers_count}</Badge>
           <Badge bg="info" className='me-1'><BinocularsFill /> {githubData.watchers_count}</Badge>
           <Badge bg="success" className='me-1'>{githubData.forks_count}</Badge>
           {githubData.license && <Badge bg='secondary' className='me-1'>License: {githubData.license.name}</Badge>}
           <Badge bg="danger">{githubData.open_issues_count}</Badge>
-        </Card.Footer>
-    </Card>
+          </div>
+    </div>
   );
 }
 
