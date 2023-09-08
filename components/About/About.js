@@ -1,9 +1,6 @@
 // External dependencies
 import React from 'react';
 import Image from 'next/image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 // Internal dependencies
 import AppAboutText from './AboutText.js';
@@ -12,13 +9,11 @@ import AppAboutSpotify from './AboutSpotify.js';
 function AppAbout() {
   return (
     <section className='about-container'>
-        <Container>
-            {/* Heading */}
+        <div className='container'>
             <h1 className='section-h1'>About</h1>
             
-            <Row>
-                {/* Profile Image */}
-                <Col lg={6} className='about-left'>
+            <div className='row'>
+                <div className='about-left col col-lg-6'>
                     <div className='about-photo-container'>
                         <Image 
                             className='about-photo'
@@ -27,17 +22,17 @@ function AppAbout() {
                             height={2016}
                             alt='photo of me' />
                     </div>
-                </Col>
+                </div>
                 
                 {/* About Text and Spotify Integration */}
-                <Col lg={6} className='about-right'>
+                <div className='about-right col col-lg-6'>
                     <div className='container'>
                         <AppAboutText />
                         <AppAboutSpotify />
                     </div>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     </section>
   );
 }
