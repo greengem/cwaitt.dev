@@ -3,9 +3,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Image from 'next/image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 // Internal dependencies
 import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
@@ -64,9 +61,9 @@ function Project({ project, latestPost }) {
     };
 
     return (
-        <Container className='mt-5'>
-            <Row>
-                <Col lg={8}>
+        <div className='container mt-5'>
+            <div className='row'>
+                <div className='col col-lg-8'>
                     <article>
                         <header>
                             <h1 className='section-h1'>{projectTitle}</h1>
@@ -78,10 +75,10 @@ function Project({ project, latestPost }) {
                             {documentToReactComponents(description, options)}
                         </section>
                     </article>
-                </Col>
-                <Col lg={4}><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></Col>
-            </Row>
-        </Container>
+                </div>
+                <div className='col col-lg-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
+            </div>
+        </div>
     );
 }
 

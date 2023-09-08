@@ -1,7 +1,3 @@
-// External dependencies
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
 // Internal dependencies
 import { fetchProjects } from '../../lib/contentful';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
@@ -18,17 +14,17 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 export default function Projects({ projects }) {
   return (
     <section id='projects'>
-      <Container className='mt-5'>
+      <div className='container mt-5'>
         <h1 className='section-h1'>My Projects</h1>
         <p>Diving deep into the world of technology, I have always been captivated by the vast realm of possibilities that different tools and frameworks have to offer. For me, each project is more than just lines of code – it&apos;s an exploration, a challenge, and most importantly, a learning journey. From the tried-and-true classics to the latest shiny tech, I enjoy getting my hands dirty, always pushing the boundaries of what&apos;s possible.</p>
         <p>Below, you&apos;ll find a curated collection of my endeavors, each with its unique tech flavor. Whether you&apos;re here to explore, get inspired, or just geek out, I hope you find these projects as exciting as I found creating them. Enjoy the journey!</p>
 
-        <Row className='g-4'>
+        <div className='row g-4'>
           {projects.map(project => (
             <ProjectCard project={project} key={project.sys.id} />
           ))}
-        </Row>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }
