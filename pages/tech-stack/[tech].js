@@ -1,7 +1,3 @@
-// External dependencies
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
 // Internal dependencies
 import { fetchProjectsByTechStack, fetchAllTechStacks } from '../../lib/contentful';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
@@ -16,14 +12,14 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 export default function TechStackPage({ tech, projects }) {
   return (
     <section id='projects'>
-      <Container className='mt-5'>
+      <div className='container mt-5'>
         <h1 className='section-h1'>Projects using {tech}</h1>
-        <Row className='g-4'>
+        <div className='row g-4'>
           {projects.map(project => (
             <ProjectCard key={project.sys.id} project={project} />
           ))}
-        </Row>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }

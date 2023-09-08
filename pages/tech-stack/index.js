@@ -1,29 +1,23 @@
 import { fetchAllTechStacks } from '../../lib/contentful';
 import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 
 export default function TechStackListing({ techStacks }) {
   return (
-    <Container className='mt-5'>
+    <div className='container mt-5'>
       <h1 className='section-h1'>Tech Stack</h1>
-        <Row>
+        <div className='row'>
         {techStacks.map(tech => (
-          <Col key={tech} lg={3} className='g-4'>
-          <Card>
-            <Card.Body>
-              <Card.Title>
-              {tech}
-            </Card.Title>
+          <div key={tech} className='col col-lg-3 g-4'>
+          <div className='card'>
+            <div className='card-body'>
+            <h5 class="card-title">{tech}</h5>
             <Link href={`/tech-stack/${tech}`} className='btn btn-primary'>View Posts</Link>
-            </Card.Body>
-          </Card>
-          </Col>
+            </div>
+          </div>
+          </div>
         ))}
-</Row>
-    </Container>
+</div>
+    </div>
   );
 }
 
