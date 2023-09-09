@@ -3,6 +3,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Image from 'next/image';
+import {Chip} from "@nextui-org/react";
 
 // Internal dependencies
 import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
@@ -14,14 +15,18 @@ import AppSidebar from '../../components/Sidebar/Sidebar.js';
  * @param {Array} techs - List of tech stacks used in the project.
  * @returns JSX.Element
  */
-function TechStackBadges({ techs }) {
-    return techs.map((tech, index) => (
-        <span key={index} className={`badge me-1 ${index === 0 ? 'bg-accent' : 'bg-secondary'}`}>
-            {tech}
-        </span>
+function TechStackBadges({ techStackEntries }) {
+    return techStackEntries.map((techEntry, index) => (
+        <Chip 
+            key={index} 
+            size='sm'
+            color={index === 0 ? "danger" : "default"} 
+            className="me-1"
+        >
+            {techEntry.fields.name}
+        </Chip>
     ));
 }
-
 /**
  * Main Project component to display details of a specific project.
  * 
@@ -30,7 +35,7 @@ function TechStackBadges({ techs }) {
  * @returns JSX.Element
  */
 function Project({ project, latestPost }) {
-    const { projectTitle, techStack, description, gitHubLink, demoUrl } = project.fields;
+    const { projectTitle, techStacks, description, gitHubLink, demoUrl } = project.fields;
 
     // Options for rendering embedded assets from Contentful rich-text fields.
     const options = {
@@ -61,14 +66,14 @@ function Project({ project, latestPost }) {
     };
 
     return (
-        <div className='container mx-auto'>
-            <div className='flex flex-wrap'>
-                <div className='relative flex-grow max-w-full flex-1 px-4 lg:w-2/3 pr-4 pl-4'>
+        <div className='container mx-auto mt-10 min-h-screen'>
+            <div className='flex flex-col md:flex-row'>
+                <div className='w-full md:w-2/3 p-4'>
                     <article>
                         <header>
-                            <h1 className='section-h1'>{projectTitle}</h1>
+                            <h1 className='section-h1 mb-2 mt-0 text-5xl font-medium leading-tight'>{projectTitle}</h1>
                             <div className='mb-4'>
-                                <TechStackBadges techs={techStack} />
+                            <TechStackBadges techStackEntries={techStacks} />
                             </div>
                         </header>
                         <section className='mb-4'>
@@ -76,7 +81,7 @@ function Project({ project, latestPost }) {
                         </section>
                     </article>
                 </div>
-                <div className='relative flex-grow max-w-full flex-1 px-4 lg:w-1/3 pr-4 pl-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
+                <div className='w-full md:w-1/3 p-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
             </div>
         </div>
     );
