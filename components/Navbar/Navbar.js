@@ -13,9 +13,10 @@ function AppNavbar({ isDarkMode, setIsDarkMode }) {
   const router = useRouter();
 
   return (
-    <Navbar maxWidth="xl">
-      <NavbarBrand><Gem className='me-1' /> <p className="font-bold text-inherit">CHRIS WAITT</p></NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+    <Navbar isMenuDefaultOpen maxWidth="full" className="container">
+      
+      <NavbarBrand><Link color="foreground" href="/"><Gem className='me-2' /></Link> <p className="font-bold text-inherit"><Link color="foreground" href="/">CHRIS WAITT</Link></p></NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem isActive={router.pathname === '/'}>
           <Link href="/" as={NextLink} color="danger">
             Home
@@ -31,8 +32,9 @@ function AppNavbar({ isDarkMode, setIsDarkMode }) {
             Tech
           </Link>
         </NavbarItem>
-        <Switch
+      <Switch
           size="sm"
+          className="ms-2"
           isSelected={isDarkMode}
           color="danger"
           startContent={<SunIcon />}

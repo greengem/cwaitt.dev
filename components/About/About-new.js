@@ -21,7 +21,7 @@ function AppAboutNew() {
                         alt='photo of me' />
   </div>
   <div className="about-text w-full md:w-1/2 p-6">
-    <h1 className="text-2xl mb-4">About Me</h1>
+  <h1 className='tracking-tight inline font-semibold text-6xl md:text-7xl lg:text-8xl'><span className='from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b'>About</span></h1>
     <AppAboutText />
                     <AppAboutSpotify />
   </div>

@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@n
 export default function TechStackListing({ techStacks }) {
   return (
     <div className='container mx-auto min-h-screen'>
-      <h1 className='section-h1 section-h1 mb-2 mt-0 text-5xl font-medium leading-tight'>Tech Stack</h1>
+      <h1 className='tracking-tight font-semibold text-6xl md:text-7xl lg:text-8xl mb-10'><span className='from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b'>Tech Stack</span></h1>
         <div className='flex flex-wrap'>
         {techStacks.map(tech => (
           <div key={tech.name} className='w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/3 relative max-w-full p-4'>

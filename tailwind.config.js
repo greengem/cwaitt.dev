@@ -23,7 +23,7 @@ const config = {
     themes: {
       light: {
         colors: {
-          background: "#E6F8FF",
+          background: "#ffe6f8",
         }
       }
     }
