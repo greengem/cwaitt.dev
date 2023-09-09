@@ -6,7 +6,7 @@ function AppNavbar() {
   return (
     <div className="navbar bg-body-tertiary navbar-expand-sm">
         <div className='container'>
-            <a className="navbar-brand" href="/"><Gem /></a>
+            <Link href='/' className='navbar-brand'><Gem /></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
