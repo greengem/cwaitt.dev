@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <NextUIProvider>
-      <main className={isDarkMode ? "dark text-foreground bg-background" : "light text-foreground bg-background"}>
+      <main className={`text-foreground bg-background ${isDarkMode ? "dark" : "light"}`}>
         <AppNavbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Component {...pageProps} /> {/* The main content of the page */}
         <AppFooter /> {/* Site-wide footer */}

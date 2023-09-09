@@ -11,10 +11,11 @@ import { MoonIcon } from "../Icons/MoonIcon";
 
 function AppNavbar({ isDarkMode, setIsDarkMode }) {
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar isMenuDefaultOpen maxWidth="full" className="container">
-      
+    <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen}>
+      <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
       <NavbarBrand><Link color="foreground" href="/"><Gem className='me-2' /></Link> <p className="font-bold text-inherit"><Link color="foreground" href="/">CHRIS WAITT</Link></p></NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem isActive={router.pathname === '/'}>
@@ -32,16 +33,21 @@ function AppNavbar({ isDarkMode, setIsDarkMode }) {
             Tech
           </Link>
         </NavbarItem>
-      <Switch
-          size="sm"
-          className="ms-2"
-          isSelected={isDarkMode}
-          color="danger"
-          startContent={<SunIcon />}
-          endContent={<MoonIcon />}
-          onValueChange={(isSelected) => setIsDarkMode(isSelected)}
-        ></Switch>
-      </NavbarContent>
+        <Switch
+            size="sm"
+            className="ms-2"
+            isSelected={isDarkMode}
+            color="danger"
+            startContent={<SunIcon />}
+            endContent={<MoonIcon />}
+            onValueChange={(isSelected) => setIsDarkMode(isSelected)}
+          ></Switch>
+        </NavbarContent>
+        <NavbarMenu>
+          <NavbarMenuItem><Link href="/" color="danger" className="w-full" size="lg">Home</Link></NavbarMenuItem>
+          <NavbarMenuItem><Link href="/projects" color="danger" className="w-full" size="lg">Projects</Link></NavbarMenuItem>
+          <NavbarMenuItem><Link href="/tech-stack" color="danger" className="w-full" size="lg">Tech Stack</Link></NavbarMenuItem>
+      </NavbarMenu>
     </Navbar>
   );
 }

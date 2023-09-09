@@ -3,9 +3,9 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default function TechStackPage({ tech, projects }) {
   return (
-    <section id='projects'>
+    <section id='tech' className=' max-w-screen-xl mx-auto'>
       <div className='container mx-auto min-h-screen'>
-        <h1 className='section-h1 mb-2 mt-0 text-5xl font-medium leading-tight'>
+      <h1 className='custom-heading from-[#FF72E1] to-[#F54C7A]'>
           Projects using {tech}
         </h1>
         <div className='flex flex-wrap'>
