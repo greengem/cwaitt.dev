@@ -1,8 +1,8 @@
-import {NextUIProvider} from '@nextui-org/react'
+import { NextUIProvider } from '@nextui-org/react'
+import React, { useState } from 'react';  // Import the useState hook from React
 
 // Internal dependencies
 import '@/styles/globals.scss'; // Global styles for the application
-import React from 'react'; // React library (could be removed if using latest versions of Next.js since React import isn't mandatory)
 import AppNavbar from '../components/Navbar/Navbar'; // Navbar component
 import AppFooter from '../components/Footer/Footer'; // Footer component
 
@@ -16,14 +16,16 @@ import AppFooter from '../components/Footer/Footer'; // Footer component
  * @returns JSX.Element
  */
 function MyApp({ Component, pageProps }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
   return (
-    <>
-      <NextUIProvider>
-        <AppNavbar /> {/* Site-wide navigation bar */}
-          <Component {...pageProps} /> {/* The main content of the page */}
+    <NextUIProvider>
+      <main className={isDarkMode ? "dark text-foreground bg-background" : "light text-foreground bg-background"}>
+        <AppNavbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        <Component {...pageProps} /> {/* The main content of the page */}
         <AppFooter /> {/* Site-wide footer */}
-      </NextUIProvider>
-    </>
+      </main>
+    </NextUIProvider>
   );
 }
 
