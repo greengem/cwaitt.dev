@@ -6,7 +6,7 @@ import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
 function AppSidebar({ gitHubLink, demoUrl, latestPost }) {
   return (
     <div className="sidebar">
-        <SidebarAboutMe />
+        {/*<SidebarAboutMe />*/}
         <SidebarGitHub gitHubLink={gitHubLink} demoUrl={demoUrl} />
         <SidebarLatestPost post={latestPost} />
     </div>
