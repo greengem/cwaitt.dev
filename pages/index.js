@@ -1,6 +1,7 @@
 // Internal dependencies
 import AppHero from '../components/Hero/Hero.js';
 import AppAbout from '../components/About/About.js';
+import AppAboutNew from '@/components/About/About-new.js';
 
 /**
  * Home Page Component
@@ -14,7 +15,8 @@ export default function Home() {
   return (
     <>
       <AppHero />
-      <AppAbout />
+      <AppAboutNew />
+
     </>
   );
 }
