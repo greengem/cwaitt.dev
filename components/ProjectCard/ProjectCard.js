@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 function ProjectCard({ project }) {
   return (
-    <div className='col col-sm-12 col-md-6'>
-      <div className="card h-100">
+    <div className="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 xxl:w-1/3 relative max-w-full px-4">
+      <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 h-full">
         <Link href={`/projects/${project.fields.slug}`}>
           {project.fields.featuredImage && (
             <Image

@@ -61,9 +61,9 @@ function Project({ project, latestPost }) {
     };
 
     return (
-        <div className='container mt-5'>
-            <div className='row'>
-                <div className='col col-lg-8'>
+        <div className='container mx-auto'>
+            <div className='flex flex-wrap'>
+                <div className='relative flex-grow max-w-full flex-1 px-4 lg:w-2/3 pr-4 pl-4'>
                     <article>
                         <header>
                             <h1 className='section-h1'>{projectTitle}</h1>
@@ -76,7 +76,7 @@ function Project({ project, latestPost }) {
                         </section>
                     </article>
                 </div>
-                <div className='col col-lg-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
+                <div className='relative flex-grow max-w-full flex-1 px-4 lg:w-1/3 pr-4 pl-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
             </div>
         </div>
     );
