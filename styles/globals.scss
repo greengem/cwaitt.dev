@@ -2,44 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-// Define base colors
-$white: #fff;
-$black: #000;
-
-// Define color schemes as maps
-$colors-scheme-1: (
-    primary: #ef37a1,
-    secondary: #2d2d2d,
-    accent: #ef37a1,
-    background: $white,
-    text: $black
-);
-
-$colors-scheme-2: (
-    primary: #4caf50,
-    secondary: #607d8b,
-    accent: #ffeb3b,
-    background: $black,
-    text: $white
-);
-
-// Current active color scheme
-$active-scheme: $colors-scheme-1;
-
-// Other variables
-$font-main: 'Arial', sans-serif;
-
-.bg-accent {
-    background-color: map-get($active-scheme, accent);
-}
-
 .section-h1{
     margin-bottom: 40px;
 }
 
-.card-img, .card-img-bottom, .card-img-top {
-    height: auto;
-}
 .blog-image-embed{
     width: 100%;
     height: auto;
@@ -52,14 +18,6 @@ $font-main: 'Arial', sans-serif;
 
 .spotify-embed-container iframe.loaded {
     opacity: 1;
-}
-
-.navbar-brand{
-    color: map-get($active-scheme, accent);
-}
-.Hero_hero-container__Epfue .btn-dark{
-    background-color: #ef37a1;
-    border-color: #ef37a1;
 }
 
 
