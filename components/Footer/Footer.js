@@ -5,7 +5,7 @@ import { Gem } from 'react-bootstrap-icons';
 
 function AppFooter() {
   return (
-    <section id='footer'>
+    <section id="footer">
         <footer className="bg-[#121212] text-white py-20">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Footer Heading */}
@@ -23,7 +23,7 @@ function AppFooter() {
                     </div>
                     <div>
                         <h3 className="text-xl font-semibold mb-4">More About Me</h3>
-                        <p>I'm a developer passionate about creating impactful solutions and pushing the boundaries of technology. Explore further and dive deep into my experiences and creations.</p>
+                        <p>I&apos;m a developer passionate about creating impactful solutions and pushing the boundaries of technology. Explore further and dive deep into my experiences and creations.</p>
                     </div>
                 </div>
                 
