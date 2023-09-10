@@ -1,5 +1,6 @@
 import { fetchAllTechStacks } from '../../lib/contentful';
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@nextui-org/react";
+import NextLink from "next/link";
 
 
 export default function TechStackListing({ techStacks }) {
@@ -36,7 +37,7 @@ export default function TechStackListing({ techStacks }) {
               <Divider/>
               <CardFooter>
                 
-                <Link href={`/tech-stack/${tech.slug}`}><Button color='danger' size='sm'>My {tech.name} Projects</Button></Link>
+                <Link href={`/tech-stack/${tech.slug}`} as={NextLink}><Button color='danger' size='sm'>My {tech.name} Projects</Button></Link>
               </CardFooter>
             </Card>
           </div>

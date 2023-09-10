@@ -2,6 +2,7 @@ import { NextUIProvider } from '@nextui-org/react'
 import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 // Internal dependencies
+import "animate.css/animate.min.css";
 import '@/styles/globals.scss'; // Global styles for the application
 import AppNavbar from '../components/Navbar/Navbar'; // Navbar component
 import AppFooter from '../components/Footer/Footer'; // Footer component
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="light">
+      <NextThemesProvider attribute="class" defaultTheme="dark">
         <AppNavbar />
         <Component {...pageProps} /> {/* The main content of the page */}
         <AppFooter /> {/* Site-wide footer */}

@@ -21,7 +21,7 @@ export const ThemeSwitcher = () => {
       <Switch
         size="sm"
         className="ms-2"
-        color="danger"
+        color="secondary"
         startContent={<SunIcon />}
         endContent={<MoonIcon />}
         isSelected={theme === "dark"}

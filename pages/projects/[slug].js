@@ -1,13 +1,17 @@
-// External dependencies
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import Image from 'next/image';
-import {Chip} from "@nextui-org/react";
 
-// Internal dependencies
+import Image from 'next/image';
+import NextLink from "next/link";
+
+import {Chip, Link, Divider} from "@nextui-org/react";
+
+import { ArrowLeft } from 'react-bootstrap-icons';
+
 import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
 import AppSidebar from '../../components/Sidebar/Sidebar.js';
+
 
 /**
  * Component for rendering tech stack badges.
@@ -19,7 +23,7 @@ function TechStackBadges({ techStackEntries }) {
     return techStackEntries.map((techEntry, index) => (
         <Chip 
             key={index} 
-            size='sm'
+            size='md'
             color={index === 0 ? "danger" : "default"} 
             className="me-1"
         >
@@ -37,7 +41,6 @@ function TechStackBadges({ techStackEntries }) {
 function Project({ project, latestPost }) {
     const { projectTitle, techStacks, description, gitHubLink, demoUrl } = project.fields;
 
-    // Options for rendering embedded assets from Contentful rich-text fields.
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => (
@@ -46,13 +49,13 @@ function Project({ project, latestPost }) {
                     alt={node.data.target.fields.title}
                     height={1284}
                     width={1712}
-                    className='blog-image-embed'
+                    className='my-6'
                 />
             ),
             'embedded-entry-block': (node) => {
                 const { language, code } = node.data.target.fields;
                 return (
-                    <div className="code-block">
+                    <div className="code-block p-4 bg-gray-800 text-white my-6 rounded">
                         <SyntaxHighlighter 
                             language={language} 
                             style={dark}
@@ -62,22 +65,50 @@ function Project({ project, latestPost }) {
                     </div>
                 );
             },
+            'paragraph': (node, children) => (
+                <p className='text-base my-4'>{children}</p>
+            ),
+            'heading-1': (node, children) => (
+                <h1 className='text-4xl font-bold my-8'>{children}</h1>
+            ),
+            'heading-2': (node, children) => (
+                <h2 className='text-3xl font-semibold my-6'>{children}</h2>
+            ),
+            'heading-3': (node, children) => (
+                <h3 className='text-2xl font-semibold my-5'>{children}</h3>
+            ),
+            'heading-4': (node, children) => (
+                <h4 className='text-xl font-medium my-4'>{children}</h4>
+            ),
+            'unordered-list': (node, children) => (
+                <ul className='pl-5 my-4'>{children}</ul>
+            ),
+            'ordered-list': (node, children) => (
+                <ol className='pl-5 my-4'>{children}</ol>
+            ),
+            'list-item': (node, children) => (
+                <li className='my-2'>{children}</li>
+            ),
+            'blockquote': (node, children) => (
+                <blockquote className='pl-4 border-l-4 border-gray-400 italic my-6'>{children}</blockquote>
+            )
         },
     };
+    
 
     return (
-        <div className='container mx-auto mt-10 min-h-screen'>
+        <div className='container mx-auto mt-10 min-h-screen mb-20'>
             <div className='flex flex-col md:flex-row'>
                 <div className='w-full md:w-2/3 p-4'>
                     <article>
                         <header>
-                            <h1 className='section-h1 mb-2 mt-0 text-5xl font-medium leading-tight'>{projectTitle}</h1>
-                            <div className='mb-4'>
-                            <TechStackBadges techStackEntries={techStacks} />
-                            </div>
+                            <h1 className='custom-heading from-[#FF1CF7] to-[#b249f8]'>{projectTitle}</h1>
                         </header>
                         <section className='mb-4'>
                             {documentToReactComponents(description, options)}
+                            <Divider className='my-10' />
+                            <div><TechStackBadges techStackEntries={techStacks} /></div>
+                            <Link color='danger' href='/projects' as={NextLink} className='mt-10'><ArrowLeft className='mr-2' />Back to Projects</Link>
                         </section>
                     </article>
                 </div>

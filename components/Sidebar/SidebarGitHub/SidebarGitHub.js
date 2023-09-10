@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
-import {Card, CardHeader, CardBody, CardFooter, Chip, Button} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, CardFooter, Chip, Button, Code} from "@nextui-org/react";
 import Link from 'next/link';
 
 function SidebarGitHub({ gitHubLink, demoUrl }) {
@@ -29,30 +29,48 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
     fetchGitHubData();
   }, [gitHubLink]);
 
+  function truncateText(text, length = 150) {
+    if (text.length <= length) {
+        return text;
+    }
+    return text.slice(0, length) + '...';
+  }
+
   if (!githubData || !latestCommit) return null;
 
   return (
-    <Card className='mb-4'>
-      <CardHeader>Code</CardHeader>
+    <Card className='mb-4 py-4'>
+      <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
+        <p><Github height='32' width='32' className="me-2 inline-block" /> <Code size='lg'>{githubData.name}</Code></p>
+      </CardHeader>
       <CardBody>
-        <h5 className="card-title"><Github className="me-1" /> {githubData.name}</h5>
-        <p><small className='text-muted'>Latest commit: {latestCommit.commit.message}</small></p>
-        <div className="d-grid gap-2">
-          <Link href={gitHubLink} target='_blank' rel='noopener noreferrer'>
-            <Button color='danger'><Github /> View on GitHub</Button>
-            
-          </Link>
-          {demoUrl && (<Link href={demoUrl} target='_blank' rel='noopener noreferrer'><Button>View Demo</Button></Link>)}
-        </div>
+        <p className='my-4'>
+          <code className='text-sm'>
+            <span className='text-danger'>Latest commit: </span>
+            <span>{truncateText(latestCommit.commit.message)}</span>
+          </code>
+        </p>
+        <div className='flex space-x-4'>
+            <Link href={gitHubLink} target='_blank' rel='noopener noreferrer' className='flex-1'>
+                <Button className='w-full' color='danger'><Github /> View on GitHub</Button>
+            </Link>
+            {demoUrl && (
+                <Link href={demoUrl} target='_blank' rel='noopener noreferrer' className='flex-1'>
+                    <Button className='w-full' color='secondary'>View Demo</Button>
+                </Link>
+            )}
+          </div>
       </CardBody>
       <CardFooter>
       <div className='flex flex-wrap'>
-          <Chip color="default" size="sm" className='me-1'>{githubData.language}</Chip>
-          <Chip color="primary" size="sm" className='me-1'><StarFill className="inline-block" /> {githubData.stargazers_count}</Chip>
-          <Chip color="secondary" size="sm" className='me-1'><BinocularsFill className="inline-block" /> {githubData.watchers_count}</Chip>
-          <Chip color="success" size="sm" className='me-1'>Forks: {githubData.forks_count}</Chip>
-          {githubData.license && <Chip color="warning" size="sm" className='me-1'>License: {githubData.license.name}</Chip>}
-          <Chip color="danger" size="sm" className='me-1'>Issues: {githubData.open_issues_count}</Chip>
+          <Chip radius="sm" color="default" className='mx-1'>{githubData.language}</Chip>
+          <Chip radius="sm" color="warning" className='mx-1'>
+              <StarFill className="inline-block" /> {githubData.stargazers_count}
+          </Chip>
+          <Chip radius="sm" color="primary" className='mx-1'>
+              <BinocularsFill className="inline-block" /> {githubData.watchers_count}
+          </Chip>
+          <Chip radius="sm" color="success" className='mx-1'>Forks: {githubData.forks_count}</Chip>
         </div>
       </CardFooter>
     </Card>

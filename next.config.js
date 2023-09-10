@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
     domains: ['picsum.photos','images.ctfassets.net'],
   },
