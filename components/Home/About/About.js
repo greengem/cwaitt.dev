@@ -18,7 +18,7 @@ function AppAbout() {
             {/*<AppAboutSpotify />*/}
           </div>
           <div className="w-full md:w-1/2 px-20">
-            <Image as={NextImage} className='object-cover h-full w-full' src='https://placehold.co/600x600' width={600} height={600} alt='photo of me' />
+            <Image as={NextImage} className='object-cover h-full w-full' src='https://picsum.photos/600/600' width={600} height={600} alt='photo of me' />
             
           </div>
         </div>
