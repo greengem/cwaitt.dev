@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: ['placehold.co','images.ctfassets.net'],
   },
 };

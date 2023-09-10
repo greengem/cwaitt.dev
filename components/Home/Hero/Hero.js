@@ -5,7 +5,7 @@ import {Github} from 'react-bootstrap-icons';
 
 function AppHero() {
   return (
-<section className='hero-container'>
+<section id='hero' className='hero-container'>
     <div className='hero-overlay'></div>
     <div className='hero-content'>
         <div className='container text-center mb-5'>

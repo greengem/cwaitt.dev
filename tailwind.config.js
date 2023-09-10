@@ -21,12 +21,9 @@ const config = {
   darkMode: "class",
   plugins: [nextui({
     themes: {
-      light: {
-        colors: {
-          background: "#fceff8",
-        }
-      }
-    }
+      light: {},
+      dark: {}
+    },
   })],
 }
 

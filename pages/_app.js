@@ -1,5 +1,5 @@
 import { NextUIProvider } from '@nextui-org/react'
-import React, { useState } from 'react';  // Import the useState hook from React
+import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 // Internal dependencies
 import '@/styles/globals.scss'; // Global styles for the application
@@ -16,15 +16,14 @@ import AppFooter from '../components/Footer/Footer'; // Footer component
  * @returns JSX.Element
  */
 function MyApp({ Component, pageProps }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   
   return (
     <NextUIProvider>
-      <main className={`text-foreground bg-background ${isDarkMode ? "dark" : "light"}`}>
-        <AppNavbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <NextThemesProvider attribute="class" defaultTheme="light">
+        <AppNavbar />
         <Component {...pageProps} /> {/* The main content of the page */}
         <AppFooter /> {/* Site-wide footer */}
-      </main>
+      </NextThemesProvider>
     </NextUIProvider>
   );
 }

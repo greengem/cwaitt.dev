@@ -8,8 +8,9 @@ import { Gem } from 'react-bootstrap-icons';
 import { Switch } from "@nextui-org/react";
 import { SunIcon } from "../Icons/SunIcon";
 import { MoonIcon } from "../Icons/MoonIcon";
+import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 
-function AppNavbar({ isDarkMode, setIsDarkMode }) {
+function AppNavbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -33,15 +34,7 @@ function AppNavbar({ isDarkMode, setIsDarkMode }) {
             Tech
           </Link>
         </NavbarItem>
-        <Switch
-            size="sm"
-            className="ms-2"
-            isSelected={isDarkMode}
-            color="danger"
-            startContent={<SunIcon />}
-            endContent={<MoonIcon />}
-            onValueChange={(isSelected) => setIsDarkMode(isSelected)}
-          ></Switch>
+          <ThemeSwitcher />
         </NavbarContent>
         <NavbarMenu>
           <NavbarMenuItem><Link href="/" color="danger" className="w-full" size="lg">Home</Link></NavbarMenuItem>
