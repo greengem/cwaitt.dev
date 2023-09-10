@@ -4,7 +4,8 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default function Projects({ projects }) {
   return (
-    <section id='projects' className='max-w-screen-xl mx-auto pt-20'>
+    <section id='projects' className=' pt-20'>
+      <div className='max-w-screen-xl mx-auto'>
       <div className='container mx-auto'>
       <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>My Projects</h1>
       
@@ -17,6 +18,7 @@ export default function Projects({ projects }) {
             <ProjectCard project={project} key={project.sys.id} />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

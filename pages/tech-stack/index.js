@@ -4,7 +4,8 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } 
 
 export default function TechStackListing({ techStacks }) {
   return (
-    <section id='tech-stacks' className=' max-w-screen-xl mx-auto pt-20'>
+    <section id='tech-stacks' className='pt-20'>
+      <div className='max-w-screen-xl mx-auto'>
     <div className='container mx-auto min-h-screen'>
       <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>Tech Stack</h1>
         <div className='flex flex-wrap'>
@@ -40,6 +41,7 @@ export default function TechStackListing({ techStacks }) {
             </Card>
           </div>
         ))}
+        </div>
         </div>
     </div>
     </section>

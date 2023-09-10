@@ -3,7 +3,8 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default function TechStackPage({ tech, projects }) {
   return (
-    <section id='tech' className=' max-w-screen-xl mx-auto'>
+    <section id='tech' className='pt-20'>
+      <div className='max-w-screen-xl mx-auto'>
       <div className='container mx-auto min-h-screen'>
       <h1 className='custom-heading from-[#FF72E1] to-[#F54C7A]'>
           Projects using {tech}
@@ -13,6 +14,7 @@ export default function TechStackPage({ tech, projects }) {
             <ProjectCard key={project.sys.id} project={project} />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

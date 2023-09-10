@@ -135,6 +135,16 @@ html.light {
     section#social {
         background: linear-gradient(90deg, #FFE1F5, #FFD6E8);
     }
+
+    section#projects {
+        background: linear-gradient(90deg, #D9FFC2, #A8FF9E); /* More extreme gradient for light mode */
+    }
+    section#tech-stacks {
+        background: linear-gradient(90deg, #FFE9E5, #FFF0DF);
+    }
+    section#tech {
+        background: linear-gradient(90deg, #FFE1F5, #FFD6E8);
+    }
 }
 
 html.dark {
@@ -151,6 +161,16 @@ html.dark {
         background: linear-gradient(90deg, #702010, #5C1800);
     }
     section#social {
+        background: linear-gradient(90deg, #700060, #5C0046);
+    }
+
+    section#projects {
+        background: linear-gradient(90deg, #013D15, #001E0A); /* More extreme gradient for dark mode */
+    }
+    section#tech-stacks {
+        background: linear-gradient(90deg, #702010, #5C1800);
+    }
+    section#tech {
         background: linear-gradient(90deg, #700060, #5C0046);
     }
 }
