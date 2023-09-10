@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
 import {Card, CardHeader, CardBody, CardFooter, Chip, Button, Code} from "@nextui-org/react";
-import Link from 'next/link';
+import {Link} from "@nextui-org/react";
+import NextLink from "next/link";
 
 function SidebarGitHub({ gitHubLink, demoUrl }) {
   const [githubData, setGithubData] = useState(null);
@@ -51,11 +52,11 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
           </code>
         </p>
         <div className='flex space-x-4'>
-            <Link href={gitHubLink} target='_blank' rel='noopener noreferrer' className='flex-1'>
+            <Link isExternal as={NextLink} href={gitHubLink} target='_blank' rel='noopener noreferrer' className='flex-1'>
                 <Button className='w-full' color='danger'><Github /> View on GitHub</Button>
             </Link>
             {demoUrl && (
-                <Link href={demoUrl} target='_blank' rel='noopener noreferrer' className='flex-1'>
+                <Link isExternal as={NextLink} href={demoUrl} target='_blank' rel='noopener noreferrer' className='flex-1'>
                     <Button className='w-full' color='secondary'>View Demo</Button>
                 </Link>
             )}
