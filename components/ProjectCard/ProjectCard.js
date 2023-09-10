@@ -4,8 +4,8 @@ import { Card, CardHeader, CardBody, CardFooter, Chip, Image } from "@nextui-org
 
 function ProjectCard({ project }) {
     return (
-        <div className="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/3 xxl:w-1/3 relative max-w-full px-4">
-            <Card className="py-4 mb-7">
+        <div className="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/3 xxl:w-1/3 relative max-w-full px-4 my-4">
+            <Card className="py-4 h-full">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <p className="text-tiny uppercase font-bold">{project.fields.projectTags.join(', ')}</p>
                     <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
