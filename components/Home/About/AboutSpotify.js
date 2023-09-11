@@ -6,8 +6,11 @@ function AppAboutSpotify() {
   useEffect(() => {
     const currentIframe = iframeRef.current;
 
+    // Null check
+    if (!currentIframe) return;
+
     // Check if the iframe has already loaded when component mounts
-    if (currentIframe && currentIframe.contentWindow) {
+    if (currentIframe.contentWindow) {
       currentIframe.classList.add('loaded');
     }
     
@@ -20,27 +23,28 @@ function AppAboutSpotify() {
 
     // Cleanup the event listener on component unmount
     return () => {
-      // Check if currentIframe exists before removing event listener
-      if (currentIframe) {
-        currentIframe.removeEventListener('load', handleLoad);
-      }
+      currentIframe.removeEventListener('load', handleLoad);
     };
   }, []);
 
   return (
     <div className="spotify-embed-container">
-        <iframe 
-            ref={iframeRef}
-            title='my-spotify-player'
-            className="spotify-embed"
-            src="https://open.spotify.com/embed/playlist/2Al9G2jrWkwDlRFMZaw1GX?utm_source=generator&theme=0" 
-            width="100%" 
-            height="152" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-        ></iframe>
+      <div style={{ borderRadius: '15px', overflow: 'hidden' }}>
+      <iframe 
+        ref={iframeRef}  // Add this ref attribute
+        className="spotify-embed"
+        src="https://open.spotify.com/embed/playlist/1rSXPXetBMq0J2fkR7Wk9k?utm_source=generator&theme=0" 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowFullScreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
     </div>
   );
 }
 
 export default AppAboutSpotify;
+

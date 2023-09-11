@@ -5,32 +5,41 @@ import {Link} from "@nextui-org/react";
 import NextLink from "next/link";
 
 import AppAboutText from './AboutText.js';
-import AppAboutSpotify from './AboutSpotify.js';
 import {Linkedin, Info} from 'react-bootstrap-icons';
 
 function AppAbout() {
   return (
     <section id='about' className="about-container py-20">
       <div className='max-w-screen-xl mx-auto  mb-20 mt-10'>
-      <div className='container mx-auto'>
-      <h1 className='custom-heading from-[#5EA2EF] to-[#0072F5]'>Behind the Code</h1>
-        <div className=' mx-auto flex flex-col md:flex-row'>
-          <div className="w-full md:w-1/2">
+        <div className='container mx-auto'>
+          <h1 className='custom-heading from-[#5EA2EF] to-[#0072F5]'>Behind the Code</h1>
             <AppAboutText />
-            {/*<AppAboutSpotify />*/}
-          </div>
-          <div className="w-full md:w-1/2 px-20">
-            <Image as={NextImage} className='object-cover h-full w-full' src='https://picsum.photos/600/600' width={600} height={600} alt='photo of me' />
-            
-          </div>
-        </div>
-        <div> 
-          <Link as={NextLink} isExternal href='https://www.linkedin.com/in/chriswaitt/'>
-                <Button size='lg' className='bg-gradient-to-tr from-[#5EA2EF] to-[#0072F5] text-white'><Linkedin />Linkedin</Button>
-            </Link>
+            <div className='flex flex-col md:flex-row space-y-20 md:space-y-0 md:space-x-20'>
+            <div className='w-full md:w-1/2'>
+                    <Image 
+                        isBlurred
+                        width={1920} 
+                        height={1080}
+                        alt="NextUI hero Image" 
+                        src="https://picsum.photos/600/300" 
+                    />
             </div>
-      </div>
-      </div>
+
+            <div className='w-full md:w-1/2'>
+                    <Image 
+                        isBlurred
+                        width={1920} 
+                        height={1080}
+                        alt="NextUI hero Image" 
+                        src="https://picsum.photos/600/300" 
+                    />
+            </div>
+        </div>
+
+
+
+            </div>
+          </div>
     </section>
   );
 }
