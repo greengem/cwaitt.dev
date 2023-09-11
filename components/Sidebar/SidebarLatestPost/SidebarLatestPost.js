@@ -1,10 +1,26 @@
 import Link from 'next/link';
-//import Image from 'next/image'
-import {Card, CardHeader, CardBody, CardFooter, Chip, Image} from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Image, Skeleton } from "@nextui-org/react";
 
 function SidebarLatestPost({ post }) {
-  if (!post) return <p>Loading latest project...</p>;
+  // If the post data hasn't loaded yet, render the Skeleton placeholders.
+  if (!post) {
+    return (
+      <Card className="py-4">
+        <Skeleton isLoaded={false}>
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+            <p className="text-tiny uppercase font-bold"></p>
+            <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full"></h4>
+          </CardHeader>
+          <CardBody className="overflow-visible py-2">
+            <div className="rounded-xl bg-gray-200" style={{ height: "621px", width: "828px" }}></div>
+            <p className="card-text mt-5 text-sm"></p>
+          </CardBody>
+        </Skeleton>
+      </Card>
+    );
+  }
 
+  // Otherwise, render the actual content.
   return (
     <Card className="py-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -20,8 +36,8 @@ function SidebarLatestPost({ post }) {
                 width={828}
                 height={621}
               />
-          </Link>
-          <p className="card-text mt-5 text-sm">{post.shortDescription}</p>
+        </Link>
+        <p className="card-text mt-5 text-sm">{post.shortDescription}</p>
       </CardBody>
     </Card>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
-import {Card, CardHeader, CardBody, CardFooter, Chip, Button, Code} from "@nextui-org/react";
-import {Link} from "@nextui-org/react";
+import { Card, CardHeader, CardBody, CardFooter, Chip, Button, Code, Skeleton } from "@nextui-org/react";
 import NextLink from "next/link";
 
 function SidebarGitHub({ gitHubLink, demoUrl }) {
@@ -10,7 +9,7 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
 
   useEffect(() => {
     async function fetchGitHubData() {
-      const repoName = gitHubLink.split('/').slice(-2).join('/'); // Get "username/repo" from the URL
+      const repoName = gitHubLink.split('/').slice(-2).join('/'); 
       const apiUrl = `https://api.github.com/repos/${repoName}`;
       
       try {
@@ -18,7 +17,6 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
         const data = await response.json();
         setGithubData(data);
 
-        // Fetch the latest commit
         const commitResponse = await fetch(data.commits_url.replace('{/sha}', ''));
         const commits = await commitResponse.json();
         setLatestCommit(commits[0]);
@@ -37,8 +35,27 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
     return text.slice(0, length) + '...';
   }
 
-  if (!githubData || !latestCommit) return null;
+  // If data hasn't loaded, return the Skeleton placeholders.
+  if (!githubData || !latestCommit) {
+    return (
+      <Card className='mb-4 py-4'>
+        <Skeleton isLoaded={false}>
+          <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
+            <p><Github height='32' width='32' className="me-2 inline-block" /></p>
+          </CardHeader>
+          <CardBody>
+            <p className='my-4'></p>
+            <div className='flex space-x-4'></div>
+          </CardBody>
+          <CardFooter>
+            <div className='flex flex-wrap'></div>
+          </CardFooter>
+        </Skeleton>
+      </Card>
+    );
+  }
 
+  // Otherwise, return the actual content.
   return (
     <Card className='mb-4 py-4'>
       <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
@@ -52,13 +69,13 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
           </code>
         </p>
         <div className='flex space-x-4'>
-            <Link isExternal as={NextLink} href={gitHubLink} target='_blank' rel='noopener noreferrer' className='flex-1'>
+            <NextLink href={gitHubLink} passHref>
                 <Button className='w-full' color='danger'><Github /> View on GitHub</Button>
-            </Link>
+            </NextLink>
             {demoUrl && (
-                <Link isExternal as={NextLink} href={demoUrl} target='_blank' rel='noopener noreferrer' className='flex-1'>
+                <NextLink href={demoUrl} passHref>
                     <Button className='w-full' color='secondary'>View Demo</Button>
-                </Link>
+                </NextLink>
             )}
           </div>
       </CardBody>
