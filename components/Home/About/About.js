@@ -18,20 +18,20 @@ function AppAbout() {
             <div className='w-full md:w-1/2'>
                     <Image 
                         isBlurred
-                        width={1920} 
-                        height={1080}
+                        width={1136}
+                  height={639}
                         alt="NextUI hero Image" 
-                        src="https://picsum.photos/600/300" 
+                        src="https://picsum.photos/id/62/1136/639" 
                     />
             </div>
 
             <div className='w-full md:w-1/2'>
                     <Image 
                         isBlurred
-                        width={1920} 
-                        height={1080}
+                        width={1136}
+                  height={639}
                         alt="NextUI hero Image" 
-                        src="https://picsum.photos/600/300" 
+                        src="https://picsum.photos/id/2/1136/639" 
                     />
             </div>
         </div>
