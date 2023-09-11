@@ -7,7 +7,7 @@ export default function TechStackListing({ techStacks }) {
     <section id='tech-stacks' className='pt-20'>
       <div className='max-w-screen-xl mx-auto'>
     <div className='container mx-auto min-h-screen'>
-      <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>Tech Stack</h1>
+      <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>Tech Stack</h1>
         <div className='flex flex-wrap'>
         {techStacks.map(tech => (
           <div key={tech.name} className='w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/3 relative max-w-full p-4'>
@@ -37,7 +37,7 @@ export default function TechStackListing({ techStacks }) {
               <CardFooter className='pt-0'>
                 
                 <Link 
-                  color='warning'
+                  color='success'
                   className='text-sm' 
                   href={`/tech-stack/${tech.slug}`} 
                   as={NextLink}

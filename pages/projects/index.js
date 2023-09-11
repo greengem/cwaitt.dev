@@ -7,7 +7,7 @@ export default function Projects({ projects }) {
     <section id='projects' className=' pt-20'>
       <div className='max-w-screen-xl mx-auto'>
       <div className='container mx-auto mb-20'>
-      <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>My Projects</h1>
+      <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>My Projects</h1>
       
         <div className='pb-5'>
         <p className='pb-4 text-lg tracking-tight'>Diving deep into the world of technology, I have always been captivated by the vast realm of possibilities that different tools and frameworks have to offer. For me, each project is more than just lines of code – it&apos;s an exploration, a challenge, and most importantly, a learning journey. From the tried-and-true classics to the latest shiny tech, I enjoy getting my hands dirty, always pushing the boundaries of what&apos;s possible.</p>
