@@ -6,7 +6,7 @@ export default function Projects({ projects }) {
   return (
     <section id='projects' className=' pt-20'>
       <div className='max-w-screen-xl mx-auto'>
-      <div className='container mx-auto'>
+      <div className='container mx-auto mb-20'>
       <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>My Projects</h1>
       
         <div className='pb-5'>

@@ -9,7 +9,7 @@ import {Chip, Link, Divider} from "@nextui-org/react";
 
 import { ArrowLeft } from 'react-bootstrap-icons';
 
-import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProject } from '../../lib/contentful';
+import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProjects } from '../../lib/contentful';
 import AppSidebar from '../../components/Sidebar/Sidebar.js';
 
 
@@ -132,7 +132,7 @@ export async function getStaticPaths() {
 // Function to fetch data for a specific project and provide it as props.
 export async function getStaticProps({ params }) {
     const project = await fetchProjectBySlug(params.slug);
-    const latestPost = await fetchLatestProject();
+    const latestPost = await fetchLatestProjects();
 
     return {
         props: {

@@ -2,7 +2,6 @@ import { fetchAllTechStacks } from '../../lib/contentful';
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@nextui-org/react";
 import NextLink from "next/link";
 
-
 export default function TechStackListing({ techStacks }) {
   return (
     <section id='tech-stacks' className='pt-20'>
@@ -24,20 +23,26 @@ export default function TechStackListing({ techStacks }) {
                 <div className="flex flex-col">
                   <p className="text-md">{tech.name}</p>
                   <p className="text-small text-default-500">
-                    <Link href={tech.externalLink}>
+                    <Link className='text-gray-500 text-sm' href={tech.externalLink}>
                       {new URL(tech.externalLink).host}
                     </Link>
                   </p>
                 </div>
               </CardHeader>
-              <Divider/>
-              <CardBody>
+
+              <CardBody className='pl-3 pt-1 pb-2'>
                 <p className='text-sm'>{tech.description}</p>
               </CardBody>
-              <Divider/>
-              <CardFooter>
+
+              <CardFooter className='pt-0'>
                 
-                <Link href={`/tech-stack/${tech.slug}`} as={NextLink}><Button color='danger' size='sm'>My {tech.name} Projects</Button></Link>
+                <Link 
+                  color='warning'
+                  className='text-sm' 
+                  href={`/tech-stack/${tech.slug}`} 
+                  as={NextLink}
+                >My {tech.name} Projects
+                </Link>
               </CardFooter>
             </Card>
           </div>
