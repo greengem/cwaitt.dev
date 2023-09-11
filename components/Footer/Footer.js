@@ -18,7 +18,7 @@ function AppFooter() {
                         <ul className="space-y-3">
                             <li><Link href="/portfolio" as={NextLink} className="hover:text-[#FF1CF7]">Portfolio</Link></li>
                             <li><Link href="/tech-stack" as={NextLink} className="hover:text-[#FF1CF7]">Tech Stack</Link></li>
-                            <li><Link href="#" as={NextLink} className="hover:text-[#FF1CF7]">Terms & Conditions -FIX-</Link></li>
+                            <li><Link href="/terms" as={NextLink} className="hover:text-[#FF1CF7]">Terms & Conditions</Link></li>
                         </ul>
                     </div>
                     <div>
