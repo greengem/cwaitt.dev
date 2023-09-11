@@ -38,4 +38,24 @@ export default function Terms() {
               If any provision of these terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.
             </p>
 
-            <h2 className='text-2xl font-bold mb-2'>6. Variation
+            <h2 className='text-2xl font-bold mb-2'>6. Variation of Terms</h2>
+            <p className='text-lg'>
+              Chris Waitt is permitted to revise these terms at any time as he sees fit, and by using this website, you are expected to review these terms on a regular basis.
+            </p>
+            
+            <h2 className='text-2xl font-bold mb-2'>7. Entire Agreement</h2>
+            <p className='text-lg'>
+              These terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between Chris Waitt and you in relation to your use of this website and supersede all prior agreements and understandings.
+            </p>
+
+            <div className='mt-8'>
+              <Link href="/">
+                Return to Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
