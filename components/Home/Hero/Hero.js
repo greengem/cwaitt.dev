@@ -13,7 +13,7 @@ function AppHero() {
             <h2 className='tracking-tight font-semibold text-2xl md:text-3xl mb-1'>Turning Ideas into Stunning Web Interfaces</h2>
             <p className='text-lg md:text-xl tracking-tight mb-6'>Front-End Developer | UI/UX Enthusiast</p>
             <div>
-                <Link as={NextLink} href="/projects"><Button color='danger' size="lg" className='mx-1'>View My Work</Button></Link>
+                <Link as={NextLink} href="/projects"><Button size="lg" className='mx-1 bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8]  text-white shadow-lg'>View My Work</Button></Link>
                 <Link as={NextLink} href="https://github.com/greengem" isExternal><Button color='default' size="lg" className='mx-1' variant="bordered"><Github />Github</Button></Link>
             </div>
         </div>
