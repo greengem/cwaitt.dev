@@ -39,9 +39,9 @@ function AppHomeRecent() {
             </div>
         </div>
 
-        <div className='text-center mt-10'>
+        <div className=' mt-10'>
             <Link href='/projects' as={NextLink}>
-                <Button size='lg' className='ml-4 bg-gradient-to-tr from-[#FF705B] to-[#FFB457]  text-white shadow-lg'>
+                <Button size='lg' className='bg-gradient-to-tr from-[#FF705B] to-[#FFB457]  text-white shadow-lg'>
                     <Book />View My Work
                 </Button>
             </Link>
