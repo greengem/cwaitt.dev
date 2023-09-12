@@ -3,13 +3,17 @@ import NextLink from "next/link";
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
-import { Gem } from 'react-bootstrap-icons';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Button } from "@nextui-org/react";
+import { Gem, ChevronDown } from 'react-bootstrap-icons';
 import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 
 function AppNavbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const icons = {
+    gem: <Gem />,
+    chevron: <ChevronDown />,
+  }
 
   return (
     <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen}>
@@ -30,8 +34,41 @@ function AppNavbar() {
             Tech Stack
           </Link>
         </NavbarItem>
-          <ThemeSwitcher />
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                radius="sm"
+                variant="light"
+                endContent={icons.chevron}
+              >
+                Tools
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="ACME features"
+            className="w-[340px]"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem
+              key="autoscaling"
+              description="Convert special characters to HTML entities."
+              href="/tools/escape"
+              startContent={icons.gem}
+            >
+              Text Escaper
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+          
+          
         </NavbarContent>
+        <ThemeSwitcher />
         <NavbarMenu>
           <NavbarMenuItem><Link href="/" as={NextLink} color="foreground" className="w-full" size="lg">Home</Link></NavbarMenuItem>
           <NavbarMenuItem><Link href="/projects" as={NextLink} color="foreground" className="w-full" size="lg">Projects</Link></NavbarMenuItem>
