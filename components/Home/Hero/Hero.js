@@ -10,28 +10,29 @@ function AppHero() {
   useEffect(() => {
     const options = {
       strings: [
-        'Hello^1000, I&apos;m <span class="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>'
+        'Hello,^1000 I&apos;m <span class="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>'
       ],
       typeSpeed: 50,
       backSpeed: 50,
       loop: false,
-      startDelay: 1000, // 1 second delay before typing starts
-      contentType: 'html', // Let's Typed.js know it's dealing with HTML content
-      showCursor: true, // Ensure cursor is shown while typing
+      startDelay: 0, // No delay before typing starts
+      contentType: 'html', 
+      showCursor: true, 
       onComplete: (self) => {
         if (self.cursor) {
-          self.cursor.style.animation = 'none'; // Stops the blinking animation
-          self.cursor.style.opacity = 0;       // Makes the cursor invisible
+          self.cursor.style.animation = 'none'; 
+          self.cursor.style.opacity = 0;       
         }
       }
     };
-
+  
     const typed = new Typed(typeRef.current, options);
-
+  
     return () => {
       typed.destroy();
     };
   }, []);
+  
 
   return (
     <section id='hero' className='hero-container'>
