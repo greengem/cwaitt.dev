@@ -2,13 +2,28 @@ import React from 'react';
 
 function AppAboutText() {
   return (
-    <div className='about-text-block'>
-        <p className='text-lg tracking-tight my-4'>Hello! I&apos;m <strong>Chris</strong>, a <em>passionate</em> web developer dedicated to turning tech visions into tangible masterpieces. 🚀 My foray into development began during my stint in the music industry. Faced with digital challenges and a shoestring budget, I embarked on a self-taught journey, diving deep into <strong>HTML</strong>, <strong>CSS</strong>, and more. 💡</p>
+<div className="about-me">
+    <p className="mb-4">
+        From setting the rhythm in the <strong className="font-semibold">music industry</strong> to writing lines of code, my journey has been anything but conventional. I began my career orchestrating the melodies of the music world, running my own companies, and carving out a unique path. Yet, amidst the beats and harmonies, I discovered a new passion—<strong className="font-semibold">front-end development</strong>.
+    </p>
 
-        <p className='text-lg tracking-tight my-4'>From assembling my initial websites to mastering the intricacies of <strong>JavaScript</strong>, I uncovered an unexpected love for coding. Nowadays, my sights are set on achieving <em>frontend perfection</em>, championing <em>responsive design</em>, and advocating for <strong>web accessibility</strong>. Whether I&apos;m sculpting intuitive interfaces 🎨, keeping pace with web standards ⚙️, or orchestrating robust backends 🖥️, I marry <em>technical prowess</em> with <em>artistic flair</em>.</p>
+    <p className="mb-4">
+        My technical journey began with the foundational bricks of the web—<em className="italic">HTML and CSS</em>. From there, I delved into PHP, expanding my backend understanding. As I delved deeper, my curiosity led me to JavaScript, opening up a world of dynamic web interactions. Python followed, broadening my horizons further. But it was the allure of modern front-end frameworks like <em className="italic">React, Next, Vue, and Angular</em> that truly solidified my passion. Each step in my journey added a new layer to my expertise, equipping me to tackle diverse challenges with an evolving toolkit.
+    </p>
 
-        <p className='text-lg tracking-tight mt-4 mb-20'>When I&apos;m not pushing pixels, you can catch me <strong>cycling along London&apos;s canals</strong> 🚴 (not swimming in them, although I do love a good swim elsewhere 🏊‍♂️). I also have a penchant for <em>crafting melodies</em> 🎵 and diving deep into <strong>PC gaming</strong> 🎮. Fancy a tech talk or a collaborative venture? Let&apos;s get the conversation flowing! 🤝</p>
-    </div>
+    <p className="mb-4">
+        Today, as an intermediate front-end developer, I bring a harmonious blend of my creative background and technical skills to every project. I craft digital experiences that are not just functional, but also aesthetically pleasing and user-friendly. I pride myself on being a <strong className="font-semibold">quick learner</strong>, a team player, and someone who's always up for a challenge.
+    </p>
+
+    <p className="mb-4">
+        Outside of coding, I maintain a symphony of hobbies that keep me grounded. Whether I'm penning soulful songs, tickling the ivories on my piano, staying fit, diving into swimming pools, or conquering the latest video games, life is always in tune.
+    </p>
+
+    <p className='mb-20'>
+        If you're seeking a developer with a unique blend of musical flair and a comprehensive journey through the tech landscape, <u className="underline">let's collaborate</u> and make some digital magic together.
+    </p>
+</div>
+
   );
 }
 
