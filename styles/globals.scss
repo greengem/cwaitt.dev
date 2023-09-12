@@ -196,12 +196,9 @@ li > .general-paragraph {
     @apply my-4;
 }
 
-ul li{
+#project ul li{
     list-style-type: disc;
 }
-ol li{
+#project ol li{
     list-style-type: decimal;
-}
-#footer ul li{
-    list-style-type: none;
 }

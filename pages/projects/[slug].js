@@ -97,24 +97,26 @@ function Project({ project, latestPost }) {
     
 
     return (
-        <div className='container mx-auto mt-10 min-h-screen mb-20'>
-            <div className='flex flex-col md:flex-row'>
-                <div className='w-full md:w-2/3 p-4'>
-                    <article>
-                        <header>
-                            <h1 className='custom-heading from-[#FF1CF7] to-[#b249f8]'>{projectTitle}</h1>
-                        </header>
-                        <section className='mb-4'>
-                            {documentToReactComponents(description, options)}
-                            <Divider className='my-10' />
-                            <div><TechStackBadges techStackEntries={techStacks} /></div>
-                            <Link color='danger' href='/projects' as={NextLink} className='mt-10'><ArrowLeft className='mr-2' />Back to Projects</Link>
-                        </section>
-                    </article>
+        <section id='project'>
+            <div className='container mx-auto mt-10 min-h-screen mb-20'>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='w-full md:w-2/3 p-4'>
+                        <article>
+                            <header>
+                                <h1 className='custom-heading from-[#FF1CF7] to-[#b249f8]'>{projectTitle}</h1>
+                            </header>
+                            <section className='mb-4'>
+                                {documentToReactComponents(description, options)}
+                                <Divider className='my-10' />
+                                <div><TechStackBadges techStackEntries={techStacks} /></div>
+                                <Link color='danger' href='/projects' as={NextLink} className='mt-10'><ArrowLeft className='mr-2' />Back to Projects</Link>
+                            </section>
+                        </article>
+                    </div>
+                    <div className='w-full md:w-1/3 p-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
                 </div>
-                <div className='w-full md:w-1/3 p-4'><AppSidebar gitHubLink={gitHubLink} demoUrl={demoUrl} latestPost={latestPost} /></div>
             </div>
-        </div>
+        </section>
     );
 }
 
