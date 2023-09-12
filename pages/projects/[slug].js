@@ -22,6 +22,7 @@ import AppSidebar from '../../components/Sidebar/Sidebar.js';
 function TechStackBadges({ techStackEntries }) {
     return techStackEntries.map((techEntry, index) => (
         <Chip 
+            variant="dot"
             key={index} 
             size='md'
             color={index === 0 ? "danger" : "default"} 

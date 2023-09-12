@@ -70,25 +70,25 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
         </p>
         <div className='flex space-x-4'>
             <Link as={NextLink} href={gitHubLink}>
-                <Button className='w-full' color='danger'><Github /> View on GitHub</Button>
+                <Button size='sm' className='w-full' color='danger'><Github /> View on GitHub</Button>
             </Link>
             {demoUrl && (
                 <Link as={NextLink} href={demoUrl}>
-                    <Button className='w-full' color='secondary'>View Demo</Button>
+                    <Button size='sm' className='w-full' color='secondary'>View Demo</Button>
                 </Link>
             )}
           </div>
       </CardBody>
       <CardFooter>
       <div className='flex flex-wrap'>
-          <Chip radius="sm" color="default" className='mx-1'>{githubData.language}</Chip>
-          <Chip radius="sm" color="warning" className='mx-1'>
-              <StarFill className="inline-block" /> {githubData.stargazers_count}
+          <Chip size='sm' radius="sm" color="default" className='mx-1 mb-1'>{githubData.language}</Chip>
+          <Chip size='sm' variant="dot" radius="sm" color="warning" className='mx-1 mb-1'>
+              Stars: {githubData.stargazers_count}
           </Chip>
-          <Chip radius="sm" color="primary" className='mx-1'>
-              <BinocularsFill className="inline-block" /> {githubData.watchers_count}
+          <Chip size='sm' variant="dot" radius="sm" color="primary" className='mx-1 mb-1'>
+              Watchers: {githubData.watchers_count}
           </Chip>
-          <Chip radius="sm" color="success" className='mx-1'>Forks: {githubData.forks_count}</Chip>
+          <Chip size='sm' variant="dot" radius="sm" color="success" className='mx-1 mb-1'>Forks: {githubData.forks_count}</Chip>
         </div>
       </CardFooter>
     </Card>
