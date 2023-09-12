@@ -16,7 +16,7 @@ function AppNavbar() {
   }
 
   return (
-    <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
       <NavbarBrand><Link color="foreground" href="/" as={NextLink}><Gem className='me-2' /></Link></NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem isActive={router.pathname === '/'}>
