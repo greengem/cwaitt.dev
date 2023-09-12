@@ -18,18 +18,6 @@ function AppSocial() {
             link: "https://github.com/greengem",
             username: "@greengem",
         },
-        {
-            icon: Twitter,
-            title: "Twitter",
-            link: "#",
-            username: "@chriswaitt",
-        },
-        {
-            icon: Instagram,
-            title: "Instagram",
-            link: "#",
-            username: "@chriswaitt",
-        },
     ];
 
     return (
