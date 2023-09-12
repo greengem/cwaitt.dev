@@ -30,7 +30,7 @@ function ProjectCard({ project }) {
                 <CardFooter className='px-5'>
                     <div className="flex flex-wrap">
                         {project.fields.techStacks.map((techEntry, index) => (
-                            <Link as={NextLink} href='#' key={index}>
+                            <Link as={NextLink} href={`/tech-stack/${techEntry.fields.slug}`} key={index}>
                                 <Chip
                                     variant="dot"
                                     size="sm"
