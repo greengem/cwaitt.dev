@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import {Link} from "@nextui-org/react";
+import NextLink from "next/link";
 
 export default function Terms() {
   return (
@@ -49,7 +50,7 @@ export default function Terms() {
             </p>
 
             <div className='mt-8'>
-              <Link href="/">
+              <Link as={NextLink} href="/">
                 Return to Home
               </Link>
             </div>

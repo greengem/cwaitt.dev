@@ -1,5 +1,6 @@
 import React from 'react';
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
+import NextLink from "next/link";
+import {Card, CardHeader, CardBody, CardFooter, Link} from "@nextui-org/react";
 import { Github, Linkedin } from 'react-bootstrap-icons';
 
 function SidebarAboutMe() {
@@ -13,8 +14,12 @@ function SidebarAboutMe() {
         <p className="card-text">I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores.</p>
       </CardBody>
       <CardFooter>
-        <a href='https://www.linkedin.com/in/chriswaitt/' target="_blank" rel="noreferrer"><Linkedin className='me-2' /></a> 
-        <a href='https://github.com/greengem' target="_blank" rel="noreferrer"><Github /></a>
+        <Link as={NextLink} href='https://www.linkedin.com/in/chriswaitt/' isExternal>
+          <Linkedin className='me-2' />
+        </Link>
+        <Link as={NextLink} href='https://github.com/greengem' isExternal>
+          <Github />
+        </Link>
       </CardFooter>
     </Card>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarAboutMe from './SidebarAboutMe/SidebarAboutMe';
+//import SidebarAboutMe from './SidebarAboutMe/SidebarAboutMe';
 import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
 import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
 

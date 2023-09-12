@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import {Link} from "@nextui-org/react";
+import NextLink from "next/link";
 import { useRouter } from 'next/router';
 import { ExclamationCircle } from 'react-bootstrap-icons';
 
@@ -15,7 +16,7 @@ export default function Custom404() {
             <p className="text-3xl font-bold mb-4">404</p>
             <p className="text-lg text-gray-700">We can&apos;t find the page you&apos;re looking for. It might have been moved or deleted.</p>
             <div className="mt-8">
-              <Link className='bg-gradient-to-r from-[#FF705B] to-[#FFB457] text-white px-6 py-2 rounded-lg shadow-md hover:opacity-90' href="/">
+              <Link as={NextLink} className='bg-gradient-to-r from-[#FF705B] to-[#FFB457] text-white px-6 py-2 rounded-lg shadow-md hover:opacity-90' href="/">
                 Return to Home
               </Link>
             </div>

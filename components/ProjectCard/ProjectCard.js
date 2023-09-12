@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import NextLink from "next/link";
 import NextImage from "next/image";
-import { Card, CardHeader, CardBody, CardFooter, Chip, Image } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, CardFooter, Chip, Image, Link } from "@nextui-org/react";
 
 function ProjectCard({ project }) {
     return (
@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
                     </h4>
                 </CardHeader>
                 <CardBody className="overflow-visible py-2">
-                    <Link href={`/projects/${project.fields.slug}`}>
+                    <Link as={NextLink} href={`/projects/${project.fields.slug}`}>
                         {project.fields.featuredImage && (
                             <Image
                                 as={NextImage}
@@ -30,7 +30,7 @@ function ProjectCard({ project }) {
                 <CardFooter className='px-5'>
                     <div className="flex flex-wrap">
                         {project.fields.techStacks.map((techEntry, index) => (
-                            <Link href='#' key={index}>
+                            <Link as={NextLink} href='#' key={index}>
                                 <Chip
                                     variant="dot"
                                     size="sm"

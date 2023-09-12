@@ -17,16 +17,16 @@ function AppHomeRecent({ projects }) {
         <div className='flex flex-col md:flex-row space-y-20 md:space-y-0 md:space-x-20'>
           {projects.map(project => (
             <div key={project.sys.id} className='w-full md:w-1/2'>
-                <Image 
-                  width={1136}
-                  height={639}
-                  alt={`Image for ${project.fields.projectTitle}`}
-                  src={`https:${project.fields.featuredImage.fields.file.url}?fit=fill&w=1136&h=639`}
-                />
-              <NextLink href={`/projects/${project.fields.slug}`}>
-                  <h4 className='text-3xl tracking-tight font-semibold mt-10 mb-2 from-[#FF705B] to-[#FFB457] bg-clip-text text-transparent bg-gradient-to-b
-'>{project.fields.projectTitle}</h4>
-              </NextLink>
+              <Image 
+                width={1136}
+                height={639}
+                alt={`Image for ${project.fields.projectTitle}`}
+                src={`https:${project.fields.featuredImage.fields.file.url}?fit=fill&w=1136&h=639`}
+              />
+              <Link as={NextLink} href={`/projects/${project.fields.slug}`}>
+                <h4 className='text-3xl tracking-tight font-semibold mt-10 mb-2 from-[#FF705B] to-[#FFB457] bg-clip-text text-transparent bg-gradient-to-b'>
+                  {project.fields.projectTitle}</h4>
+              </Link>
               <p className='tracking-tight mb-6'>{project.fields.shortDescription}</p>
             </div>
           ))}
