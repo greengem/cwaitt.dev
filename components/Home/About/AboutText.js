@@ -19,7 +19,7 @@ function AppAboutText() {
         Outside of coding, I maintain a symphony of hobbies that keep me grounded. Whether I&apos;m penning soulful songs, tickling the ivories on my piano, staying fit, diving into swimming pools, or conquering the latest video games, life is always in tune.
     </p>
 
-    <p className='mb-20'>
+    <p className="mb-20">
         If you&apos;re seeking a developer with a unique blend of musical flair and a comprehensive journey through the tech landscape, <u className="underline">let&apos;s collaborate</u> and make some digital magic together.
     </p>
 </div>
