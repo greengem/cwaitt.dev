@@ -10,13 +10,13 @@ export default function EscapeTool() {
   function handleEscape() {
     // Define a function to escape text
     const escapeChars = (str) => {
-        return str
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&apos;');
-    }
+      return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '{"\""}') // JSX-friendly form for double quotes
+          .replace(/'/g, '{"\'"}'); // JSX-friendly form for single quotes
+  }
 
     // Use regex to match text outside of tags, and apply the escape function to that text
     const escapedText = inputText.replace(/(>)([^<]*)(<)/g, function(match, p1, p2, p3) {
