@@ -12,15 +12,15 @@ function AppAboutText() {
     </p>
 
     <p className="mb-4">
-        Today, as an intermediate front-end developer, I bring a harmonious blend of my creative background and technical skills to every project. I craft digital experiences that are not just functional, but also aesthetically pleasing and user-friendly. I pride myself on being a <strong className="font-semibold">quick learner</strong>, a team player, and someone who's always up for a challenge.
+        Today, as an intermediate front-end developer, I bring a harmonious blend of my creative background and technical skills to every project. I craft digital experiences that are not just functional, but also aesthetically pleasing and user-friendly. I pride myself on being a <strong className="font-semibold">quick learner</strong>, a team player, and someone who&apos;s always up for a challenge.
     </p>
 
     <p className="mb-4">
-        Outside of coding, I maintain a symphony of hobbies that keep me grounded. Whether I'm penning soulful songs, tickling the ivories on my piano, staying fit, diving into swimming pools, or conquering the latest video games, life is always in tune.
+        Outside of coding, I maintain a symphony of hobbies that keep me grounded. Whether I&apos;m penning soulful songs, tickling the ivories on my piano, staying fit, diving into swimming pools, or conquering the latest video games, life is always in tune.
     </p>
 
     <p className='mb-20'>
-        If you're seeking a developer with a unique blend of musical flair and a comprehensive journey through the tech landscape, <u className="underline">let's collaborate</u> and make some digital magic together.
+        If you&apos;re seeking a developer with a unique blend of musical flair and a comprehensive journey through the tech landscape, <u className="underline">let&apos;s collaborate</u> and make some digital magic together.
     </p>
 </div>
 
