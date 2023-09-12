@@ -99,7 +99,7 @@ function Project({ project, latestPost }) {
 
     return (
         <section id='project'>
-            <div className='container mx-auto mt-10 min-h-screen mb-20'>
+            <div className='max-w-screen-xl container mx-auto mt-10 min-h-screen mb-20'>
                 <div className='flex flex-col md:flex-row'>
                     <div className='w-full md:w-2/3 p-4'>
                         <article>
