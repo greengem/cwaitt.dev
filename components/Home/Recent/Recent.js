@@ -18,7 +18,6 @@ function AppHomeRecent({ projects }) {
           {projects.map(project => (
             <div key={project.sys.id} className='w-full md:w-1/2'>
                 <Image 
-                  isBlurred
                   width={1136}
                   height={639}
                   alt={`Image for ${project.fields.projectTitle}`}

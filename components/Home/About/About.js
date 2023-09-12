@@ -17,7 +17,6 @@ function AppAbout() {
             <div className='flex flex-col md:flex-row space-y-20 md:space-y-0 md:space-x-20'>
             <div className='w-full md:w-1/2'>
                     <Image 
-                        isBlurred
                         width={1136}
                   height={639}
                         alt="NextUI hero Image" 
@@ -27,7 +26,6 @@ function AppAbout() {
 
             <div className='w-full md:w-1/2'>
                     <Image 
-                        isBlurred
                         width={1136}
                   height={639}
                         alt="NextUI hero Image" 
