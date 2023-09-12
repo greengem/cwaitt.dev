@@ -4,14 +4,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Button } from "@nextui-org/react";
-import { Gem, ChevronDown } from 'react-bootstrap-icons';
+import { Gem, ChevronDown, ArrowLeftRight } from 'react-bootstrap-icons';
 import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 
 function AppNavbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const icons = {
-    gem: <Gem />,
+    arrowlr: <ArrowLeftRight />,
     chevron: <ChevronDown />,
   }
 
@@ -59,7 +59,7 @@ function AppNavbar() {
               key="autoscaling"
               description="Convert special characters to HTML entities."
               href="/tools/escape"
-              startContent={icons.gem}
+              startContent={icons.arrowlr}
             >
               Text Escaper
             </DropdownItem>
