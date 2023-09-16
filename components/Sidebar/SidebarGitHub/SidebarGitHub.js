@@ -69,11 +69,11 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
           </code>
         </p>
         <div className='flex space-x-4'>
-            <Link as={NextLink} href={gitHubLink}>
+            <Link as={NextLink} href={gitHubLink} isExternal>
                 <Button size='sm' className='w-full' color='danger'><Github /> View on GitHub</Button>
             </Link>
             {demoUrl && (
-                <Link as={NextLink} href={demoUrl}>
+                <Link as={NextLink} href={demoUrl} isExternal>
                     <Button size='sm' className='w-full' color='secondary'>View Demo</Button>
                 </Link>
             )}
