@@ -22,14 +22,14 @@
 
 /* styles.css or another relevant stylesheet */
 .custom-heading {
-    @apply min-h-[4rem] tracking-tight align-middle font-semibold text-4xl md:text-5xl lg:text-6xl mb-20 bg-clip-text text-transparent bg-gradient-to-b;
+    @apply min-h-[4rem] tracking-tight align-middle font-semibold text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-7 bg-clip-text text-transparent bg-gradient-to-b;
  }
  
 
 /* HERO */
 .hero-container {
     position: relative;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,15 +177,7 @@ html.dark {
 }
 
 */
-.card-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
-.card-body {
-    flex: 1;
-}
 /* styles.css or your main stylesheet */
 
 li > .general-paragraph {

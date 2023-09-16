@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, StarFill, BinocularsFill } from 'react-bootstrap-icons';
+import { Github, EyeFill } from 'react-bootstrap-icons';
 import { Card, CardHeader, CardBody, CardFooter, Chip, Button, Code, Skeleton, Link } from "@nextui-org/react";
 import NextLink from "next/link";
 
@@ -68,13 +68,13 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
             <span>{truncateText(latestCommit.commit.message)}</span>
           </code>
         </p>
-        <div className='flex space-x-4'>
-            <Link as={NextLink} href={gitHubLink} isExternal>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            <Link as={NextLink} href={gitHubLink} isExternal className='w-full'>
                 <Button size='sm' className='w-full' color='danger'><Github /> View on GitHub</Button>
             </Link>
             {demoUrl && (
-                <Link as={NextLink} href={demoUrl} isExternal>
-                    <Button size='sm' className='w-full' color='secondary'>View Demo</Button>
+                <Link as={NextLink} href={demoUrl} isExternal className='w-full'>
+                    <Button size='sm' className='w-full' color='secondary'><EyeFill /> View Demo</Button>
                 </Link>
             )}
           </div>

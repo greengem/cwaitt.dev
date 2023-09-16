@@ -10,7 +10,7 @@ function AppHomeRecent({ projects }) {
   }
     
   return (
-    <section id='recent' className='py-20'>
+    <section id='recent' className='py-5'>
       <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 mt-10'>
         <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>My Recent Work</h1>
         
