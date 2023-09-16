@@ -17,7 +17,7 @@ function AppNavbar() {
 
   return (
     <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
-      <NavbarBrand><Link color="foreground" href="/" as={NextLink}><Gem className='me-2' /></Link></NavbarBrand>
+      <NavbarBrand><Link color="foreground" href="/" as={NextLink}><span className="text-secondary"><Gem className='me-2' /></span> Chris Waitt</Link></NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem isActive={router.pathname === '/'}>
           <Link href="/" as={NextLink} color="foreground">
@@ -34,39 +34,22 @@ function AppNavbar() {
             Tech Stack
           </Link>
         </NavbarItem>
+        {/*
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                radius="sm"
-                variant="light"
-                endContent={icons.chevron}
-              >
-                Tools
-              </Button>
+              <Link color="foreground">Tools</Link>
             </DropdownTrigger>
           </NavbarItem>
-          <DropdownMenu
-            aria-label="ACME features"
-            className="w-[340px]"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
+          <DropdownMenu aria-label="ACME features" className="w-[340px]" itemClasses={{base: "gap-4",}}>
             <DropdownItem
               key="autoscaling"
               description="Convert special characters to HTML entities."
-              href="/tools/escape"
+              
               startContent={icons.arrowlr}
-            >
-              Text Escaper
-            </DropdownItem>
+            >Text Escaper</DropdownItem>
           </DropdownMenu>
-        </Dropdown>
-          
-          
+  </Dropdown>*/}
         </NavbarContent>
         <ThemeSwitcher />
         <NavbarMenu>
