@@ -39,11 +39,11 @@ export default function EscapeTool() {
           <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>Text Escaper Tool</h1>
           <p className='mb-10'>
   In web development, especially when dealing with HTML and JavaScript, certain characters can cause issues if not properly {"\""}escaped{"\""}. These characters have special meanings in HTML and JS, and using them as-is can lead to unexpected results or even code vulnerabilities. Our Text Escaper Tool helps you seamlessly convert these problematic characters into their corresponding escape sequences, ensuring that your code remains clean and behaves as intended. The following symbols will be converted: 
-  <Code>&amp; to &amp;amp;</Code> 
-  <Code>&lt; to &amp;lt;</Code> 
-  <Code>&gt; to &amp;gt;</Code> 
-  <Code>{"\""} to &amp;quot;</Code> 
-  <Code>{"'"} to &amp;apos;</Code> 
+  <Code className='mx-1'>&amp; to &amp;amp;</Code> 
+  <Code className='mx-1'>&lt; to &amp;lt;</Code> 
+  <Code className='mx-1'>&gt; to &amp;gt;</Code> 
+  <Code className='mx-1'>{"\""} to &amp;quot;</Code> 
+  <Code className='mx-1'>{"'"} to &amp;apos;</Code> 
   Simply input your text, and let the tool handle the rest!
 </p>
 
