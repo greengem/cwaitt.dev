@@ -19,7 +19,7 @@ export const ThemeSwitcher = () => {
   return (
     <div>
       <Switch
-        size="sm"
+        size="md"
         className="ms-2"
         color="secondary"
         startContent={<SunIcon />}
