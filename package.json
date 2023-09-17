@@ -31,8 +31,9 @@
     "typed.js": "^2.0.16"
   },
   "devDependencies": {
-    "@types/node": "20.6.2",
-    "@types/react": "18.2.21",
-    "tailwindcss": "^3.3.3"
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.21",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
