@@ -11,7 +11,7 @@ export default function TechStackListing({ techStacks }) {
         <div className='flex flex-wrap'>
         {techStacks.map(tech => (
           <div key={tech.name} className='w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/3 relative max-w-full p-4'>
-            <Card>
+            <Card shadow='lg'>
               <CardHeader className="flex gap-3">
                 <Image
                   alt={tech.logo.description || "Tech Stack Logo"}

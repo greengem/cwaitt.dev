@@ -57,7 +57,7 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
 
   // Otherwise, return the actual content.
   return (
-    <Card className='mb-4 py-4'>
+    <Card className='mb-4 py-4' shadow='lg'>
       <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
         <p><Github height='32' width='32' className="me-2 inline-block" /> <Code size='lg'>{githubData.name}</Code></p>
       </CardHeader>

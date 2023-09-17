@@ -5,7 +5,7 @@ function SidebarLatestPost({ post }) {
   // If the post data hasn't loaded yet, render the Skeleton placeholders.
   if (!post) {
     return (
-      <Card className="py-4">
+      <Card className="py-4" shadow="lg">
         <Skeleton isLoaded={false}>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny uppercase font-bold text-danger"></p>
@@ -30,6 +30,7 @@ function SidebarLatestPost({ post }) {
       <CardBody className="overflow-visible py-2">
         <Link as={NextLink} href={`/projects/${post.slug}`}>
               <Image
+              shadow="lg"
                 src={`https:${post.featuredImage.fields.file.url}?fit=fill&w=828&h=621`}
                 className='object-cover rounded-xl'
                 alt={`Featured image for ${post.projectTitle}`}
