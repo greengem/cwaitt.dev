@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Card, CardHeader, CardBody, Link, Image, Button } from "@nextui-org/react";
 import { Github, Linkedin, Twitter, Instagram } from 'react-bootstrap-icons';

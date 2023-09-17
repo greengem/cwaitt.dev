@@ -1,7 +1,7 @@
+'use client'
 import React from 'react';
 import {Link} from "@nextui-org/react";
 import NextLink from "next/link";
-import { Gem } from 'react-bootstrap-icons';
 
 function AppFooter() {
   return (
@@ -25,7 +25,7 @@ function AppFooter() {
                     </div>
                 </div>
                 <div className="text-center border-t border-gray-700 pt-8">
-                    <p className="text-sm">© {new Date().getFullYear()} Chris Waitt. All Rights Reserved.</p>
+                    <p className="text-sm">© 2023 Chris Waitt. All Rights Reserved.</p>
                 </div>
             </div>
             </div>

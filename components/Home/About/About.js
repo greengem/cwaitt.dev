@@ -1,5 +1,6 @@
+'use client'
 import React from 'react';
-import { Image } from "@nextui-org/react";
+import {Image} from "@nextui-org/react";
 import NextImage from "next/image";
 import AppAboutText from './AboutText.js';
 

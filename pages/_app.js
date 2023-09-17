@@ -3,7 +3,7 @@ import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 // Internal dependencies
 import "animate.css/animate.min.css";
-import '@/styles/globals.scss'; // Global styles for the application
+import '../styles/globals.css'; // Global styles for the application
 import AppNavbar from '../components/Navbar/Navbar'; // Navbar component
 import AppFooter from '../components/Footer/Footer'; // Footer component
 

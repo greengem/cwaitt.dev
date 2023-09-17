@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Image, Button, Link } from "@nextui-org/react";
 import NextLink from "next/link";

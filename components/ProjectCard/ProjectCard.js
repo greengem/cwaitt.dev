@@ -1,3 +1,4 @@
+'use client'
 import NextLink from "next/link";
 import NextImage from "next/image";
 import { Card, CardHeader, CardBody, CardFooter, Chip, Image, Link } from "@nextui-org/react";
