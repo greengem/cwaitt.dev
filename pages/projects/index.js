@@ -13,7 +13,7 @@ export default function Projects({ projects }) {
         <p className='pb-4 text-lg tracking-tight'>Diving deep into the world of technology, I have always been captivated by the vast realm of possibilities that different tools and frameworks have to offer. For me, each project is more than just lines of code – it&apos;s an exploration, a challenge, and most importantly, a learning journey. From the tried-and-true classics to the latest shiny tech, I enjoy getting my hands dirty, always pushing the boundaries of what&apos;s possible.</p>
         <p className='pb-4 text-lg tracking-tight'>Below, you&apos;ll find a curated collection of my endeavors, each with its unique tech flavor. Whether you&apos;re here to explore, get inspired, or just geek out, I hope you find these projects as exciting as I found creating them. Enjoy the journey!</p>
         </div>
-        <div className='flex flex-wrap'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
           {projects.map(project => (
             <ProjectCard project={project} key={project.sys.id} />
           ))}
