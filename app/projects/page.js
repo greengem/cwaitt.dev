@@ -2,7 +2,7 @@ import { fetchProjects } from '../../lib/contentful';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default async function Projects() {
-  const projectsData = await fetchProjectsData(); // Fetching projects on server
+  const projectsData = await fetchProjectsData();
 
   return (
     <section id='projects' className=' pt-20'>

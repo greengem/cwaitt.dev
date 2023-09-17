@@ -1,6 +1,7 @@
-'use client'
 import React from 'react';
-import { Card, CardHeader, CardBody, Link, Image, Button } from "@nextui-org/react";
+import {Card, CardHeader} from "@nextui-org/card";
+import {Link} from "@nextui-org/link";
+
 import { Github, Linkedin, Twitter, Instagram } from 'react-bootstrap-icons';
 import NextLink from "next/link";
 

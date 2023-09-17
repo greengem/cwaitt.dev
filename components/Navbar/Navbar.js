@@ -1,9 +1,9 @@
 'use client'
-import { Link } from "@nextui-org/react";
+{/* Find alternative to useState, documentation needs updating */}
+import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import React from 'react';
-
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
+import {  Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/navbar";
 import { Gem, ChevronDown, ArrowLeftRight } from 'react-bootstrap-icons';
 import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 

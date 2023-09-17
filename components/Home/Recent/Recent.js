@@ -1,15 +1,11 @@
-'use client'
 import React from 'react';
-import { Image, Button, Link } from "@nextui-org/react";
+import { Image } from "@nextui-org/image"
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import { Book } from 'react-bootstrap-icons';
 
 function AppHomeRecent({ projects }) {
-    
-  if (!projects || projects.length === 0) {
-    return <div>Loading...</div>;
-  }
-    
   return (
     <section id='recent' className='py-5'>
       <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 mt-10'>
@@ -36,7 +32,6 @@ function AppHomeRecent({ projects }) {
             </div>
           ))}
         </div>
-
         <div className='mt-10'>
           <Link href='/projects' as={NextLink}>
             <Button size='lg' className='bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg'>

@@ -1,7 +1,9 @@
-'use client'
 import React from 'react';
 import NextLink from "next/link";
-import { Card, CardHeader, CardBody, CardFooter, Button, Chip, Link } from "@nextui-org/react";
+import {Card, CardHeader, CardBody} from "@nextui-org/card";
+import {Button} from "@nextui-org/button";
+import {Chip} from "@nextui-org/chip";
+import {Link} from "@nextui-org/link";
 import { Bezier2, CodeSlash, Tools, Server } from 'react-bootstrap-icons';
 
 function AppSkills() {

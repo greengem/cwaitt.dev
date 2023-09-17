@@ -1,7 +1,7 @@
+import "../styles/globals.css";
 import { Providers } from "./providers";
-import '../styles/globals.css';
-import AppNavbar from '../components/Navbar/Navbar';
-import AppFooter from '../components/Footer/Footer';
+import AppNavbar from "../components/Navbar/Navbar";
+import AppFooter from "../components/Footer/Footer";
 
 export default function RootLayout({ children }) {
   return (

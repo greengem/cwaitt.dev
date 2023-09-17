@@ -1,8 +1,12 @@
 import { fetchAllTechStacks } from '../../lib/contentful';
-import { Card, CardHeader, CardBody, CardFooter, Link, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/image";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 
-export default function TechStackListing({ techStacks }) {
+export default async function TechStackListing() {
+  const techStacks = await fetchTechStackData(); // Fetch tech stacks on server
+
   return (
     <section id='tech-stacks' className='pt-20'>
       <div className='max-w-screen-xl mx-auto'>
@@ -52,13 +56,10 @@ export default function TechStackListing({ techStacks }) {
   );
 }
 
-export async function getStaticProps() {
-  const techStacks = await fetchAllTechStacks();
-
-  return {
-    props: {
-      techStacks,
-    },
-    revalidate: 60,
-  };
+async function fetchTechStackData() {
+  const res = await fetchAllTechStacks(); // Call to your function from contentful lib
+  if (!res) { // or any other check you'd like to perform on the response
+    throw new Error('Failed to fetch tech stacks');
+  }
+  return res;
 }
