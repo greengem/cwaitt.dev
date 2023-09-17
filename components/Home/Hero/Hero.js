@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import NextLink from "next/link";
 import { Button, Link } from "@nextui-org/react";
-import { Github } from 'react-bootstrap-icons';
+import { Github, EyeFill } from 'react-bootstrap-icons';
 import Typed from 'typed.js';
 
 function AppHero() {

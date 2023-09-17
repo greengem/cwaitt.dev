@@ -10,26 +10,24 @@ function AppAbout() {
         <div className='container mx-auto'>
           <h1 className='custom-heading from-[#5EA2EF] to-[#0072F5]'>Behind the Code</h1>
           <AppAboutText />
-          <div className='flex flex-col md:flex-row space-y-20 md:space-y-0 md:space-x-20'>
-            <div className='w-full md:w-1/2'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-20'>
               <Image
                 as={NextImage}
+                shadow='lg'
                 width={1136}
                 height={639}
+                className='shadow-xl'
                 alt="NextUI hero Image"
-                src="https://picsum.photos/id/62/1136/639"
+                src="https://picsum.photos/id/3/1136/639"
               />
-            </div>
-
-            <div className='w-full md:w-1/2'>
               <Image
                 as={NextImage}
+                shadow='lg'
                 width={1136}
                 height={639}
                 alt="NextUI hero Image"
                 src="https://picsum.photos/id/2/1136/639"
               />
-            </div>
           </div>
         </div>
       </div>
