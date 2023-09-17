@@ -8,10 +8,9 @@ export default function TechStackListing({ techStacks }) {
       <div className='max-w-screen-xl mx-auto'>
     <div className='container mx-auto min-h-screen'>
       <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>Tech Stack</h1>
-        <div className='flex flex-wrap'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
         {techStacks.map(tech => (
-          <div key={tech.name} className='w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/3 relative max-w-full p-4'>
-            <Card shadow='lg'>
+            <Card key={tech.name} shadow='lg'>
               <CardHeader className="flex gap-3">
                 <Image
                   alt={tech.logo.description || "Tech Stack Logo"}
@@ -45,7 +44,6 @@ export default function TechStackListing({ techStacks }) {
                 </Link>
               </CardFooter>
             </Card>
-          </div>
         ))}
         </div>
         </div>

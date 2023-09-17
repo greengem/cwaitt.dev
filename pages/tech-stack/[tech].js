@@ -9,7 +9,7 @@ export default function TechStackPage({ tech, projects }) {
       <h1 className='custom-heading from-[#FF72E1] to-[#F54C7A]'>
           Projects using {tech}
         </h1>
-        <div className='flex flex-wrap'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
           {projects.map(project => (
             <ProjectCard key={project.sys.id} project={project} />
           ))}
