@@ -68,7 +68,22 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
     }`,
     isDraftMode
   )
-  console.log(entries);
+  return extractProjectEntries(entries)
+}
+
+export async function getTwoRecentProjects(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      projectCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }, limit: 2) {
+        items {
+          ${PROJECT_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
   return extractProjectEntries(entries)
 }
 
