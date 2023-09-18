@@ -46,7 +46,8 @@ export async function generateStaticParams() {
                             </section>
                         </article>
                     </div>
-                    <div className='w-full md:w-1/3 p-4'><AppSidebar /></div>
+                    <div className='w-full md:w-1/3 p-4'><AppSidebar gitHubLink={project.gitHubLink} demoUrl={project.demoUrl} />
+</div>
                 </div>
             </div>
         </section>

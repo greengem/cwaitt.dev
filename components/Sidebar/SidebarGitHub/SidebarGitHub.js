@@ -1,6 +1,12 @@
+'use client'
 import { useState, useEffect } from 'react';
 import { Github, EyeFill } from 'react-bootstrap-icons';
-import { Card, CardHeader, CardBody, CardFooter, Chip, Button, Code, Skeleton, Link } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Chip } from "@nextui-org/chip";
+import {  Button } from "@nextui-org/button";
+import { Code } from "@nextui-org/code";
+import { Skeleton } from "@nextui-org/skeleton";
+import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 
 function SidebarGitHub({ gitHubLink, demoUrl }) {
@@ -35,7 +41,6 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
     return text.slice(0, length) + '...';
   }
 
-  // If data hasn't loaded, return the Skeleton placeholders.
   if (!githubData || !latestCommit) {
     return (
       <Card className='mb-4 py-4'>
@@ -55,7 +60,6 @@ function SidebarGitHub({ gitHubLink, demoUrl }) {
     );
   }
 
-  // Otherwise, return the actual content.
   return (
     <Card className='mb-4 py-4' shadow='lg'>
       <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
