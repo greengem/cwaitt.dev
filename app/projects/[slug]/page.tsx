@@ -7,7 +7,7 @@ import { Divider } from "@nextui-org/divider";
 import { ArrowLeft } from 'react-bootstrap-icons';
 import { DescriptionRenderer } from '../../../lib/markdown'
 import { getAllProjects, getProjectAndMoreProjects } from '../../../lib/api';
-//import AppSidebar from '../../../components/Sidebar/Sidebar.js';
+import AppSidebar from '../../../components/Sidebar/Sidebar.js';
 
 export async function generateStaticParams() {
     const allProjects = await getAllProjects(false)
@@ -46,7 +46,7 @@ export async function generateStaticParams() {
                             </section>
                         </article>
                     </div>
-                    <div className='w-full md:w-1/3 p-4'>sidebar</div>
+                    <div className='w-full md:w-1/3 p-4'><AppSidebar /></div>
                 </div>
             </div>
         </section>
