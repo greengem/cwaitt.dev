@@ -1,5 +1,5 @@
 import { fetchProjectsByTechStack, fetchAllTechStackSlugs } from '../../lib/contentful';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
+//import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default function TechStackPage({ tech, projects }) {
   return (
@@ -11,7 +11,7 @@ export default function TechStackPage({ tech, projects }) {
         </h1>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
           {projects.map(project => (
-            <ProjectCard key={project.sys.id} project={project} />
+            {/*<ProjectCard key={project.sys.id} project={project} />*/}
           ))}
         </div>
       </div>
