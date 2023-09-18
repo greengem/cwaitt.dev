@@ -2,8 +2,8 @@ import {Image} from "@nextui-org/image";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+//import SyntaxHighlighter from 'react-syntax-highlighter';
+//import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 interface DescriptionAsset {
   sys: {
@@ -48,7 +48,7 @@ export function DescriptionRenderer({ description }: { description: DescriptionD
           id={node?.data?.target?.sys?.id}
           assets={description?.links?.assets?.block}
         />
-      ),      
+      ),
       [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
         <p className='text-base my-4'>{children}</p>
       ),
