@@ -1,11 +1,9 @@
+// Common project fields without the rich-text description
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   projectTitle
   date
   projectTags
-  description {
-    json
-  }
   shortDescription
   featuredImage {
     url
@@ -14,8 +12,25 @@ const PROJECT_GRAPHQL_FIELDS = `
   demoUrl
 `
 
+const PROJECT_DESCRIPTION_FIELD = `
+  description {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+          description
+        }
+      }
+    }
+  }
+`
+
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
-  return fetch(
+  const response = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
@@ -30,15 +45,17 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
       body: JSON.stringify({ query }),
       next: { tags: ['projects'] },
     }
-  ).then((response) => response.json())
+  );
+  const jsonResponse = await response.json();
+  return jsonResponse;
 }
 
 function extractProject(fetchResponse: any): any {
-  return fetchResponse?.data?.projectCollection?.items?.[0]
+  return fetchResponse?.data?.projectCollection?.items?.[0];
 }
 
 function extractProjectEntries(fetchResponse: any): any[] {
-  return fetchResponse?.data?.projectCollection?.items
+  return fetchResponse?.data?.projectCollection?.items;
 }
 
 export async function getPreviewProjectBySlug(slug: string | null): Promise<any> {
@@ -47,6 +64,7 @@ export async function getPreviewProjectBySlug(slug: string | null): Promise<any>
       projectCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
+          ${PROJECT_DESCRIPTION_FIELD}
         }
       }
     }`,
@@ -87,10 +105,7 @@ export async function getTwoRecentProjects(isDraftMode: boolean): Promise<any[]>
   return extractProjectEntries(entries)
 }
 
-export async function getProjectAndMoreProjects(
-  slug: string,
-  preview: boolean
-): Promise<any> {
+export async function getProjectAndMoreProjects(slug: string, preview: boolean): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
       projectCollection(where: { slug: "${slug}" }, preview: ${
@@ -98,6 +113,7 @@ export async function getProjectAndMoreProjects(
     }, limit: 1) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
+          ${PROJECT_DESCRIPTION_FIELD}
         }
       }
     }`,

@@ -9,8 +9,8 @@ import {Chip, Link, Divider} from "@nextui-org/react";
 
 import { ArrowLeft } from 'react-bootstrap-icons';
 
-import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProjects } from '../../lib/contentful';
-import AppSidebar from '../../components/Sidebar/Sidebar.js';
+import { fetchProjectBySlug, fetchAllProjectSlugs, fetchLatestProjects } from '../../../lib/contentful';
+import AppSidebar from '../../../components/Sidebar/Sidebar.js';
 
 
 /**
@@ -108,7 +108,7 @@ function Project({ project, latestPost }) {
                             </header>
                             <section className='mb-4'>
                                 {documentToReactComponents(description, options)}
-                                <Divider className='my-10' />
+                                
                                 <div><TechStackBadges techStackEntries={techStacks} /></div>
                                 <Link color='danger' href='/projects' as={NextLink} className='mt-10'><ArrowLeft className='mr-2' />Back to Projects</Link>
                             </section>
