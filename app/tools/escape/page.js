@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import { Textarea, Button, Code } from "@nextui-org/react";
 import { ArrowLeftRight} from 'react-bootstrap-icons';
