@@ -55,7 +55,7 @@ function Project({
             color="warning"
             className="mr-1"
           >
-            {stack.name}
+            <Link color='warning' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
           </Chip>
         ))}
       </CardFooter>
