@@ -7,20 +7,19 @@ import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
 import { Book } from 'react-bootstrap-icons';
 
-interface ProjectProps {
+interface ProjectPreviewProps {
   slug: string;
   projectTitle: string;
   shortDescription: string;
   featuredImageUrl: any;
 }
 
-function Project({
+const ProjectPreview: React.FC<ProjectPreviewProps> = ({
   slug,
   projectTitle,
   shortDescription,
   featuredImageUrl,
-}: ProjectProps) {
-  return (
+}) => (
     <div>
       <Link as={NextLink} href={`/projects/${slug}`}>
         <Image
@@ -43,9 +42,8 @@ function Project({
       </p>
     </div>
   );
-}
 
-export default async function Page() {
+export default async function RecentWork() {
   const { isEnabled } = draftMode();
   const twoProjects = await getTwoRecentProjects(isEnabled);
 
@@ -56,7 +54,7 @@ export default async function Page() {
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">My Recent Work</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {twoProjects.map((project, index) => (
-              <Project
+              <ProjectPreview
                 key={index}
                 slug={project.slug}
                 projectTitle={project.projectTitle}
