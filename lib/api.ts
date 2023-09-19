@@ -1,3 +1,13 @@
+const TECHSTACK_GRAPHQL_FIELDS = `
+  slug
+  name
+  techDescription
+  externalLink
+  logo {
+    url
+  }
+`;
+
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   projectTitle
@@ -9,7 +19,16 @@ const PROJECT_GRAPHQL_FIELDS = `
   }
   gitHubLink
   demoUrl
-`
+  techStacksCollection {
+    items {
+      ... on TechStack {
+        slug
+        name
+      }
+    }
+  }
+`;
+
 
 const PROJECT_DESCRIPTION_FIELD = `
   description {
@@ -28,16 +47,7 @@ const PROJECT_DESCRIPTION_FIELD = `
   }
 `
 
-const TECHSTACK_GRAPHQL_FIELDS = `
-  slug
-  name
-  techDescription
-  externalLink
-  logo {
-    url
-  }
 
-`
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
   const response = await fetch(
@@ -53,7 +63,6 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: ['projects'] },
     }
   );
   const jsonResponse = await response.json();
@@ -103,21 +112,19 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   return extractProjectEntries(entries)
 }
 
-export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
+export async function getAllTechStacks(): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
-      techStackCollection(where: { slug_exists: true }, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }) {
+      techStackCollection(where: { slug_exists: true }) {
         items {
           ${TECHSTACK_GRAPHQL_FIELDS}
         }
       }
-    }`,
-    isDraftMode
-  )
-  return extractTechStackEntries(entries)
+    }`
+  );
+  return extractTechStackEntries(entries);
 }
+
 
 export async function getLatestProject(isDraftMode: boolean): Promise<any> {
   const response = await fetchGraphQL(
@@ -184,39 +191,35 @@ export async function getProjectAndMoreProjects(slug: string, preview: boolean):
   }  
 }
 
-export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
+export async function getProjectsByTechStack(slug: string): Promise<any[]> {
   // Fetch the tech stack first based on slug to get its ID
   const techStack = await fetchGraphQL(
     `query {
-      techStackCollection(where: { slug: "${slug}" }, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }, limit: 1) {
+      techStackCollection(where: { slug: "${slug}" }, limit: 1) {
         items {
           sys {
             id
           }
         }
       }
-    }`,
-    isDraftMode
+    }`
   );
 
   const techStackId = techStack?.data?.techStackCollection?.items?.[0]?.sys?.id;
   
+  // If there's no techStackId found, return an empty array
+  if (!techStackId) return [];
+
   // Fetch projects that contain the tech stack with the given ID
   const projects = await fetchGraphQL(
     `query {
-      projectCollection(where: { techStacks: { sys: { id: "${techStackId}" } } }, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }) {
+      projectCollection(where: { techStacks: { sys: { id: "${techStackId}" } } }) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
         }
       }
-    }`,
-    isDraftMode
+    }`
   );
 
   return extractProjectEntries(projects);
 }
-
