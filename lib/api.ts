@@ -183,3 +183,40 @@ export async function getProjectAndMoreProjects(slug: string, preview: boolean):
     moreProjects: extractProjectEntries(entries),
   }  
 }
+
+export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
+  // Fetch the tech stack first based on slug to get its ID
+  const techStack = await fetchGraphQL(
+    `query {
+      techStackCollection(where: { slug: "${slug}" }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }, limit: 1) {
+        items {
+          sys {
+            id
+          }
+        }
+      }
+    }`,
+    isDraftMode
+  );
+
+  const techStackId = techStack?.data?.techStackCollection?.items?.[0]?.sys?.id;
+  
+  // Fetch projects that contain the tech stack with the given ID
+  const projects = await fetchGraphQL(
+    `query {
+      projectCollection(where: { techStacks: { sys: { id: "${techStackId}" } } }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
+        items {
+          ${PROJECT_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  );
+
+  return extractProjectEntries(projects);
+}
+
