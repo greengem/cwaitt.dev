@@ -1,13 +1,11 @@
 import React from 'react';
-//import SidebarAboutMe from './SidebarAboutMe/SidebarAboutMe';
 import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
 import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
 
-function AppSidebar({ gitHubLink, demoUrl }) {
+function AppSidebar({ githubData, demoUrl, latestCommit }) {
   return (
     <div className="sidebar">
-        {/*<SidebarAboutMe />*/}
-        <SidebarGitHub gitHubLink={gitHubLink} demoUrl={demoUrl} />
+        <SidebarGitHub githubData={githubData} demoUrl={demoUrl} latestCommit={latestCommit} />
         <SidebarLatestPost />
     </div>
   );

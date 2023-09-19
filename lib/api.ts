@@ -160,6 +160,25 @@ export async function getTwoRecentProjects(isDraftMode: boolean): Promise<any[]>
   return extractProjectEntries(entries)
 }
 
+export async function fetchProjectsByTechStack(techStackSlug: string, isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      projectCollection(
+        where: { techStacksCollection_contains: { slug: "${techStackSlug}" } },
+        order: date_DESC,
+        preview: ${isDraftMode ? 'true' : 'false'}
+      ) {
+        items {
+          ${PROJECT_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
+  return extractProjectEntries(entries);
+}
+
+
 export async function getProjectAndMoreProjects(slug: string, preview: boolean): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
@@ -190,37 +209,4 @@ export async function getProjectAndMoreProjects(slug: string, preview: boolean):
     project: extractProject(entry),
     moreProjects: extractProjectEntries(entries),
   }  
-}
-
-export async function getProjectsByTechStack(slug: string): Promise<any[]> {
-  // Fetch the tech stack first based on slug to get its ID
-  const techStack = await fetchGraphQL(
-    `query {
-      techStackCollection(where: { slug: "${slug}" }, limit: 1) {
-        items {
-          sys {
-            id
-          }
-        }
-      }
-    }`
-  );
-
-  const techStackId = techStack?.data?.techStackCollection?.items?.[0]?.sys?.id;
-  
-  // If there's no techStackId found, return an empty array
-  if (!techStackId) return [];
-
-  // Fetch projects that contain the tech stack with the given ID
-  const projects = await fetchGraphQL(
-    `query {
-      projectCollection(where: { techStacks: { sys: { id: "${techStackId}" } } }) {
-        items {
-          ${PROJECT_GRAPHQL_FIELDS}
-        }
-      }
-    }`
-  );
-
-  return extractProjectEntries(projects);
 }

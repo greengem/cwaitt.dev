@@ -6,7 +6,7 @@ import { Divider } from '@nextui-org/divider';
 import { ArrowLeft } from 'react-bootstrap-icons';
 import { DescriptionRenderer } from '../../../lib/markdown';
 import { getAllProjects, getProjectAndMoreProjects } from '../../../lib/api';
-import AppSidebar from '../../../components/Sidebar/Sidebar.js';
+import AppSidebar from '../../../components/Sidebar/Sidebar';
 
 export const dynamicParams = true;
 
@@ -20,8 +20,33 @@ async function getProjectData(params: { slug: string }) {
   return await getProjectAndMoreProjects(params.slug, isEnabled);
 }
 
+function convertToApiUrl(gitHubUrl: string): string {
+  return gitHubUrl.replace('https://github.com/', 'https://api.github.com/repos/');
+}
+
+async function fetchGithubData(apiUrl: string) {
+  const res = await fetch(apiUrl, { cache: 'force-cache' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch GitHub data');
+  }
+  return res.json();
+}
+
+async function fetchLatestCommitMessage(apiUrl: string) {
+  const res = await fetch(`${apiUrl}/commits`, { cache: 'force-cache' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch latest commit');
+  }
+  const commits = await res.json();
+  return commits[0].commit.message; // Return the message of the latest commit
+}
+
+
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   const { project, moreProjects } = await getProjectData(params);
+  const githubApiUrl = convertToApiUrl(project.gitHubLink);
+  const githubData = await fetchGithubData(githubApiUrl);
+  const latestCommitMessage = await fetchLatestCommitMessage(githubApiUrl);
 
   return (
     <section id="project">
@@ -63,10 +88,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             </article>
           </div>
           <div className="w-full md:w-1/3 p-4">
-            <AppSidebar
-              gitHubLink={project.gitHubLink}
-              demoUrl={project.demoUrl}
-            />
+          <AppSidebar githubData={githubData} demoUrl={project.demoUrl} latestCommit={latestCommitMessage} />
           </div>
         </div>
       </div>
