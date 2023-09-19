@@ -8,24 +8,20 @@ import { DescriptionRenderer } from '../../../lib/markdown';
 import { getAllProjects, getProjectAndMoreProjects } from '../../../lib/api';
 import AppSidebar from '../../../components/Sidebar/Sidebar.js';
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const allProjects = await getAllProjects(false);
-
-  return allProjects.map((project) => ({
-    slug: project.slug,
-  }));
+  return allProjects.map((project) => ({ slug: project.slug }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+async function getProjectData(params: { slug: string }) {
   const { isEnabled } = draftMode();
-  const { project, moreProjects } = await getProjectAndMoreProjects(
-    params.slug,
-    isEnabled
-  );
+  return await getProjectAndMoreProjects(params.slug, isEnabled);
+}
+
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const { project, moreProjects } = await getProjectData(params);
 
   return (
     <section id="project">

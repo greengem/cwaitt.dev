@@ -76,16 +76,17 @@ export default async function Page() {
           </h1>
           <div className="pb-5">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-              {allProjects.map((project, index) => (
-                <Project
-                  key={index}
-                  slug={project.slug}
-                  projectTitle={project.projectTitle}
-                  shortDescription={project.shortDescription}
-                  featuredImageUrl={project.featuredImage.url}
-                  techStacks={project.techStacksCollection.items}
-                />
-              ))}
+            {allProjects.map((project) => (
+              <Project
+                key={project.slug}  // Here's the change
+                slug={project.slug}
+                projectTitle={project.projectTitle}
+                shortDescription={project.shortDescription}
+                featuredImageUrl={project.featuredImage.url}
+                techStacks={project.techStacksCollection.items}
+              />
+            ))}
+
             </div>
           </div>
         </div>
