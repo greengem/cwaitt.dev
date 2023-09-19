@@ -112,19 +112,21 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   return extractProjectEntries(entries)
 }
 
-export async function getAllTechStacks(): Promise<any[]> {
+export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
-      techStackCollection(where: { slug_exists: true }) {
+      techStackCollection(where: { slug_exists: true }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
         items {
           ${TECHSTACK_GRAPHQL_FIELDS}
         }
       }
-    }`
-  );
-  return extractTechStackEntries(entries);
+    }`,
+    isDraftMode
+  )
+  return extractTechStackEntries(entries)
 }
-
 
 export async function getLatestProject(isDraftMode: boolean): Promise<any> {
   const response = await fetchGraphQL(
@@ -141,7 +143,6 @@ export async function getLatestProject(isDraftMode: boolean): Promise<any> {
   );
   return extractProject(response);
 }
-
 
 export async function getTwoRecentProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
