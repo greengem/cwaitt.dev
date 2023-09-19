@@ -3,6 +3,7 @@ import { getAllProjects } from '../../lib/api';
 
 import NextLink from "next/link";
 import NextImage from "next/image";
+
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 //import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
@@ -39,23 +40,6 @@ function Project({
       </Link>
       <p className="card-text mt-5 text-sm">{shortDescription}</p>
     </CardBody>
-    {/*
-    <CardFooter className='px-5'>
-        <div className="flex flex-wrap">
-            {project.fields.techStacks.map((techEntry, index) => (
-                <Link as={NextLink} href={`/tech-stack/${techEntry.fields.slug}`} key={index}>
-                    <Chip
-                        variant="dot"
-                        size="sm"
-                        color={index === 0 ? "danger" : "secondary"}
-                        className="me-1"
-                    >
-                        {techEntry.fields.name}
-                    </Chip>
-                </Link>
-            ))}
-        </div>
-            </CardFooter> */}
 </Card>
   );
 }

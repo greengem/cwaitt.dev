@@ -1,4 +1,3 @@
-// Common project fields without the rich-text description
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   projectTitle
@@ -27,6 +26,17 @@ const PROJECT_DESCRIPTION_FIELD = `
       }
     }
   }
+`
+
+const TECHSTACK_GRAPHQL_FIELDS = `
+  slug
+  name
+  techDescription
+  externalLink
+  logo {
+    url
+  }
+
 `
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
@@ -58,6 +68,10 @@ function extractProjectEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.projectCollection?.items;
 }
 
+function extractTechStackEntries(fetchResponse: any): any[] {
+  return fetchResponse?.data?.techStackCollection?.items;
+}
+
 export async function getPreviewProjectBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
@@ -87,6 +101,22 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
     isDraftMode
   )
   return extractProjectEntries(entries)
+}
+
+export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      techStackCollection(where: { slug_exists: true }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
+        items {
+          ${TECHSTACK_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
+  return extractTechStackEntries(entries)
 }
 
 export async function getLatestProject(isDraftMode: boolean): Promise<any> {
