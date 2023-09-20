@@ -1,13 +1,13 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
 import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
 import { Divider } from '@nextui-org/divider';
 import { ArrowLeft } from 'react-bootstrap-icons';
-import { DescriptionRenderer } from '../../../lib/markdown';
 import { getAllProjects, getProjectAndMoreProjects } from '../../../lib/api';
 import AppSidebar from '../../../components/Sidebar/Sidebar';
+import {RichTextRenderer} from '../../../lib/markdown';
 
 export const dynamicParams = true;
 
@@ -39,9 +39,8 @@ async function fetchLatestCommitMessage(apiUrl: string) {
     throw new Error('Failed to fetch latest commit');
   }
   const commits = await res.json();
-  return commits[0].commit.message; // Return the message of the latest commit
+  return commits[0].commit.message;
 }
-
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   const { project, moreProjects } = await getProjectData(params);
@@ -64,8 +63,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 </h1>
               </header>
               <section className="mb-4">
-                <DescriptionRenderer description={project.description} />
-
+              <RichTextRenderer description={project.description} />
                 <Divider className="my-10" />
                 <div className="flex flex-wrap gap-2">
                   {project.techStacksCollection.items.map((techStack) => (
@@ -92,7 +90,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             </article>
           </div>
           <div className="w-full md:w-1/3 p-4">
-          <AppSidebar githubData={githubData} demoUrl={project.demoUrl} latestCommit={latestCommitMessage} />
+            <AppSidebar githubData={githubData} demoUrl={project.demoUrl} latestCommit={latestCommitMessage} />
           </div>
         </div>
       </div>

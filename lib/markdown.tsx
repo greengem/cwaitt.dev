@@ -1,4 +1,5 @@
 import {Image} from "@nextui-org/image";
+import {Code} from "@nextui-org/code";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
@@ -34,13 +35,13 @@ function RichTextAsset({
   const asset = assets?.find((asset) => asset.sys.id === id);
 
   if (asset?.url) {
-    return <Image as={NextImage} src={asset.url} layout="fill" alt={asset.description} />;
+    return <Image as={NextImage} src={asset.url} width={800} height={600} alt={asset.description} shadow="lg" />;
   }
 
   return null;
 }
 
-export function DescriptionRenderer({ description }: { description: DescriptionData }) {
+export function RichTextRenderer({ description }: { description: DescriptionData }) {
   return documentToReactComponents(description.json, {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
@@ -49,6 +50,25 @@ export function DescriptionRenderer({ description }: { description: DescriptionD
           assets={description?.links?.assets?.block}
         />
       ),
+
+      
+      [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
+        const language = node.data.target.fields && node.data.target.fields.language;
+        const code = node.data.target.fields && node.data.target.fields.code;
+      
+        // Check if both language and code are defined before rendering
+        if (language && code) {
+          return <Code>{language} code={code}</Code>;
+        } else {
+          // Handle the case where language or code is not defined
+          return <Code>Code snippet pending</Code>;
+        }
+      },
+      
+      
+      
+      
+
       [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
         <p className='text-base my-4'>{children}</p>
       ),
@@ -71,7 +91,7 @@ export function DescriptionRenderer({ description }: { description: DescriptionD
         <ol className='pl-5 my-4'>{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => (
-        <li className='my-2'>{children}</li>
+        <li style={{ marginLeft: '1.5rem' }} className='my-2'>{children}</li>
       ),
     },
   });
