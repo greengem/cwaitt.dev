@@ -47,7 +47,8 @@ const PROJECT_DESCRIPTION_FIELD = `
   }
 `
 
-async function fetchGraphQL(query: string, preview = false): Promise<any> {
+
+async function fetchGraphQL(query: string, preview = false, variables?: any): Promise<any> {
   try {
     const response = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -61,7 +62,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
               : process.env.CONTENTFUL_ACCESS_TOKEN
           }`,
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, variables }), // Include variables in the request body
       }
     );
 
@@ -77,6 +78,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
   }
 }
 
+
 function extractProject(fetchResponse: any): any {
   return fetchResponse?.data?.projectCollection?.items?.[0];
 }
@@ -88,6 +90,7 @@ function extractProjectEntries(fetchResponse: any): any[] {
 function extractTechStackEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.techStackCollection?.items;
 }
+
 
 export async function getPreviewProjectBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
@@ -103,6 +106,39 @@ export async function getPreviewProjectBySlug(slug: string | null): Promise<any>
   )
   return extractProject(entry)
 }
+
+export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
+  const query = `
+  query ProjectsByTechStack($techStackSlug: String!) {
+    projectCollection(where: {
+      techStacks:{
+        slug: $techStackSlug
+      }
+    }) {
+      items {
+        slug
+        projectTitle
+        featuredImage {
+          url
+        }
+        shortDescription
+        techStacksCollection {
+          items {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+  const response = await fetchGraphQL(query, isDraftMode, { techStackSlug: slug });
+  return response?.data?.projectCollection?.items || [];
+}
+
+
+
+
 
 export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
@@ -166,24 +202,6 @@ export async function getTwoRecentProjects(isDraftMode: boolean): Promise<any[]>
     isDraftMode
   )
   return extractProjectEntries(entries)
-}
-
-export async function fetchProjectsByTechStack(techStackSlug: string, isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(
-    `query {
-      projectCollection(
-        where: { techStacksCollection_contains: { slug: "${techStackSlug}" } },
-        order: date_DESC,
-        preview: ${isDraftMode ? 'true' : 'false'}
-      ) {
-        items {
-          ${PROJECT_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    isDraftMode
-  )
-  return extractProjectEntries(entries);
 }
 
 
