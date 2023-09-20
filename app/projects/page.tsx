@@ -43,6 +43,7 @@ function Project({
             className="object-cover rounded-xl"
             width={1268}
             height={951}
+            alt={`Image for ${projectTitle}`}
           />
         </Link>
         <p className="card-text mt-5 text-sm">{shortDescription}</p>

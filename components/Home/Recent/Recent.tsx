@@ -26,6 +26,7 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
           width={1136}
           shadow="lg"
           height={639}
+          alt={`Image for ${projectTitle}`}
           src={`${featuredImageUrl}?fit=fill&w=1136&h=639`}
         />
       </Link>
