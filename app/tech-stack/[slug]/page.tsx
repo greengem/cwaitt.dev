@@ -1,5 +1,5 @@
 import { draftMode } from 'next/headers';
-import { getAllProjects } from '../../../lib/api';
+import { getProjectsByTechStack } from '../../../lib/api';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
 import {
@@ -63,30 +63,30 @@ function Project({
   );
 }
 
-export default async function Page() {
+export default async function TechStackSlugPage({ params }) {
   const { isEnabled } = draftMode();
-  const allProjects = await getAllProjects(isEnabled);
+  const projects = await getProjectsByTechStack(params.slug, isEnabled);
 
   return (
     <section id="projects" className="pt-20">
       <div className="max-w-screen-xl mx-auto">
         <div className="container mx-auto mb-20">
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">
-            My Projects
+            Projects with Tech Stack: {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
           </h1>
+
           <div className="pb-5">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-            {allProjects.map((project) => (
-              <Project
-                key={project.slug}  // Here's the change
-                slug={project.slug}
-                projectTitle={project.projectTitle}
-                shortDescription={project.shortDescription}
-                featuredImageUrl={project.featuredImage.url}
-                techStacks={project.techStacksCollection.items}
-              />
-            ))}
-
+              {projects.map((project) => (
+                <Project
+                  key={project.slug}
+                  slug={project.slug}
+                  projectTitle={project.projectTitle}
+                  shortDescription={project.shortDescription}
+                  featuredImageUrl={project.featuredImage.url}
+                  techStacks={project.techStacksCollection.items}
+                />
+              ))}
             </div>
           </div>
         </div>

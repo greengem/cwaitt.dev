@@ -67,8 +67,7 @@ export default async function RecentWork() {
             <Link href="/projects" as={NextLink}>
               <Button
                 size="lg"
-                className="bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg"
-              >
+                className="bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg">
                 <Book />View My Work
               </Button>
             </Link>
