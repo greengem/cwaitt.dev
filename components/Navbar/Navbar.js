@@ -1,5 +1,4 @@
 'use client'
-{/* Find alternative to useState, documentation needs updating */}
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import React from 'react';
