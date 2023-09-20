@@ -1,5 +1,5 @@
 import { draftMode } from 'next/headers';
-import { getProjectsByTechStack } from '../../../lib/api';
+import { getProjectsByTechStack, getAllTechStacks } from '../../../lib/api';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
 import {
@@ -11,6 +11,20 @@ import {
 import { Chip } from '@nextui-org/chip';
 import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
+
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const allTechStacks = await getAllTechStacks(false); // Fetch non-draft data
+  return allTechStacks.map((project) => ({ slug: project.slug }));
+}
+
+async function getTechStackData(slug: string) {
+  // Fetch project data without relying on draft mode
+  return await getProjectsByTechStack(slug, false); // Assuming 'false' for non-draft mode
+}
+
+
 
 interface ProjectProps {
   slug: string;
@@ -65,15 +79,14 @@ function Project({
 }
 
 export default async function TechStackSlugPage({ params }) {
-  const { isEnabled } = draftMode();
-  const projects = await getProjectsByTechStack(params.slug, isEnabled);
+  const projects = await getTechStackData(params.slug);
 
   return (
     <section id="projects" className="pt-20">
       <div className="max-w-screen-xl mx-auto">
         <div className="container mx-auto mb-20">
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">
-            Projects with Tech Stack: {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
+            Projects using {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
           </h1>
 
           <div className="pb-5">
