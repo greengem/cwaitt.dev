@@ -1,4 +1,4 @@
-import { draftMode } from 'next/headers';
+import { notFound } from 'next/navigation'
 import { getProjectsByTechStack, getAllTechStacks } from '../../../lib/api';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
@@ -15,17 +15,13 @@ import { Link } from '@nextui-org/link';
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const allTechStacks = await getAllTechStacks(false); // Fetch non-draft data
+  const allTechStacks = await getAllTechStacks(false);
   return allTechStacks.map((project) => ({ slug: project.slug }));
 }
 
 async function getTechStackData(slug: string) {
-  // Fetch project data without relying on draft mode
-  return await getProjectsByTechStack(slug, false); // Assuming 'false' for non-draft mode
+  return await getProjectsByTechStack(slug, false);
 }
-
-
-
 interface ProjectProps {
   slug: string;
   projectTitle: string;
@@ -80,7 +76,9 @@ function Project({
 
 export default async function TechStackSlugPage({ params }) {
   const projects = await getTechStackData(params.slug);
-
+  if (!projects || projects.length === 0) {
+    return notFound();
+  }
   return (
     <section id="projects" className="pt-20">
       <div className="max-w-screen-xl mx-auto">

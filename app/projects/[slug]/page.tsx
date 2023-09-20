@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers';
 import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
@@ -44,6 +45,9 @@ async function fetchLatestCommitMessage(apiUrl: string) {
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   const { project, moreProjects } = await getProjectData(params);
+  if (!project) {
+    return notFound();
+  }
   const githubApiUrl = convertToApiUrl(project.gitHubLink);
   const githubData = await fetchGithubData(githubApiUrl);
   const latestCommitMessage = await fetchLatestCommitMessage(githubApiUrl);
