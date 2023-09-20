@@ -47,26 +47,34 @@ const PROJECT_DESCRIPTION_FIELD = `
   }
 `
 
-
-
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
-  const response = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
-        }`,
-      },
-      body: JSON.stringify({ query }),
+  try {
+    const response = await fetch(
+      `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${
+            preview
+              ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+              : process.env.CONTENTFUL_ACCESS_TOKEN
+          }`,
+        },
+        body: JSON.stringify({ query }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from Contentful');
     }
-  );
-  const jsonResponse = await response.json();
-  return jsonResponse;
+
+    const jsonResponse = await response.json();
+    return jsonResponse;
+  } catch (error) {
+    console.error('Error fetching data from Contentful:', error);
+    throw error;
+  }
 }
 
 function extractProject(fetchResponse: any): any {
