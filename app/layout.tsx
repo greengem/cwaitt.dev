@@ -15,9 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <AppNavbar />
-            <main>
               {children}
-            </main>
           <AppFooter />
         </Providers>
       </body>

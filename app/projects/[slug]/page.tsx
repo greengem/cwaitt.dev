@@ -45,7 +45,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     getLatestProject(isEnabled)
   ]);
 
-
   if (!project) {
     return notFound();
   }

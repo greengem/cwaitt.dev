@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation'
 import { getProjectsByTechStack, getAllTechStacks } from '../../../lib/api';
 import ProjectCard from '../../../components/ProjectCard/ProjectCard';

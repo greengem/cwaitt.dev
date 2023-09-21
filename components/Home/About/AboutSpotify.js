@@ -29,7 +29,7 @@ export default function AppAboutSpotify() {
 
   return (
     <div className="spotify-embed-container">
-      <div style={{ borderRadius: '15px', overflow: 'hidden' }}>
+      <div>
       <iframe 
         ref={iframeRef}  // Add this ref attribute
         className="spotify-embed"

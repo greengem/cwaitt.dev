@@ -11,7 +11,7 @@ export default function AppHero() {
   useEffect(() => {
     const options = {
       strings: [
-        'Hello,^1000 I&apos;m <span class="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>'
+        'Hello,^1000 I&apos;m <span className="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>'
       ],
       typeSpeed: 50,
       backSpeed: 50,

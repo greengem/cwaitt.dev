@@ -91,7 +91,7 @@ export function RichTextRenderer({ description }: { description: DescriptionData
         <ol className='pl-5 my-4'>{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => (
-        <li style={{ marginLeft: '1.5rem' }} className='my-2'>{children}</li>
+        <li className='my-2'>{children}</li>
       ),
     },
   });
