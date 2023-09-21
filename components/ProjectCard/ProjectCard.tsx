@@ -51,12 +51,12 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <CardFooter className="px-5">
         {techStacks.map((stack) => (
           <Chip
+            size='sm'
             key={stack.slug}
-            variant="bordered"
-            color="warning"
-            className="mr-1"
+            color="default"
+            className="mr-2"
           >
-            <Link color='warning' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
+            <Link className='text-sm' color='foreground' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
           </Chip>
         ))}
       </CardFooter>
