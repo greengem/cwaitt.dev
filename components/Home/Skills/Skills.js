@@ -1,4 +1,3 @@
-import React from 'react';
 import NextLink from "next/link";
 import {Card, CardHeader, CardBody} from "@nextui-org/card";
 import {Button} from "@nextui-org/button";

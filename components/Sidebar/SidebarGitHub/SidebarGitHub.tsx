@@ -1,4 +1,3 @@
-import React from 'react';
 import { UilGithub } from '@iconscout/react-unicons'
 import { UilEye } from '@iconscout/react-unicons'
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";

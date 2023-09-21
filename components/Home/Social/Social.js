@@ -1,4 +1,3 @@
-import React from 'react';
 import {Card, CardHeader} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
 

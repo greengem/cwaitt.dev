@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function AppAboutText() {
   return (
 <div className="about-me">

@@ -1,4 +1,3 @@
-import React from 'react';
 import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
 import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
 

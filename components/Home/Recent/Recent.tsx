@@ -1,5 +1,4 @@
 import { draftMode } from 'next/headers';
-import React from 'react';
 import { getTwoRecentProjects } from '../../../lib/api';
 import { Image } from '@nextui-org/image';
 import { Button } from '@nextui-org/button';
