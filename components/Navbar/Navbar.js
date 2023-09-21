@@ -6,7 +6,7 @@ import {  Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navb
 import { Gem, ChevronDown, ArrowLeftRight } from 'react-bootstrap-icons';
 import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 
-function AppNavbar() {
+export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const icons = {
     arrowlr: <ArrowLeftRight />,
@@ -43,5 +43,3 @@ function AppNavbar() {
     </Navbar>
   );
 }
-
-export default AppNavbar;

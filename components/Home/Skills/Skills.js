@@ -6,7 +6,7 @@ import {Chip} from "@nextui-org/chip";
 import {Link} from "@nextui-org/link";
 import { Bezier2, CodeSlash, Tools, Server } from 'react-bootstrap-icons';
 
-function AppSkills() {
+export default function AppSkills() {
   return (
     <section id='skills' className="py-5">
       <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 mt-10 '>
@@ -54,5 +54,3 @@ function AppSkills() {
     </section>
   );
 }
-
-export default AppSkills;

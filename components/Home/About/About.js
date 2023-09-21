@@ -3,7 +3,7 @@ import {Image} from "@nextui-org/image";
 import NextImage from "next/image";
 import AppAboutText from './AboutText.js';
 
-function AppAbout() {
+export default function AppAbout() {
   return (
     <section id='about' className="about-container py-5">
       <div className='max-w-screen-xl mx-auto mb-20 mt-10'>
@@ -35,4 +35,3 @@ function AppAbout() {
   );
 }
 
-export default AppAbout;

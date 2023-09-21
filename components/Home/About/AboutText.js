@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AppAboutText() {
+export default function AppAboutText() {
   return (
 <div className="about-me">
     <p className="mb-4">
@@ -23,5 +23,3 @@ function AppAboutText() {
 
   );
 }
-
-export default AppAboutText;

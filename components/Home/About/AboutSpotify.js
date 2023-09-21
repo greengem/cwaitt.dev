@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function AppAboutSpotify() {
+export default function AppAboutSpotify() {
   const iframeRef = useRef(null);
 
   useEffect(() => {
@@ -45,6 +45,3 @@ function AppAboutSpotify() {
     </div>
   );
 }
-
-export default AppAboutSpotify;
-

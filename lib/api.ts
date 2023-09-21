@@ -107,39 +107,6 @@ export async function getPreviewProjectBySlug(slug: string | null): Promise<any>
   return extractProject(entry)
 }
 
-export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
-  const query = `
-  query ProjectsByTechStack($techStackSlug: String!) {
-    projectCollection(where: {
-      techStacks:{
-        slug: $techStackSlug
-      }
-    }) {
-      items {
-        slug
-        projectTitle
-        featuredImage {
-          url
-        }
-        shortDescription
-        techStacksCollection {
-          items {
-            name
-          }
-        }
-      }
-    }
-  }
-`;
-
-  const response = await fetchGraphQL(query, isDraftMode, { techStackSlug: slug });
-  return response?.data?.projectCollection?.items || [];
-}
-
-
-
-
-
 export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
@@ -154,22 +121,6 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
     isDraftMode
   )
   return extractProjectEntries(entries)
-}
-
-export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(
-    `query {
-      techStackCollection(where: { slug_exists: true }, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }) {
-        items {
-          ${TECHSTACK_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    isDraftMode
-  )
-  return extractTechStackEntries(entries)
 }
 
 export async function getLatestProject(isDraftMode: boolean): Promise<any> {
@@ -235,4 +186,49 @@ export async function getProjectAndMoreProjects(slug: string, preview: boolean):
     project: extractProject(entry),
     moreProjects: extractProjectEntries(entries),
   }  
+}
+
+export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      techStackCollection(where: { slug_exists: true }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
+        items {
+          ${TECHSTACK_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
+  return extractTechStackEntries(entries)
+}
+
+export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
+  const query = `
+  query ProjectsByTechStack($techStackSlug: String!) {
+    projectCollection(where: {
+      techStacks:{
+        slug: $techStackSlug
+      }
+    }) {
+      items {
+        slug
+        projectTitle
+        featuredImage {
+          url
+        }
+        shortDescription
+        techStacksCollection {
+          items {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+  const response = await fetchGraphQL(query, isDraftMode, { techStackSlug: slug });
+  return response?.data?.projectCollection?.items || [];
 }

@@ -5,7 +5,7 @@ import { Button, Link } from "@nextui-org/react";
 import { Github, EyeFill } from 'react-bootstrap-icons';
 import Typed from 'typed.js';
 
-function AppHero() {
+export default function AppHero() {
   const typeRef = useRef(null);
 
   useEffect(() => {
@@ -54,5 +54,3 @@ function AppHero() {
     </section>
   );
 }
-
-export default AppHero;

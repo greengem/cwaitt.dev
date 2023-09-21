@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "@nextui-org/link";
 import NextLink from "next/link";
 
-function AppFooter() {
+export default function AppFooter() {
   return (
     <section id="footer">
         <footer className="bg-[#121212] text-white py-20">
@@ -32,5 +32,3 @@ function AppFooter() {
     </section>
   );
 }
-
-export default AppFooter;

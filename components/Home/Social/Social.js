@@ -5,7 +5,7 @@ import {Link} from "@nextui-org/link";
 import { Github, Linkedin, Twitter, Instagram } from 'react-bootstrap-icons';
 import NextLink from "next/link";
 
-function AppSocial() {
+export default function AppSocial() {
 
     const socialCards = [
         {
@@ -53,5 +53,3 @@ function AppSocial() {
         </section>
     );
 }
-
-export default AppSocial;
