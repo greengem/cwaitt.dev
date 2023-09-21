@@ -5,7 +5,14 @@ import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
 import { Divider } from '@nextui-org/divider';
 import { ArrowLeft } from 'react-bootstrap-icons';
-import { getAllProjects, getProjectAndMoreProjects } from '../../../lib/api';
+import {
+  getAllProjects,
+  getProjectAndMoreProjects,
+  getLatestProject,
+  convertToApiUrl,
+  fetchGithubData,
+  fetchLatestCommitMessage,
+} from '../../../lib/api';
 import AppSidebar from '../../../components/Sidebar/Sidebar';
 import {RichTextRenderer} from '../../../lib/markdown';
 
@@ -21,36 +28,27 @@ async function getProjectData(params: { slug: string }) {
   return await getProjectAndMoreProjects(params.slug, isEnabled);
 }
 
-function convertToApiUrl(gitHubUrl: string): string {
-  return gitHubUrl.replace('https://github.com/', 'https://api.github.com/repos/');
-}
-
-async function fetchGithubData(apiUrl: string) {
-  const res = await fetch(apiUrl, { cache: 'force-cache' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch GitHub data');
-  }
-  return res.json();
-}
-
-async function fetchLatestCommitMessage(apiUrl: string) {
-  const res = await fetch(`${apiUrl}/commits`, { cache: 'force-cache' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch latest commit');
-  }
-  const commits = await res.json();
-  return commits[0].commit.message;
-}
-
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const { isEnabled } = draftMode();
+  
   const { project, moreProjects } = await getProjectData(params);
+  
   if (!project) {
     return notFound();
   }
-  const githubApiUrl = convertToApiUrl(project.gitHubLink);
-  const githubData = await fetchGithubData(githubApiUrl);
-  const latestCommitMessage = await fetchLatestCommitMessage(githubApiUrl);
 
+  const githubApiUrl = convertToApiUrl(project.gitHubLink);
+
+  const [ githubData, latestCommitMessage, latestProject ] = await Promise.all([
+    fetchGithubData(githubApiUrl),
+    fetchLatestCommitMessage(githubApiUrl),
+    getLatestProject(isEnabled)
+  ]);
+
+
+  if (!project) {
+    return notFound();
+  }
   return (
     <section id="project">
       <div className="max-w-screen-xl container mx-auto mt-10 min-h-screen mb-20">
@@ -90,7 +88,12 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             </article>
           </div>
           <div className="w-full md:w-1/3 p-4">
-            <AppSidebar githubData={githubData} demoUrl={project.demoUrl} latestCommit={latestCommitMessage} />
+          <AppSidebar 
+              githubData={githubData} 
+              demoUrl={project.demoUrl} 
+              latestCommit={latestCommitMessage}
+              latestProject={latestProject} 
+            />
           </div>
         </div>
       </div>

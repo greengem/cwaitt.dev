@@ -1,3 +1,4 @@
+//Contentful GraphQL Schema
 const TECHSTACK_GRAPHQL_FIELDS = `
   slug
   name
@@ -47,6 +48,7 @@ const PROJECT_DESCRIPTION_FIELD = `
   }
 `
 
+//Contentful Client
 
 async function fetchGraphQL(query: string, preview = false, variables?: any): Promise<any> {
   try {
@@ -78,6 +80,7 @@ async function fetchGraphQL(query: string, preview = false, variables?: any): Pr
   }
 }
 
+//Contentful API Calls
 
 function extractProject(fetchResponse: any): any {
   return fetchResponse?.data?.projectCollection?.items?.[0];
@@ -90,7 +93,6 @@ function extractProjectEntries(fetchResponse: any): any[] {
 function extractTechStackEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.techStackCollection?.items;
 }
-
 
 export async function getPreviewProjectBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
@@ -231,4 +233,27 @@ export async function getProjectsByTechStack(slug: string, isDraftMode: boolean)
 
   const response = await fetchGraphQL(query, isDraftMode, { techStackSlug: slug });
   return response?.data?.projectCollection?.items || [];
+}
+
+//Github API Calls
+
+export function convertToApiUrl(gitHubUrl: string): string {
+  return gitHubUrl.replace('https://github.com/', 'https://api.github.com/repos/');
+}
+
+export async function fetchGithubData(apiUrl: string) {
+  const res = await fetch(apiUrl, { cache: 'force-cache' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch GitHub data');
+  }
+  return res.json();
+}
+
+export async function fetchLatestCommitMessage(apiUrl: string) {
+  const res = await fetch(`${apiUrl}/commits`, { cache: 'force-cache' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch latest commit');
+  }
+  const commits = await res.json();
+  return commits[0].commit.message;
 }
