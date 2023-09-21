@@ -2,20 +2,21 @@ import React from 'react';
 import {Card, CardHeader} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
 
-import { Github, Linkedin, Twitter, Instagram } from 'react-bootstrap-icons';
+import { UilGithub } from '@iconscout/react-unicons'
+import { UilLinkedin } from '@iconscout/react-unicons'
 import NextLink from "next/link";
 
 export default function AppSocial() {
 
     const socialCards = [
         {
-            icon: Linkedin,
+            icon: UilLinkedin,
             title: "Linkedin",
             link: "https://www.linkedin.com/in/chriswaitt/",
             username: "@chriswaitt",
         },
         {
-            icon: Github,
+            icon: UilGithub,
             title: "Github",
             link: "https://github.com/greengem",
             username: "@greengem",

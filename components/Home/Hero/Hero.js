@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import NextLink from "next/link";
 import { Button, Link } from "@nextui-org/react";
-import { Github, EyeFill } from 'react-bootstrap-icons';
+import { UilGithub } from '@iconscout/react-unicons'
 import Typed from 'typed.js';
 
 export default function AppHero() {
@@ -47,7 +47,7 @@ export default function AppHero() {
           <p className='text-lg md:text-xl tracking-tight mb-6'>Front-End Developer | UI/UX Enthusiast</p>
           <div>
             <Link as={NextLink} href="/projects"><Button size="lg" className='mx-1 bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8]  text-white shadow-lg'>View My Work</Button></Link>
-            <Link as={NextLink} href="https://github.com/greengem" isExternal><Button color='default' size="lg" className='mx-1' variant="bordered"><Github />Github</Button></Link>
+            <Link as={NextLink} href="https://github.com/greengem" isExternal><Button color='default' size="lg" className='mx-1' variant="bordered"><UilGithub />Github</Button></Link>
           </div>
         </div>
       </div>

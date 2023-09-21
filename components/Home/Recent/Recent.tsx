@@ -5,7 +5,6 @@ import { Image } from '@nextui-org/image';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
-import { Book } from 'react-bootstrap-icons';
 
 interface ProjectPreviewProps {
   slug: string;
@@ -69,7 +68,7 @@ export default async function RecentWork() {
               <Button
                 size="lg"
                 className="bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg">
-                <Book />View My Work
+                View My Work
               </Button>
             </Link>
           </div>

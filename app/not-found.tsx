@@ -1,13 +1,13 @@
 import {Link} from "@nextui-org/link";
 import NextLink from "next/link";
-import { ExclamationCircle } from 'react-bootstrap-icons';
+import { UilExclamationTriangle } from '@iconscout/react-unicons'
 
 function NotFoundPage() {
 	return (
         <section id='projects' className="pt-20 min-h-screen flex flex-col justify-center">
         <div className='max-w-screen-xl mx-auto text-center'>
           <div className='container mx-auto mb-20'>
-            <ExclamationCircle className="w-16 h-16 mx-auto text-red-500" />
+            <UilExclamationTriangle className="w-16 h-16 mx-auto text-red-500" />
             <h1 className="custom-heading from-[#FF705B] to-[#FFB457] my-6">Oops! Page Not Found</h1>
             <div className='pb-5 space-y-6'>
               <p className="text-3xl font-bold mb-4">404</p>

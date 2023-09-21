@@ -25,7 +25,6 @@ export default async function TechStackSlugPage({ params }) {
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">
             Projects using {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
           </h1>
-
           <div className="pb-5">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
               {projects.map((project) => (

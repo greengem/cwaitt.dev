@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, EyeFill } from 'react-bootstrap-icons';
+import { UilGithub } from '@iconscout/react-unicons'
+import { UilEye } from '@iconscout/react-unicons'
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Button } from "@nextui-org/button";
@@ -26,7 +27,7 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
     <aside>
       <Card className='mb-4 py-4' shadow='lg'>
         <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
-          <p><Github height='32' width='32' className="me-2 inline-block" /> <Code size='lg'>{githubData.name}</Code></p>
+          <p><UilGithub height='32' width='32' className="me-2 inline-block" /> <Code size='lg'>{githubData.name}</Code></p>
         </CardHeader>
         <CardBody>
           <p className='my-4'>
@@ -37,11 +38,11 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
           </p>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <Link as={NextLink} href={githubData.html_url} isExternal className='w-full'>
-              <Button size='sm' className='w-full' color='danger'><Github /> View on GitHub</Button>
+              <Button size='sm' className='w-full' color='danger'><UilGithub /> View on GitHub</Button>
             </Link>
             {demoUrl && (
               <Link as={NextLink} href={demoUrl} isExternal className='w-full'>
-                <Button size='sm' className='w-full' color='secondary'><EyeFill /> View Demo</Button>
+                <Button size='sm' className='w-full' color='secondary'><UilEye /> View Demo</Button>
               </Link>
             )}
           </div>

@@ -3,19 +3,14 @@ import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import React from 'react';
 import {  Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/navbar";
-import { Gem, ChevronDown, ArrowLeftRight } from 'react-bootstrap-icons';
 import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
 
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const icons = {
-    arrowlr: <ArrowLeftRight />,
-    chevron: <ChevronDown />,
-  }
 
   return (
     <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
-      <NavbarBrand><Link color="foreground" href="/" as={NextLink}><span className="text-secondary"><Gem className='me-2' /></span> Chris Waitt</Link></NavbarBrand>
+      <NavbarBrand><Link color="foreground" href="/" as={NextLink}>Chris Waitt</Link></NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link href="/" as={NextLink} color="foreground">

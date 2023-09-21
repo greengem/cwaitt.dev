@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
 import { Divider } from '@nextui-org/divider';
-import { ArrowLeft } from 'react-bootstrap-icons';
+import { UilArrowLeft } from '@iconscout/react-unicons'
 import {
   getAllProjects,
   getProjectAndMoreProjects,
@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                   as={NextLink}
                   className="mt-10"
                 >
-                  <ArrowLeft className="mr-2" />
+                  <UilArrowLeft className="mr-2" />
                   Back to Projects
                 </Link>
               </section>
