@@ -16,7 +16,7 @@ export default function AppHero() {
       typeSpeed: 50,
       backSpeed: 50,
       loop: false,
-      startDelay: 0, // No delay before typing starts
+      startDelay: 0,
       contentType: 'html', 
       showCursor: true, 
       onComplete: (self) => {

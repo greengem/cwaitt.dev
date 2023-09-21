@@ -44,6 +44,17 @@ const PROJECT_DESCRIPTION_FIELD = `
           description
         }
       }
+      entries {
+        block {
+          ... on CodeBlock {
+            sys {
+              id
+            }
+            code
+            language
+          }
+        }
+      }
     }
   }
 `

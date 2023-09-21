@@ -1,98 +1,89 @@
-import {Image} from "@nextui-org/image";
-import {Code} from "@nextui-org/code";
+'use client'
+import React from 'react';
+import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-//import SyntaxHighlighter from 'react-syntax-highlighter';
-//import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-interface DescriptionAsset {
+interface EmbeddedEntry {
+  code: string;
+  language: string;
   sys: {
-    id: string
+      id: string;
   };
-  url: string;
-  description: string;
 }
 
-interface DescriptionAssetLink {
-  block: DescriptionAsset[]
+
+interface DescriptionAsset {
+    sys: { id: string };
+    url: string;
+    description: string;
 }
 
 interface DescriptionData {
-  json: any;
-  links: {
-    assets: DescriptionAssetLink;
-  };
+    json: any;
+    links: { 
+        assets: { block: DescriptionAsset[] };
+        entries: { block: EmbeddedEntry[] };
+    };
 }
 
-function RichTextAsset({
-  id,
-  assets,
-}: {
-  id: string;
-  assets: DescriptionAsset[] | undefined;
-}) {
-  const asset = assets?.find((asset) => asset.sys.id === id);
 
-  if (asset?.url) {
-    return <Image as={NextImage} src={asset.url} width={800} height={600} alt={asset.description} shadow="lg" />;
-  }
+const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ id, assets }) => {
+    const asset = assets?.find(a => a.sys.id === id);
 
-  return null;
-}
+    if (!asset?.url) return null;
 
-export function RichTextRenderer({ description }: { description: DescriptionData }) {
-  return documentToReactComponents(description.json, {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
-        <RichTextAsset
-          id={node?.data?.target?.sys?.id}
-          assets={description?.links?.assets?.block}
+    return (
+        <Image
+            as={NextImage}
+            src={asset.url}
+            width={800}
+            height={600}
+            alt={asset.description}
+            shadow="lg"
         />
-      ),
+    );
+};
 
-      
-      [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
-        const language = node.data.target.fields && node.data.target.fields.language;
-        const code = node.data.target.fields && node.data.target.fields.code;
-      
-        // Check if both language and code are defined before rendering
-        if (language && code) {
-          return <Code>{language} code={code}</Code>;
-        } else {
-          // Handle the case where language or code is not defined
-          return <Code>Code snippet pending</Code>;
-        }
-      },
-      
-      
-      
-      
-
-      [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
-        <p className='text-base my-4'>{children}</p>
-      ),
-      [BLOCKS.HEADING_1]: (node: any, children: React.ReactNode) => (
-        <h1 className='text-4xl font-bold my-8'>{children}</h1>
-      ),
-      [BLOCKS.HEADING_2]: (node: any, children: React.ReactNode) => (
-        <h2 className='text-3xl font-semibold my-6'>{children}</h2>
-      ),
-      [BLOCKS.HEADING_3]: (node: any, children: React.ReactNode) => (
-        <h3 className='text-2xl font-semibold my-5'>{children}</h3>
-      ),
-      [BLOCKS.HEADING_4]: (node: any, children: React.ReactNode) => (
-        <h4 className='text-xl font-medium my-4'>{children}</h4>
-      ),
-      [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => (
-        <ul className='pl-5 my-4'>{children}</ul>
-      ),
-      [BLOCKS.OL_LIST]: (node: any, children: React.ReactNode) => (
-        <ol className='pl-5 my-4'>{children}</ol>
-      ),
-      [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => (
-        <li className='my-2'>{children}</li>
-      ),
-    },
-  });
+interface RichTextRendererProps {
+    description: DescriptionData;
 }
+
+export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description }) => {
+    const options: {
+        renderNode: {
+            [key in BLOCKS]?: (node: any, children: React.ReactNode) => React.ReactNode
+        }
+    } = {
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node) => (
+                <RichTextAsset id={node?.data?.target?.sys?.id} assets={description?.links?.assets?.block} />
+            ),
+            [BLOCKS.PARAGRAPH]: (_, children) => <p className='text-base my-4'>{children}</p>,
+            [BLOCKS.HEADING_1]: (_, children) => <h1 className='text-4xl font-bold my-8'>{children}</h1>,
+            [BLOCKS.HEADING_2]: (_, children) => <h2 className='text-3xl font-semibold my-6'>{children}</h2>,
+            [BLOCKS.HEADING_3]: (_, children) => <h3 className='text-2xl font-semibold my-5'>{children}</h3>,
+            [BLOCKS.HEADING_4]: (_, children) => <h4 className='text-xl font-medium my-4'>{children}</h4>,
+            [BLOCKS.UL_LIST]: (_, children) => <ul className='pl-5 my-4'>{children}</ul>,
+            [BLOCKS.OL_LIST]: (_, children) => <ol className='pl-5 my-4'>{children}</ol>,
+            [BLOCKS.LIST_ITEM]: (_, children) => <li className='my-2'>{children}</li>,
+            [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+              const entryId = node.data.target.sys.id;
+              const entry = description.links.entries.block.find(e => e.sys.id === entryId);
+              if (!entry) return null;
+              return (
+                <div>
+                    <SyntaxHighlighter language={entry.language} style={docco}>
+                        {entry.code}
+                    </SyntaxHighlighter>
+                </div>
+              );
+            }
+        },
+    };
+
+    return documentToReactComponents(description.json, options);
+};

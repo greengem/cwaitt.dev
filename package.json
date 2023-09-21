@@ -23,6 +23,7 @@
     "postcss": "^8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.68.0",
     "sharp": "^0.32.6",
     "typed.js": "^2.0.16"
