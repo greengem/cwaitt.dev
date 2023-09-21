@@ -7,6 +7,7 @@ export const dynamicParams = true;
 export async function generateStaticParams() {
   const allTechStacks = await getAllTechStacks(false);
   return allTechStacks.map((project) => ({ slug: project.slug }));
+  
 }
 
 async function getTechStackData(slug: string) {
@@ -18,6 +19,7 @@ export default async function TechStackSlugPage({ params }) {
   if (!projects || projects.length === 0) {
     return notFound();
   }
+
   return (
     <section id="projects" className="pt-20">
       <div className="max-w-screen-xl mx-auto">

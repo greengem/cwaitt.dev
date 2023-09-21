@@ -224,6 +224,7 @@ export async function getProjectsByTechStack(slug: string, isDraftMode: boolean)
         techStacksCollection {
           items {
             name
+            slug
           }
         }
       }

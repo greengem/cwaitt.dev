@@ -5,7 +5,7 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 export default async function Page() {
   const { isEnabled } = draftMode();
   const allProjects = await getAllProjects(isEnabled);
-
+  
   return (
     <section id="projects" className="pt-20">
       <div className="max-w-screen-xl mx-auto">
