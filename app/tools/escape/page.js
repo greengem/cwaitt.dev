@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react';
 import { Textarea, Button, Code } from "@nextui-org/react";
-import { ArrowLeftRight} from 'react-bootstrap-icons';
 
 export default function EscapeTool() {
   const [inputText, setInputText] = useState('');
@@ -67,7 +66,7 @@ export default function EscapeTool() {
             
             {/* Button controls */}
             <div className="md:w-1/3 text-center my-10 flex flex-col items-center">
-    <Button className='mx-5 mb-4 bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-black shadow-lg' size='lg' onClick={handleEscape}><ArrowLeftRight />Escape Text</Button>
+    <Button className='mx-5 mb-4 bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-black shadow-lg' size='lg' onClick={handleEscape}>Escape Text</Button>
     <Button color='default' className='mx-5' size='lg' onClick={clearFields}>Clear</Button>
 </div>
 
