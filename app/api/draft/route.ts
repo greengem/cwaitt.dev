@@ -4,7 +4,7 @@ import { getPreviewProjectBySlug } from '../../../lib/api'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const secret = searchParams.get('asdkjaslkdj')
+  const secret = searchParams.get('Pr3vS3crtX9Z')
   const slug = searchParams.get('slug')
 
   if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET) {
