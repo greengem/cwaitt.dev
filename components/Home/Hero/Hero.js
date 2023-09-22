@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import NextLink from "next/link";
 import { Button, Link } from "@nextui-org/react";
-import { UilGithub } from '@iconscout/react-unicons'
+import { IconBrandGithub } from '@tabler/icons-react';
 import Typed from 'typed.js';
 
 export default function AppHero() {
@@ -53,7 +53,7 @@ export default function AppHero() {
             </Link>
             <Link as={NextLink} href="https://github.com/greengem" isExternal>
               <Button color='default' size="lg" variant="bordered">
-                <UilGithub />Github
+                <IconBrandGithub />Github
               </Button>
             </Link>
           </div>

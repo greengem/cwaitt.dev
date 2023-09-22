@@ -3,9 +3,7 @@ import {Card, CardHeader, CardBody} from "@nextui-org/card";
 import {Button} from "@nextui-org/button";
 import {Chip} from "@nextui-org/chip";
 import {Link} from "@nextui-org/link";
-import { UilPalette } from '@iconscout/react-unicons'
-import { UilBracketsCurly } from '@iconscout/react-unicons'
-import { UilCloudDatabaseTree } from '@iconscout/react-unicons'
+import { IconPalette, IconBraces, IconServer} from '@tabler/icons-react';
 
 export default function AppSkills() {
   return (
@@ -15,7 +13,7 @@ export default function AppSkills() {
           <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>Technical Expertise</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
               <Card shadow="lg" className='p-4 card-container'>
-                <CardHeader className='text-xl font-semibold tracking-tight '><UilPalette className='mr-2' /> Designer</CardHeader>
+                <CardHeader className='text-xl font-semibold tracking-tight '><IconPalette className='mr-2' /> Designer</CardHeader>
                 <CardBody className='text-default-700 tracking-tight card-body relative'>
                   <p>Combining aesthetics with functionality to create intuitive and compelling designs. Passionate about user-centric designs, with a keen eye for detail and a strong understanding of modern UX/UI principles.</p>
                   <div className='flex flex-wrap mt-6'>
@@ -25,7 +23,7 @@ export default function AppSkills() {
                 </CardBody>
               </Card>
               <Card shadow="lg" className='p-4 card-container'>
-                <CardHeader className='text-xl font-semibold tracking-tight '><UilBracketsCurly className='mr-2' /> Frontend Developer</CardHeader>
+                <CardHeader className='text-xl font-semibold tracking-tight '><IconBraces className='mr-2' /> Frontend Developer</CardHeader>
                 <CardBody className='text-default-700 tracking-tight card-body'>
                   <p>Crafting responsive, interactive, and user-friendly interfaces that bring designs to life. Skilled in HTML, CSS, and modern JavaScript frameworks to ensure optimal web performance and engaging user</p>
                   <div className='flex flex-wrap mt-6'>
@@ -35,7 +33,7 @@ export default function AppSkills() {
                 </CardBody>
               </Card>
               <Card shadow="lg" className='p-4 card-container'>
-                <CardHeader className='text-xl font-semibold tracking-tight '><UilCloudDatabaseTree className='mr-2' /> Backend Developer</CardHeader>
+                <CardHeader className='text-xl font-semibold tracking-tight '><IconServer className='mr-2' /> Backend Developer</CardHeader>
                 <CardBody className='text-default-700 tracking-tight card-body'>
                   <p>Expert in server-side logic, ensuring smooth data integration and building robust APIs. Proficient in various back-end languages and database management, delivering secure and scalable solutions.</p>
                   <div className='flex flex-wrap mt-6'>

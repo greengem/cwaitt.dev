@@ -1,21 +1,20 @@
 import {Card, CardHeader} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
-
-import { UilGithub } from '@iconscout/react-unicons'
-import { UilLinkedin } from '@iconscout/react-unicons'
+import { IconBrandGithub } from '@tabler/icons-react';
+import { IconBrandLinkedin } from '@tabler/icons-react';
 import NextLink from "next/link";
 
 export default function AppSocial() {
 
     const socialCards = [
         {
-            icon: UilLinkedin,
+            icon: IconBrandLinkedin,
             title: "Linkedin",
             link: "https://www.linkedin.com/in/chriswaitt/",
             username: "@chriswaitt",
         },
         {
-            icon: UilGithub,
+            icon: IconBrandGithub,
             title: "Github",
             link: "https://github.com/greengem",
             username: "@greengem",
