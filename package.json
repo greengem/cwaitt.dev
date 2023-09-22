@@ -13,6 +13,7 @@
     "@contentful/rich-text-types": "^16.3.0",
     "@iconscout/react-unicons": "^2.0.2",
     "@nextui-org/react": "^2.1.13",
+    "@tabler/icons-react": "^2.34.0",
     "autoprefixer": "^10.4.16",
     "contentful": "^10.5.2",
     "eslint": "8.49.0",
