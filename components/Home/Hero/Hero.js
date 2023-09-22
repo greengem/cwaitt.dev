@@ -1,39 +1,39 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
-import NextLink from "next/link";
-import { Button, Link } from "@nextui-org/react";
-import { IconBrandGithub } from '@tabler/icons-react';
 import Typed from 'typed.js';
+import NextLink from "next/link";
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
+import { IconBrandGithub } from '@tabler/icons-react';
 
 export default function AppHero() {
-  const typeRef = useRef(null);
+  const elRef = useRef(null);
 
   useEffect(() => {
     const options = {
       strings: [
-        'Hello,^1000 I&apos;m <span className="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>'
+        `Hello,^1000 I'm <span class="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>`
       ],
       typeSpeed: 50,
       backSpeed: 50,
       loop: false,
-      startDelay: 0,
-      contentType: 'html', 
-      showCursor: true, 
+      contentType: 'html',
       onComplete: (self) => {
         if (self.cursor) {
-          self.cursor.style.animation = 'none'; 
-          self.cursor.style.opacity = 0;       
+          self.cursor.style.animation = 'none';
+          self.cursor.style.opacity = 0;
         }
       }
     };
-  
-    const typed = new Typed(typeRef.current, options);
-  
-    return () => {
-      typed.destroy();
-    };
+
+    if (elRef.current) {
+      const typed = new Typed(elRef.current, options);
+
+      return () => {
+        typed.destroy();
+      };
+    }
   }, []);
-  
 
   return (
     <section id='hero' className='hero-container'>
@@ -41,7 +41,7 @@ export default function AppHero() {
       <div className='hero-content'>
         <div className='container text-center mb-5'>
           <h1 className='tracking-tight font-semibold text-6xl md:text-7xl lg:text-8xl mb-5'>
-            <span ref={typeRef}></span>
+            <span ref={elRef}></span>
           </h1>
           <h2 className='tracking-tight font-semibold text-2xl md:text-3xl mb-1'>Turning Ideas into Stunning Web Interfaces</h2>
           <p className='text-lg md:text-xl tracking-tight mb-6'>Front-End Developer | UI/UX Enthusiast</p>

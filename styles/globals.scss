@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.section-h1{
-    margin-bottom: 40px;
-}
-
 .custom-heading {
     @apply min-h-[4rem] tracking-tight align-middle font-semibold text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-7 bg-clip-text text-transparent bg-gradient-to-b;
  }
