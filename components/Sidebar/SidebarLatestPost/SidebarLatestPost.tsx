@@ -10,6 +10,7 @@ export default function SidebarLatestPost({ latestProject }) {
         shortDescription={latestProject.shortDescription}
         featuredImageUrl={latestProject.featuredImage.url}
         techStacks={latestProject.techStacksCollection.items}
+        projectTags={latestProject.projectTags}
       />
     </div>
   );

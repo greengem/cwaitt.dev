@@ -10,7 +10,7 @@ export default function AppNavbar() {
 
   return (
     <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
-      <NavbarBrand><Link color="foreground" href="/" as={NextLink}>Chris Waitt</Link></NavbarBrand>
+      <NavbarBrand><Link color="foreground" href="/" as={NextLink} className="font-semibold tracking-tight uppercase">Chris Waitt <span className="text-secondary ml-1">Portfolio</span></Link></NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem>
           <Link href="/" as={NextLink} color="foreground">
