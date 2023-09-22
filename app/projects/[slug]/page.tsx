@@ -4,14 +4,14 @@ import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
 import { Divider } from '@nextui-org/divider';
-import { UilArrowLeft } from '@iconscout/react-unicons'
+import { UilArrowLeft } from '@iconscout/react-unicons';
 import {
   getAllProjects,
   getProjectAndMoreProjects,
   getLatestProject,
   convertToApiUrl,
   fetchGithubData,
-  fetchLatestCommitMessage,
+  fetchLatestCommitDetails,
 } from '../../../lib/api';
 import AppSidebar from '../../../components/Sidebar/Sidebar';
 import {RichTextRenderer} from '../../../lib/markdown';
@@ -39,20 +39,22 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   const githubApiUrl = convertToApiUrl(project.gitHubLink);
 
-  const [ githubData, latestCommitMessage, latestProject ] = await Promise.all([
+  const [ githubData, latestCommitDetails, latestProject ] = await Promise.all([
     fetchGithubData(githubApiUrl),
-    fetchLatestCommitMessage(githubApiUrl),
+    fetchLatestCommitDetails(githubApiUrl),
     getLatestProject(isEnabled)
   ]);
 
   if (!project) {
     return notFound();
   }
+
   return (
     <section id="project">
-      <div className="max-w-screen-xl container mx-auto mt-10 min-h-screen mb-20">
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-2/3 p-4">
+      <div className="max-w-screen-xl mx-auto mt-10 min-h-screen mb-20">
+        <div className='container'>
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+          <div className="col-span-2">
             <article>
               <header>
                 <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">
@@ -60,7 +62,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 </h1>
               </header>
               <section className="mb-4">
-              <RichTextRenderer description={project.description} />
+                <RichTextRenderer description={project.description} />
                 <Divider className="my-10" />
                 <div className="flex flex-wrap gap-2">
                   {project.techStacksCollection.items.map((techStack) => (
@@ -86,15 +88,17 @@ export default async function ProjectPage({ params }: { params: { slug: string }
               </section>
             </article>
           </div>
-          <div className="w-full md:w-1/3 p-4">
-          <AppSidebar 
+          <div className="col-span-1">
+            <AppSidebar 
               githubData={githubData} 
               demoUrl={project.demoUrl} 
-              latestCommit={latestCommitMessage}
+              latestCommit={latestCommitDetails.message}
+              latestCommitUrl={latestCommitDetails.url}
               latestProject={latestProject} 
             />
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

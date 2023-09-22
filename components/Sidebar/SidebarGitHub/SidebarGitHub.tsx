@@ -18,9 +18,10 @@ interface SidebarGitHubProps {
   };
   demoUrl?: string;
   latestCommit?: string;
+  latestCommitUrl?: string;
 }
 
-const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, latestCommit }) => {
+const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, latestCommit, latestCommitUrl }) => {
 
   return (
     <aside>
@@ -31,7 +32,7 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
         <CardBody>
           <p className='my-4'>
             <code className='text-sm'>
-              <span className='text-danger'>Latest commit: </span>
+              <span className='text-danger'><Link href={latestCommitUrl} isExternal color='danger' className='text-sm mr-1'>Latest commit: </Link></span>
               <span>{latestCommit}</span>
             </code>
           </p>

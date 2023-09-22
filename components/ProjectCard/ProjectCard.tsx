@@ -15,6 +15,7 @@ interface ProjectProps {
   projectTitle: string;
   shortDescription: string;
   featuredImageUrl: any;
+  projectTags: string;
   techStacks: { slug: string; name: string }[];
 }
 
@@ -24,12 +25,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
   shortDescription,
   featuredImageUrl,
   techStacks,
+  projectTags,
 }) => {
 
   return (
     
     <Card className="py-4 h-full" shadow="lg">
-      <CardHeader className="pb-3 pt-2 px-4 flex-col items-start">
+      <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
+        <p className="text-tiny uppercase font-bold">{projectTags}</p>
         <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
           {projectTitle}
         </h4>

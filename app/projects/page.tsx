@@ -21,6 +21,7 @@ export default async function Page() {
                   shortDescription={project.shortDescription}
                   featuredImageUrl={project.featuredImage.url}
                   techStacks={project.techStacksCollection.items}
+                  projectTags={project.projectTags}
               />
               ))}
             </div>

@@ -232,6 +232,7 @@ export async function getProjectsByTechStack(slug: string, isDraftMode: boolean)
           url
         }
         shortDescription
+        projectTags
         techStacksCollection {
           items {
             name
@@ -261,11 +262,20 @@ export async function fetchGithubData(apiUrl: string) {
   return res.json();
 }
 
-export async function fetchLatestCommitMessage(apiUrl: string) {
+export async function fetchLatestCommitDetails(apiUrl: string, maxLength: number = 150) {
   const res = await fetch(`${apiUrl}/commits`, { cache: 'force-cache' });
   if (!res.ok) {
     throw new Error('Failed to fetch latest commit');
   }
   const commits = await res.json();
-  return commits[0].commit.message;
+  const commitMessage = commits[0].commit.message;
+  const truncatedMessage = commitMessage.length > maxLength 
+    ? commitMessage.slice(0, maxLength) + '...'
+    : commitMessage;
+  const commitUrl = commits[0].html_url;
+
+  return {
+    message: truncatedMessage,
+    url: commitUrl
+  };
 }
