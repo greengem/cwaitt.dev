@@ -13,6 +13,14 @@ export const ThemeSwitcher = () => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      import('highlight.js/styles/github-dark.css');
+    } else {
+      import('highlight.js/styles/github.css');
+    }
+  }, [theme]);
+
   if (!mounted) return null;
 
   return (

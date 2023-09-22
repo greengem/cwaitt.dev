@@ -1,11 +1,17 @@
-'use client'
 import React from 'react';
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import hljs from 'highlight.js';
+
+import javascript from 'highlight.js/lib/languages/javascript';
+import php from 'highlight.js/lib/languages/php';
+import python from 'highlight.js/lib/languages/python';
+
+hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('php', php);
+hljs.registerLanguage('python', python);
 
 interface EmbeddedEntry {
   code: string;
@@ -14,7 +20,6 @@ interface EmbeddedEntry {
       id: string;
   };
 }
-
 
 interface DescriptionAsset {
     sys: { id: string };
@@ -29,7 +34,6 @@ interface DescriptionData {
         entries: { block: EmbeddedEntry[] };
     };
 }
-
 
 const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ id, assets }) => {
     const asset = assets?.find(a => a.sys.id === id);
@@ -67,23 +71,24 @@ export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description 
             [BLOCKS.HEADING_2]: (_, children) => <h2 className='text-3xl font-semibold my-6'>{children}</h2>,
             [BLOCKS.HEADING_3]: (_, children) => <h3 className='text-2xl font-semibold my-5'>{children}</h3>,
             [BLOCKS.HEADING_4]: (_, children) => <h4 className='text-xl font-medium my-4'>{children}</h4>,
-            [BLOCKS.UL_LIST]: (_, children) => <ul className='pl-5 my-4'>{children}</ul>,
-            [BLOCKS.OL_LIST]: (_, children) => <ol className='pl-5 my-4'>{children}</ol>,
-            [BLOCKS.LIST_ITEM]: (_, children) => <li className='my-2'>{children}</li>,
+            [BLOCKS.UL_LIST]: (_, children) => <ul className='list-disc list-inside'>{children}</ul>,
+            [BLOCKS.OL_LIST]: (_, children) => <ol className='list-disc list-inside'>{children}</ol>,
+            [BLOCKS.LIST_ITEM]: (_, children) => <li>{children}</li>,
             [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-              const entryId = node.data.target.sys.id;
-              const entry = description.links.entries.block.find(e => e.sys.id === entryId);
-              if (!entry) return null;
-              return (
-                <div>
-                    <SyntaxHighlighter language={entry.language} style={docco}>
-                        {entry.code}
-                    </SyntaxHighlighter>
-                </div>
-              );
+                const entryId = node.data.target.sys.id;
+                const entry = description.links.entries.block.find(e => e.sys.id === entryId);
+                if (!entry) return null;
+                const highlightedCode = hljs.highlight(entry.code, { language: entry.language }).value;
+                return (
+                    <div className='syntax-custom overflow-x-auto'>
+                        <p className="text-tiny uppercase font-bold mb-1">{entry.language}</p>
+                        <pre className='text-sm'>
+                            <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+                        </pre>
+                    </div>
+                );
             }
         },
     };
-
     return documentToReactComponents(description.json, options);
 };

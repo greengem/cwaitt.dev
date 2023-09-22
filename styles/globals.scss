@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-h1{
+    margin-bottom: 40px;
+}
+
+.custom-heading {
+    @apply min-h-[4rem] tracking-tight align-middle font-semibold text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-7 bg-clip-text text-transparent bg-gradient-to-b;
+ }
+ 
+
+/* HERO */
+.hero-container {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    //color: #fceff8;
+}
+
+
+
+
+
+
+
+.spotify-embed-container iframe{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.spotify-embed-container iframe.loaded {
+    opacity: 1;
+}
