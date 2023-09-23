@@ -19,7 +19,7 @@ export default function AppHero() {
             Turning Ideas into Stunning Web Interfaces
           </h2>
           <p className="text-lg md:text-xl mb-10">
-            Front-End Developer | UI/UX Enthusiast
+          Front-End Expertise with a Passion for UI/UX
           </p>
           <div className="mb-20">
             <Link as={NextLink} href="/projects" className="mr-3 block">
@@ -28,7 +28,7 @@ export default function AppHero() {
               </Button>
             </Link>
           </div>
-          <p className="text-xs uppercase mb-4">- All the latest tech -</p>
+          <p className="text-xs uppercase mb-4">Merging form with function for seamless user experiences.</p>
           <div className="grid gap-y-6 grid-cols-5 max-w-screen-sm mx-auto justify-items-center mb-20">
             <IconBrandReact className="transition ease-in-out duration-300 hover:text-secondary" stroke={1} width={32} height={32} />
             <IconBrandNextjs className="transition ease-in-out duration-300 hover:text-secondary" stroke={1} width={32} height={32} />
