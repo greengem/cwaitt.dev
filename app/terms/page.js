@@ -5,7 +5,7 @@ import NextLink from "next/link";
 export default function Terms() {
   return (
     <section id='terms' className='pt-20'>
-      <div className='max-w-screen-xl mx-auto'>
+      <div className='max-w-screen-xl mx-auto lg:px-10'>
         <div className='container mx-auto mb-20'>
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457] mb-6">Terms &amp; Conditions</h1>
           <div className='pb-5 space-y-6'>

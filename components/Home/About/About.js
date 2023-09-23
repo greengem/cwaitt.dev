@@ -5,7 +5,7 @@ import AppAboutText from './AboutText.js';
 export default function AppAbout() {
   return (
     <section id='about' className="about-container py-5">
-      <div className='max-w-screen-xl mx-auto mb-20 mt-10'>
+      <div className='max-w-screen-xl mx-auto mb-20 mt-10 lg:px-10'>
         <div className='container mx-auto'>
           <h1 className='custom-heading from-[#5EA2EF] to-[#0072F5]'>Behind the Code</h1>
           <AppAboutText />
@@ -33,4 +33,3 @@ export default function AppAbout() {
     </section>
   );
 }
-

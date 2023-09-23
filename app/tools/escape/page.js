@@ -34,7 +34,7 @@ export default function EscapeTool() {
 
   return (
     <section id='recent' className='py-20'>
-      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 mt-10'>
+      <div className='max-w-screen-xl mx-auto mb-20 mt-10 lg:px-10'>
         <div className="container mx-auto mt-10">
           <h1 className='custom-heading from-[#FF705B] to-[#FFB457]'>Text Escaper Tool</h1>
           <p className='mb-10'>

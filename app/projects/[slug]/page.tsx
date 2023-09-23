@@ -52,7 +52,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   return (
     <section id="project">
-      <div className="max-w-screen-xl mx-auto mt-10 min-h-screen mb-20">
+      <div className="max-w-screen-xl mx-auto mt-10 min-h-screen mb-20 lg:px-10">
         <div className='container'>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
           <div className="col-span-2">

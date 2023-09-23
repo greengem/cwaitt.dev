@@ -7,7 +7,7 @@ import { IconBrandGithub, IconBrandReact, IconBrandNextjs, IconBrandVue, IconBra
 export default function AppHero() {
   return (
     <section id='hero' className="pt-20 h-screen">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto  lg:px-10">
         <div className="container h-full text-center">
           <p className="notice mb-3 text-xs">
             <strong>Notice:</strong> This website is currently <strong>under construction</strong>

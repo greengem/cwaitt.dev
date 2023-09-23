@@ -23,7 +23,7 @@ export default async function TechStackSlugPage({ params }) {
 
   return (
     <section id="projects" className="pt-20">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto lg:px-10">
         <div className="container mx-auto mb-20">
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">
             Projects using {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
