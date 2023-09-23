@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden">
+      <body>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <AppNavbar />
               {children}
