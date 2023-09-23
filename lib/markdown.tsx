@@ -1,9 +1,10 @@
-import React from 'react';
 import { Image } from "@nextui-org/image";
+import { Chip } from "@nextui-org/chip";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import hljs from 'highlight.js';
+import { IconCodeCircle } from '@tabler/icons-react';
 
 import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
@@ -70,9 +71,9 @@ export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description 
             [BLOCKS.HEADING_1]: (_, children) => <h1 className='text-4xl font-bold my-8'>{children}</h1>,
             [BLOCKS.HEADING_2]: (_, children) => <h2 className='text-3xl font-semibold my-6'>{children}</h2>,
             [BLOCKS.HEADING_3]: (_, children) => <h3 className='text-2xl font-semibold my-5'>{children}</h3>,
-            [BLOCKS.HEADING_4]: (_, children) => <h4 className='text-xl font-medium my-4'>{children}</h4>,
-            [BLOCKS.UL_LIST]: (_, children) => <ul className='list-disc list-inside'>{children}</ul>,
-            [BLOCKS.OL_LIST]: (_, children) => <ol className='list-disc list-inside'>{children}</ol>,
+            [BLOCKS.HEADING_4]: (_, children) => <h4 className='text-xl font-medium mb-4 mt-10'>{children}</h4>,
+            [BLOCKS.UL_LIST]: (_, children) => <ul className='space-y-1 list-inside list-disc'>{children}</ul>,
+            [BLOCKS.OL_LIST]: (_, children) => <ol className='space-y-1 list-inside list-decimal'>{children}</ol>,
             [BLOCKS.LIST_ITEM]: (_, children) => <li>{children}</li>,
             [BLOCKS.EMBEDDED_ENTRY]: (node) => {
                 const entryId = node.data.target.sys.id;
@@ -80,9 +81,11 @@ export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description 
                 if (!entry) return null;
                 const highlightedCode = hljs.highlight(entry.code, { language: entry.language }).value;
                 return (
-                    <div className='syntax-custom overflow-x-auto'>
-                        <p className="text-tiny uppercase font-bold mb-1">{entry.language}</p>
-                        <pre className='text-sm'>
+                    <div className='syntax-custom overflow-x-auto my-10 border-2 rounded-lg border-gray-900'>
+                        <p className="text-tiny uppercase font-bold mb-1 text-secondary bg-gray-900 px-4 py-2">
+                            <IconCodeCircle width={16} height={16} className="inline mr-1" />{entry.language}
+                        </p>
+                        <pre className='text-sm p-4'>
                             <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                         </pre>
                     </div>
