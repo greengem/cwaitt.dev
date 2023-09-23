@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
   return (
     
-    <Card className="py-4 h-full" shadow="md">
+    <Card className="py-4 h-full" shadow="sm">
       <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold">{projectTags}</p>
         <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <CardBody className="overflow-visible py-2">
         <Link as={NextLink} href={`/projects/${slug}`}>
           <Image
-            shadow="lg"
+            shadow="sm"
             as={NextImage}
             src={`${featuredImageUrl}?fit=fill&w=1136&h=639`}
             className="object-cover rounded-xl"

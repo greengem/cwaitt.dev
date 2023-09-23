@@ -2,7 +2,7 @@ import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 
 export default function SidebarLatestPost({ latestProject }) {
   return (
-    <div>
+    <aside>
       <ProjectCard
         key={latestProject.slug}
         slug={latestProject.slug}
@@ -12,6 +12,6 @@ export default function SidebarLatestPost({ latestProject }) {
         techStacks={latestProject.techStacksCollection.items}
         projectTags={latestProject.projectTags}
       />
-    </div>
+    </aside>
   );
 }

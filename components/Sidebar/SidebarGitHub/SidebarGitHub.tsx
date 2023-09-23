@@ -25,7 +25,7 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
 
   return (
     <aside>
-      <Card className='mb-4 py-4' shadow='lg'>
+      <Card className='mb-4 py-4' shadow='sm'>
         <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
           <p><Code size='lg'>{githubData.name}</Code></p>
         </CardHeader>
