@@ -63,20 +63,24 @@ const PROJECT_DESCRIPTION_FIELD = `
 
 async function fetchGraphQL(query: string, preview = false, variables?: any): Promise<any> {
   try {
+    const fetchOptions: any = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${
+          preview
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN
+        }`,
+      },
+      body: JSON.stringify({ query, variables }),
+      cache: 'no-store', //change to force-cache for prod
+      //next: { revalidate: 10 } //turn on for prod
+    };
+
     const response = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${
-            preview
-              ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-              : process.env.CONTENTFUL_ACCESS_TOKEN
-          }`,
-        },
-        body: JSON.stringify({ query, variables }), // Include variables in the request body
-      }
+      fetchOptions
     );
 
     if (!response.ok) {
@@ -90,6 +94,7 @@ async function fetchGraphQL(query: string, preview = false, variables?: any): Pr
     throw error;
   }
 }
+
 
 //Contentful API Calls
 
