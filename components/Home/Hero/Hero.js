@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import { motion } from 'framer-motion';
 import NextLink from "next/link";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
@@ -35,6 +36,21 @@ export default function AppHero() {
     }
   }, []);
 
+  const fadeInH2 = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 3, duration: 2 } }
+};
+
+const fadeInP = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 4, duration: 2 } }
+};
+
+const fadeInButtons = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 5, duration: 2 } }
+};
+
   return (
     <section id='hero' className='hero-container'>
       <div className='hero-overlay'></div>
@@ -43,20 +59,37 @@ export default function AppHero() {
           <h1 className='tracking-tight font-semibold text-6xl md:text-7xl lg:text-8xl mb-5'>
             <span ref={elRef}></span>
           </h1>
-          <h2 className='tracking-tight font-semibold text-2xl md:text-3xl mb-1'>Turning Ideas into Stunning Web Interfaces</h2>
-          <p className='text-lg md:text-xl tracking-tight mb-6'>Front-End Developer | UI/UX Enthusiast</p>
-          <div className='flex justify-center items-center gap-x-2'>
+          <motion.h2 
+                variants={fadeInH2}
+                initial="hidden"
+                animate="visible"
+                className='tracking-tight font-semibold text-2xl md:text-3xl mb-1'>
+                Turning Ideas into Stunning Web Interfaces
+            </motion.h2>
+            <motion.p 
+                variants={fadeInP}
+                initial="hidden"
+                animate="visible"
+                className='text-lg md:text-xl tracking-tight mb-6'>
+                Front-End Developer | UI/UX Enthusiast
+            </motion.p>
+            <motion.div 
+            className='flex justify-center items-center gap-x-2'
+            variants={fadeInButtons}
+            initial="hidden"
+            animate="visible"
+        >
             <Link as={NextLink} href="/projects">
-              <Button size="lg" className='bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8]  text-white shadow-lg'>
-                View My Work
-              </Button>
+                <Button size="lg" className='bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8]  text-white shadow-lg'>
+                    View My Work
+                </Button>
             </Link>
             <Link as={NextLink} href="https://github.com/greengem" isExternal>
-              <Button color='default' size="lg" variant="bordered">
-                <IconBrandGithub />Github
-              </Button>
+                <Button color='default' size="lg" variant="bordered">
+                    <IconBrandGithub />Github
+                </Button>
             </Link>
-          </div>
+        </motion.div>
         </div>
       </div>
     </section>
