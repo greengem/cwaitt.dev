@@ -13,7 +13,7 @@ export default function AppHero() {
         This website is currently <strong>under construction</strong>
       </p>
       <h1 className='tracking-tight font-bold text-6xl md:text-7xl lg:text-8xl mb-10'>
-        Hello, I'm <span className="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>
+        Hello, I&apos;m <span className="from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b">Chris Waitt</span>
       </h1>
       <h2 className="text-2xl md:text-3xl mb-1">
         Turning Ideas into Stunning Web Interfaces
