@@ -27,19 +27,20 @@ const Star = ({ delay = 0 }) => {
     const vibrantGlow = `0 0 10px ${starColor}, 0 0 15px ${starColor}`;
   
     useEffect(() => {
-        // Ensure that stars are placed within the viewport and not outside
-        const topPosition = `${Math.random() * 100}vh`;
-        const leftPosition = `${Math.random() * (100 - (size / window.innerWidth * 100))}vw`; 
-
-        setPositions({ top: topPosition, left: leftPosition });
-
-        controls.start({
+      // Ensure that stars are placed within the viewport and not outside
+      const topPosition = `${Math.random() * 100}vh`;
+      const leftPosition = `${Math.random() * (100 - (size / window.innerWidth * 100))}vw`; 
+  
+      setPositions({ top: topPosition, left: leftPosition });
+  
+      controls.start({
           y: ["0%", "5%", "0%", "-5%", "0%"],
           x: ["0%", "5%", "0%", "-5%", "0%"],
           opacity: [initialOpacity, 1, initialOpacity],
           transition: { duration: 5, loop: Infinity, delay: delay }
       });
-    }, [controls, delay]);
+  }, [controls, delay, initialOpacity, size]);  // Added initialOpacity and size to the dependency array
+  
   
     return (
       <motion.div
