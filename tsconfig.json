@@ -21,10 +21,18 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/app/*": ["app/*"],
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
+    "types/declarations.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"

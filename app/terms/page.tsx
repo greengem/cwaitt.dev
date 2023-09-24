@@ -1,6 +1,6 @@
 'use client'
-import PageSection from '../../components/Layout/Section/PageSection'
-import Container from '../../../components/Layout/Container'
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
 import {Link} from "@nextui-org/react";
 import NextLink from "next/link";
 

@@ -1,8 +1,8 @@
 import { draftMode } from 'next/headers';
-import { getAllProjects } from '../../lib/api';
-import PageSection from '../../components/Layout/Section/PageSection'
-import Container from '../../components/Layout/Container'
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import { getAllProjects } from '@/lib/api';
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
 
 export default async function Page() {
   const { isEnabled } = draftMode();

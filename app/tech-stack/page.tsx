@@ -1,7 +1,7 @@
 import { draftMode } from 'next/headers';
-import { getAllTechStacks } from '../../lib/api';
-import PageSection from '../../components/Layout/Section/PageSection'
-import Container from '../../components/Layout/Container'
+import { getAllTechStacks } from '@/lib/api';
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
 
 import NextLink from "next/link";
 import NextImage from "next/image";

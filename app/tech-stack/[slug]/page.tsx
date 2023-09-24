@@ -1,9 +1,9 @@
-import type { Metadata, ResolvingMetadata } from 'next';
+//import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation'
-import { getProjectsByTechStack, getAllTechStacks } from '../../../lib/api';
-import PageSection from '../../../components/Layout/Section/PageSection'
-import Container from '../../../components/Layout/Container'
-import ProjectCard from '../../../components/ProjectCard/ProjectCard';
+import { getProjectsByTechStack, getAllTechStacks } from '@/lib/api';
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
 
 export const dynamicParams = true;
 

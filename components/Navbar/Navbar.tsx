@@ -9,7 +9,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navba
 import { Link } from "@nextui-org/link";
 
 // Local components
-import { ThemeSwitcher } from "../DarkModeToggle/DarkModeToggle";
+import { ThemeSwitcher } from "@/components/DarkModeToggle/DarkModeToggle";
 
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

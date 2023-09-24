@@ -1,5 +1,5 @@
-import HomeSection from '../../../components/Layout/Section/HomeSection'
-import Container from '../../../components/Layout/Container'
+import HomeSection from '@/components/Layout/Section/HomeSection'
+import Container from '@/components/Layout/Container'
 import {Card, CardHeader} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
 import { IconBrandGithub } from '@tabler/icons-react';

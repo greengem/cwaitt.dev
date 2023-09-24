@@ -1,6 +1,6 @@
 'use client'
-import Container from '../../../components/Layout/Container'
-import HeroSection from '../../../components/Layout/Section/HeroSection'
+import Container from '@/components/Layout/Container'
+import HeroSection from '@/components/Layout/Section/HeroSection'
 import NextLink from "next/link";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";

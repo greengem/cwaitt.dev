@@ -1,5 +1,5 @@
-import HomeSection from '../../../components/Layout/Section/HomeSection'
-import Container from '../../../components/Layout/Container'
+import HomeSection from '@/components/Layout/Section/HomeSection'
+import Container from '@/components/Layout/Container'
 import NextLink from "next/link";
 import {Card, CardHeader, CardBody} from "@nextui-org/card";
 import {Button} from "@nextui-org/button";

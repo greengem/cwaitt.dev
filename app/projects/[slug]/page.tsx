@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
-import PageSection from '../../../components/Layout/Section/PageSection'
-import Container from '../../../components/Layout/Container'
-import AppSidebar from '../../../components/Sidebar/Sidebar';
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
+import AppSidebar from '@/components/Sidebar/Sidebar';
 import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';

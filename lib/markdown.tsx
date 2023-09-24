@@ -1,5 +1,4 @@
 import { Image } from "@nextui-org/image";
-import { Chip } from "@nextui-org/chip";
 import NextImage from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';

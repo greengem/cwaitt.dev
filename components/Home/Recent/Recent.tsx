@@ -1,12 +1,12 @@
 import { draftMode } from 'next/headers';
-import { getTwoRecentProjects } from '../../../lib/api';
+import { getTwoRecentProjects } from '@/lib/api';
 import { Image } from "@nextui-org/image";
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
 import NextImage from "next/image";
-import HomeSection from '../../../components/Layout/Section/HomeSection'
-import Container from '../../../components/Layout/Container'
+import HomeSection from '@/components/Layout/Section/HomeSection'
+import Container from '@/components/Layout/Container'
 
 interface ProjectPreviewProps {
   slug: string;

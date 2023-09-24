@@ -1,4 +1,4 @@
-import ProjectCard from '../../../components/ProjectCard/ProjectCard';
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
 
 export default function SidebarLatestPost({ latestProject }) {
   return (

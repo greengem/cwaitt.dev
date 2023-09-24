@@ -1,5 +1,5 @@
-import Container from '../../../components/Layout/Container'
-import HomeSection from '../../../components/Layout/Section/HomeSection'
+import Container from '@/components/Layout/Container'
+import HomeSection from '@/components/Layout/Section/HomeSection'
 import {Image} from "@nextui-org/image";
 import NextImage from "next/image";
 import AppAboutText from './AboutText.js';

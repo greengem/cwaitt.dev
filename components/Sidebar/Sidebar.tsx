@@ -1,5 +1,5 @@
-import SidebarGitHub from './SidebarGitHub/SidebarGitHub';
-import SidebarLatestPost from './SidebarLatestPost/SidebarLatestPost';
+import SidebarGitHub from '@/components/Sidebar/SidebarGitHub/SidebarGitHub';
+import SidebarLatestPost from '@/components/Sidebar/SidebarLatestPost/SidebarLatestPost';
 
 export default function AppSidebar({ githubData, demoUrl, latestCommit, latestCommitUrl, latestProject }) {
   return (

@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
-import PageSection from '../../components/Layout/Section/PageSection'
-import Container from '../../../components/Layout/Container'
+import PageSection from '@/components/Layout/Section/PageSection'
+import Container from '@/components/Layout/Container'
 import { Textarea, Button, Code } from "@nextui-org/react";
 
 export default function EscapeTool() {
