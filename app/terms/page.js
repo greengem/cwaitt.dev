@@ -1,12 +1,13 @@
 'use client'
+import PageSection from '../../components/Layout/Section/PageSection'
+import Container from '../../../components/Layout/Container'
 import {Link} from "@nextui-org/react";
 import NextLink from "next/link";
 
 export default function Terms() {
   return (
-    <section id='terms' className='pt-20'>
-      <div className='max-w-screen-xl mx-auto lg:px-10'>
-        <div className='container mx-auto mb-20'>
+    <PageSection id='terms'>
+      <Container>
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457] mb-6">Terms &amp; Conditions</h1>
           <div className='pb-5 space-y-6'>
             <h2 className='text-2xl font-bold mb-2'>1. Introduction</h2>
@@ -56,8 +57,7 @@ export default function Terms() {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </PageSection>
   );
 }

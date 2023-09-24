@@ -1,12 +1,13 @@
+import Container from '../../../components/Layout/Container'
+import HomeSection from '../../../components/Layout/Section/HomeSection'
 import {Image} from "@nextui-org/image";
 import NextImage from "next/image";
 import AppAboutText from './AboutText.js';
 
 export default function AppAbout() {
   return (
-    <section id='about' className="about-container py-5">
-      <div className='max-w-screen-xl mx-auto mb-20 mt-10 lg:px-10'>
-        <div className='container mx-auto'>
+    <HomeSection id='about'>
+      <Container>
           <h1 className='custom-heading from-[#5EA2EF] to-[#0072F5]'>Behind the Code</h1>
           <AppAboutText />
           <div className='grid grid-cols-1 md:grid-cols-2 gap-20'>
@@ -28,8 +29,7 @@ export default function AppAbout() {
                 src="https://picsum.photos/id/2/1136/639"
               />
           </div>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </HomeSection>
   );
 }

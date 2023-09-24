@@ -1,5 +1,7 @@
 import { draftMode } from 'next/headers';
 import { getAllTechStacks } from '../../lib/api';
+import PageSection from '../../components/Layout/Section/PageSection'
+import Container from '../../components/Layout/Container'
 
 import NextLink from "next/link";
 import NextImage from "next/image";
@@ -63,9 +65,8 @@ export default async function TechStackPage() {
   const { isEnabled } = draftMode();
   const allTechStacks = await getAllTechStacks(isEnabled);
   return (
-    <section id='tech-stacks' className='pt-20'>
-      <div className='max-w-screen-xl mx-auto lg:px-10'>
-        <div className='container mx-auto min-h-screen'>
+    <PageSection id='tech-stack'>
+      <Container>
           <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>Tech Stack</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
             {allTechStacks?.map((techStack, index) => (
@@ -79,8 +80,7 @@ export default async function TechStackPage() {
               />
             ))}
           </div>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </PageSection>
   );
 }

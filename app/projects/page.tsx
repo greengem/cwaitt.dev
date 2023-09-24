@@ -1,5 +1,7 @@
 import { draftMode } from 'next/headers';
 import { getAllProjects } from '../../lib/api';
+import PageSection from '../../components/Layout/Section/PageSection'
+import Container from '../../components/Layout/Container'
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export default async function Page() {
@@ -7,11 +9,9 @@ export default async function Page() {
   const allProjects = await getAllProjects(isEnabled);
   
   return (
-    <section id="projects" className="pt-20">
-      <div className="max-w-screen-xl mx-auto lg:px-10">
-        <div className="container mx-auto mb-20">
+    <PageSection id='projects'>
+      <Container>
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">My Projects</h1>
-          <div className="pb-5">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
               {allProjects.map((project) => (
                 <ProjectCard
@@ -25,9 +25,7 @@ export default async function Page() {
               />
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </Container>
+    </PageSection>
   );
 }

@@ -5,6 +5,8 @@ import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
 import NextImage from "next/image";
+import HomeSection from '../../../components/Layout/Section/HomeSection'
+import Container from '../../../components/Layout/Container'
 
 interface ProjectPreviewProps {
   slug: string;
@@ -49,32 +51,30 @@ export default async function RecentWork() {
   const twoProjects = await getTwoRecentProjects(isEnabled);
 
   return (
-    <section id="recent" className="py-5">
-      <div className="max-w-screen-xl mx-auto mb-20 mt-10 lg:px-10">
-        <div className="container mx-auto">
-          <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">My Recent Work</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {twoProjects.map((project, index) => (
-              <ProjectPreview
-                key={index}
-                slug={project.slug}
-                projectTitle={project.projectTitle}
-                shortDescription={project.shortDescription}
-                featuredImageUrl={project.featuredImage.url}
-              />
-            ))}
-          </div>
-          <div className="mt-10">
-            <Link href="/projects" as={NextLink}>
-              <Button
-                size="lg"
-                className="bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg">
-                View My Work
-              </Button>
-            </Link>
-          </div>
+    <HomeSection id='recent'>
+      <Container>
+        <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">My Recent Work</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {twoProjects.map((project, index) => (
+            <ProjectPreview
+              key={index}
+              slug={project.slug}
+              projectTitle={project.projectTitle}
+              shortDescription={project.shortDescription}
+              featuredImageUrl={project.featuredImage.url}
+            />
+          ))}
         </div>
-      </div>
-    </section>
+        <div className="mt-10">
+          <Link href="/projects" as={NextLink}>
+            <Button
+              size="lg"
+              className="bg-gradient-to-tr from-[#FF705B] to-[#FFB457] text-white shadow-lg">
+              View My Work
+            </Button>
+          </Link>
+        </div>
+      </Container>
+    </HomeSection>
   );
 }

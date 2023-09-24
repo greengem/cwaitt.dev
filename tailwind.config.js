@@ -9,10 +9,6 @@ const config = {
     './lib/markdown.tsx'
   ],
   theme: {
-    container: {
-      center: true,
-      padding: '1rem',
-    },
     extend: {},
   },
   darkMode: 'class',

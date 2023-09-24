@@ -1,5 +1,8 @@
 import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
+import PageSection from '../../../components/Layout/Section/PageSection'
+import Container from '../../../components/Layout/Container'
+import AppSidebar from '../../../components/Sidebar/Sidebar';
 import NextLink from 'next/link';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
@@ -14,7 +17,6 @@ import {
   fetchGithubData,
   fetchLatestCommitDetails,
 } from '../../../lib/api';
-import AppSidebar from '../../../components/Sidebar/Sidebar';
 import {RichTextRenderer} from '../../../lib/markdown';
 
 export const dynamicParams = true;
@@ -51,9 +53,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   }
 
   return (
-    <section id="project">
-      <div className="max-w-screen-xl mx-auto mt-10 min-h-screen mb-20 lg:px-10">
-        <div className='container'>
+    <PageSection id='project'>
+      <Container>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
           <div className="col-span-2">
             <article>
@@ -99,8 +100,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             />
           </div>
         </div>
-      </div>
-      </div>
-    </section>
+      </Container>
+    </PageSection>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation'
 import { getProjectsByTechStack, getAllTechStacks } from '../../../lib/api';
+import PageSection from '../../../components/Layout/Section/PageSection'
+import Container from '../../../components/Layout/Container'
 import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 
 export const dynamicParams = true;
@@ -22,13 +24,11 @@ export default async function TechStackSlugPage({ params }) {
   }
 
   return (
-    <section id="projects" className="pt-20">
-      <div className="max-w-screen-xl mx-auto lg:px-10">
-        <div className="container mx-auto mb-20">
+    <PageSection id='projects-by-tech'>
+      <Container>
           <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">
             Projects using {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
           </h1>
-          <div className="pb-5">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
               {projects.map((project) => (
                 <ProjectCard
@@ -42,9 +42,7 @@ export default async function TechStackSlugPage({ params }) {
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </PageSection>
   );
 }

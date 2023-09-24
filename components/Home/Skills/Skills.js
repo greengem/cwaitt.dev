@@ -1,3 +1,5 @@
+import HomeSection from '../../../components/Layout/Section/HomeSection'
+import Container from '../../../components/Layout/Container'
 import NextLink from "next/link";
 import {Card, CardHeader, CardBody} from "@nextui-org/card";
 import {Button} from "@nextui-org/button";
@@ -7,9 +9,8 @@ import { IconPalette, IconBraces, IconServer} from '@tabler/icons-react';
 
 export default function AppSkills() {
   return (
-    <section id='skills' className="py-5">
-      <div className='max-w-screen-xl mx-auto mb-20 mt-10 lg:px-10'>
-        <div className='container mx-auto'>
+    <HomeSection id='skills'>
+      <Container>
           <h1 className='custom-heading from-[#6FEE8D] to-[#17c964]'>Technical Expertise</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
               <Card shadow="lg" className='p-4 card-container'>
@@ -48,8 +49,7 @@ export default function AppSkills() {
               <Button size='lg' className='bg-gradient-to-tr from-[#6FEE8D] to-[#17c964]  text-white shadow-lg'>Tech Stack</Button>
             </Link>
           </div>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </HomeSection>
   );
 }
