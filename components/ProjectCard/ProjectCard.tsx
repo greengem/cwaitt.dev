@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
   return (
     
-    <Card className="py-4 h-full" shadow="sm">
+    <Card className="py-4 h-full" shadow="lg">
       <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold">{projectTags}</p>
         <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
