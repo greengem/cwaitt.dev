@@ -25,7 +25,7 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
 
   return (
     <aside>
-      <Card className='mb-4 py-4' shadow='sm'>
+      <Card className='mb-5 py-4' shadow='lg'>
         <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
           <p><Code size='lg'>{githubData.name}</Code></p>
         </CardHeader>
@@ -36,13 +36,13 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
               <span>{latestCommit}</span>
             </code>
           </p>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
             <Link as={NextLink} href={githubData.html_url} isExternal className='w-full'>
-              <Button size='sm' className='w-full' color='danger'><IconBrandGithub /> View on GitHub</Button>
+              <Button size='sm' className='w-full' color='danger'>View Repo</Button>
             </Link>
             {demoUrl && (
               <Link as={NextLink} href={demoUrl} isExternal className='w-full'>
-                <Button size='sm' className='w-full' color='secondary'><IconEye /> View Demo</Button>
+                <Button size='sm' className='w-full' color='secondary'>View Demo</Button>
               </Link>
             )}
           </div>

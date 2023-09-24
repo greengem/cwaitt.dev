@@ -33,7 +33,7 @@ export default function AppSocial() {
                         <div key={index} className="w-full">
                             <Card shadow="lg">
                                 <CardHeader className="flex gap-3">
-                                    <card.icon height="40" width="40" />
+                                    <card.icon stroke={1} height="40" width="40" />
                                     <div className="flex flex-col">
                                         <p className="text-md">{card.title}</p>
                                         <p className="text-small text-default-500">
