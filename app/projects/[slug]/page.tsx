@@ -8,7 +8,6 @@ import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
 import { Divider } from '@nextui-org/divider';
 import { IconArrowLeft } from '@tabler/icons-react';
-import '@contentful/live-preview/style.css';
 import {
   getAllProjects,
   getProjectAndMoreProjects,
@@ -59,13 +58,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           <div className="col-span-2">
             <article>
               <header>
-                <h1 
-                  className="custom-heading from-[#FF1CF7] to-[#b249f8]" 
-                  data-contentful-entry-id={project.sys.id}
-                  data-contentful-field-id="projectTitle"
-                >
-                  {project.projectTitle}
-                </h1>
+                <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">{project.projectTitle}</h1>
               </header>
               <section className="mb-4">
                 <RichTextRenderer description={project.description} />
