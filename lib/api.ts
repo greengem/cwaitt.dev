@@ -74,8 +74,8 @@ async function fetchGraphQL(query: string, preview = false, variables?: any): Pr
         }`,
       },
       body: JSON.stringify({ query, variables }),
-      cache: 'no-store', //change to force-cache for prod
-      //next: { revalidate: 10 } //turn on for prod
+      cache: 'force-cache', //use force-cache or no-store for SSR
+      next: { tags: ['posts'] }, //testing on demand revalidation
     };
 
     const response = await fetch(
