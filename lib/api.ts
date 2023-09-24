@@ -10,6 +10,9 @@ const TECHSTACK_GRAPHQL_FIELDS = `
 `;
 
 const PROJECT_GRAPHQL_FIELDS = `
+  sys{
+    id
+  }
   slug
   projectTitle
   date
