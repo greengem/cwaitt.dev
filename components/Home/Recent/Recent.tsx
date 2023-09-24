@@ -1,5 +1,3 @@
-import { draftMode } from 'next/headers';
-import { getTwoRecentProjects } from '@/lib/api';
 import { Image } from "@nextui-org/image";
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
@@ -13,6 +11,17 @@ interface ProjectPreviewProps {
   projectTitle: string;
   shortDescription: string;
   featuredImageUrl: any;
+}
+
+interface RecentWorkProps {
+  projects: Array<{
+    slug: string;
+    projectTitle: string;
+    shortDescription: string;
+    featuredImage: {
+      url: string;
+    };
+  }>;
 }
 
 const ProjectPreview: React.FC<ProjectPreviewProps> = ({
@@ -46,16 +55,12 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
     </div>
   );
 
-export default async function RecentWork() {
-  const { isEnabled } = draftMode();
-  const twoProjects = await getTwoRecentProjects(isEnabled);
-
-  return (
+  const RecentWork: React.FC<RecentWorkProps> = ({ projects }) => (
     <HomeSection id='recent'>
       <Container>
         <h1 className="custom-heading from-[#FF705B] to-[#FFB457]">My Recent Work</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {twoProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectPreview
               key={index}
               slug={project.slug}
@@ -77,4 +82,4 @@ export default async function RecentWork() {
       </Container>
     </HomeSection>
   );
-}
+  export default RecentWork;
