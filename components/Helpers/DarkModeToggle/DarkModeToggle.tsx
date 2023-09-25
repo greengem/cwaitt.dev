@@ -27,6 +27,8 @@ export const ThemeSwitcher = () => {
   return (
     <div>
       <Switch
+        name="themeSwitch"
+        id=":r0:"
         size="md"
         className="ms-2"
         color="secondary"
