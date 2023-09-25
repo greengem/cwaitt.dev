@@ -23,7 +23,7 @@ interface SidebarGitHubProps {
 
 const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, latestCommit, latestCommitUrl }) => {
   return (
-    <div className="grid grid-cols-3 mb-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 mb-3">
       <div className="col-span-2">
         <h4 className="text-xl font-semibold mb-1">
           <span className="mr-2">Github Repository:</span>
