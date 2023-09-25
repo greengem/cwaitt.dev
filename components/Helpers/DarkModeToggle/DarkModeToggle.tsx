@@ -22,7 +22,7 @@ export const ThemeSwitcher = () => {
     }
   }, [theme]);
 
-  if (!mounted) return null;
+  if (!mounted || theme === undefined) return null;
 
   return (
     <div>
