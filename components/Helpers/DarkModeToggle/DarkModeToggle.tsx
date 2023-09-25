@@ -12,7 +12,7 @@ export const ThemeSwitcher = () => {
     setMounted(true);
     const initialThemeColor = theme === "dark" ? "#000000" : "#ffffff";
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', initialThemeColor);
-  }, []);
+  }, [theme]);
 
   useEffect(() => {
     if (theme === 'dark') {
