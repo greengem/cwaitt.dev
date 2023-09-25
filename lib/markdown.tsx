@@ -80,13 +80,15 @@ export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description 
                 if (!entry) return null;
                 const highlightedCode = hljs.highlight(entry.code, { language: entry.language }).value;
                 return (
-                    <div className='syntax-custom overflow-x-auto my-10 border-2 rounded-lg border-gray-900'>
-                        <p className="text-tiny uppercase font-bold mb-1 text-secondary bg-gray-900 px-4 py-2">
+                    <div className="my-10">
+                        <p className="text-tiny uppercase font-bold text-secondary bg-gray-200 dark:bg-gray-900 px-4 pb-2 pt-3 rounded-t-lg">
                             <IconCodeCircle width={16} height={16} className="inline mr-1" />{entry.language}
                         </p>
-                        <pre className='text-sm p-4'>
-                            <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
-                        </pre>
+                        <div className='syntax-custom overflow-x-auto border-x-2 border-b-2 rounded-b-lg dark:border-gray-900'>
+                            <pre className='text-sm p-4'>
+                                <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+                            </pre>
+                        </div>
                     </div>
                 );
             }
