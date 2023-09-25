@@ -43,11 +43,12 @@ const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ 
     return (
         <Image
             as={NextImage}
-            src={asset.url}
-            width={800}
-            height={600}
+            src={`${asset.url}?fit=fill&w=2400&h=1260`}
+            width={2400}
+            height={1260}
             alt={asset.description}
             shadow="lg"
+            className="my-10"
         />
     );
 };

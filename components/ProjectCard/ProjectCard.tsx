@@ -42,10 +42,10 @@ const ProjectCard: React.FC<ProjectProps> = ({
           <Image
             shadow="sm"
             as={NextImage}
-            src={`${featuredImageUrl}?fit=fill&w=1136&h=639`}
+            src={`${featuredImageUrl}?fit=fill&w=1096&h=616`}
             className="object-cover rounded-xl"
-            width={1136}
-            height={639}
+            width={1096}
+            height={616}
             alt={`Image for ${projectTitle}`}
           />
         </Link>

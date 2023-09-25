@@ -107,9 +107,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
         <Image 
           as={NextImage} 
-          src={`${project.featuredImage.url}?fit=fill&w=1200&h=630`}
-          width={1200}
-          height={630}
+          src={`${project.featuredImage.url}?fit=fill&w=2400&h=1260`}
+          width={2400}
+          height={1260}
           alt={`Featured image for ${project.projectTitle}`}
         />
 
