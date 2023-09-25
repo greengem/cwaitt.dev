@@ -1,4 +1,4 @@
-//import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata} from 'next'
 import { notFound } from 'next/navigation'
 import { getProjectsByTechStack, getAllTechStacks } from '@/lib/api';
 import PageSection from '@/components/Layout/Section/PageSection'
@@ -16,6 +16,60 @@ export async function generateStaticParams() {
 async function getTechStackData(slug: string) {
   return await getProjectsByTechStack(slug, false);
 }
+
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const projects = await getTechStackData(params.slug);
+  if (!projects || projects.length === 0) {
+    return {};
+  }
+
+  const techStackName = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
+
+  const ogImageUrl = `${projects[0].featuredImage.url}?fit=fill&w=1200&h=630`;
+
+  return {
+    title: `My Projects using ${techStackName}`,
+    description: `Browse projects developed using ${techStackName}.`,
+    openGraph: {
+      title: `Projects using ${techStackName}`,
+      description: `Browse projects developed using ${techStackName}.`,
+      url: `https://cwaitt.dev/tech-stack/${params.slug}`,
+      siteName: 'Chris Waitt - Frontend Developer Portfolio',
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: 'en_GB',
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Projects using ${techStackName}`,
+      description: `Browse projects developed using ${techStackName}.`,
+      creator: '@cwaitt_dev',
+      images: [ogImageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-video-preview': 'none',
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      }
+    }
+  };
+}
+
 
 export default async function TechStackSlugPage({ params }) {
   const projects = await getTechStackData(params.slug);

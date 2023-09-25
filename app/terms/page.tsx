@@ -21,15 +21,14 @@ export default function Terms() {
             </p>
 
             <h2 className='text-2xl font-bold mb-2'>3. Restrictions</h2>
-            <p className='text-lg'>
-              You are specifically restricted from all of the following:
+            <p className='text-lg'>You are specifically restricted from all of the following:</p>
               <ul className='list-disc pl-6 mt-2'>
                 <li className='text-lg'>Using the website in any way that impacts user access;</li>
                 <li className='text-lg'>Engaging in data mining, data harvesting, data extracting, or any similar activity in relation to this website;</li>
                 <li className='text-lg'>Using the website contrary to applicable laws and regulations, or in a way that causes harm to the website, or any person or business entity;</li>
                 <li className='text-lg'>Using this website to engage in advertising or marketing.</li>
               </ul>
-            </p>
+            
 
             <h2 className='text-2xl font-bold mb-2'>4. Limitation of Liability</h2>
             <p className='text-lg'>

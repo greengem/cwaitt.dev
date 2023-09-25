@@ -1,4 +1,4 @@
-'use client'
+// ThemeSwitcher.tsx
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Switch } from "@nextui-org/react";
@@ -11,6 +11,10 @@ export const ThemeSwitcher = () => {
 
   useEffect(() => {
     setMounted(true);
+
+    // Set initial theme-color based on the theme using optional chaining
+    const initialThemeColor = theme === "dark" ? "#000000" : "#ffffff";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', initialThemeColor);
   }, []);
 
   useEffect(() => {
@@ -32,7 +36,14 @@ export const ThemeSwitcher = () => {
         startContent={<SunIcon />}
         endContent={<MoonIcon />}
         isSelected={theme === "dark"}
-        onValueChange={(isSelected) => setTheme(isSelected ? "dark" : "light")}
+        onValueChange={(isSelected) => {
+          const newTheme = isSelected ? "dark" : "light";
+          setTheme(newTheme);
+
+          // Update the theme-color meta tag based on the theme using optional chaining
+          const themeColor = newTheme === "dark" ? "#181818" : "#ffffff";
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
+        }}
       />
     </div>
   );
