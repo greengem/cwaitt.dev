@@ -1,4 +1,4 @@
-import Date from '@/components/Helpers/Date/Date';
+import Date from '@/components/Helpers/Date/Date'
 
 interface ProjectHeaderProps {
   project: {

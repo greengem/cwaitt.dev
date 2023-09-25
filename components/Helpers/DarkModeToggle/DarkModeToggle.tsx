@@ -1,4 +1,3 @@
-// ThemeSwitcher.tsx
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Switch } from "@nextui-org/react";
