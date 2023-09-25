@@ -1,25 +1,31 @@
+
+// Next.js and external libraries
 import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
-import type { Metadata} from 'next'
-import PageSection from '@/components/Layout/Section/PageSection'
-import Container from '@/components/Layout/Container'
-import AppSidebar from '@/components/Sidebar/Sidebar';
-import NextLink from 'next/link';
-import { Chip } from '@nextui-org/chip';
-import { Link } from '@nextui-org/link';
-import { Divider } from '@nextui-org/divider';
-import { IconArrowLeft } from '@tabler/icons-react';
-import {Image} from "@nextui-org/image";
+import type { Metadata } from 'next';
 import NextImage from "next/image";
+
+// @nextui-org individual imports
+import { Divider } from '@nextui-org/divider';
+import { Image } from "@nextui-org/image";
+
+// Local utility imports
 import {
   getAllProjects,
   getProjectAndMoreProjects,
-  getLatestProject,
   convertToApiUrl,
   fetchGithubData,
   fetchLatestCommitDetails,
 } from '@/lib/api';
-import {RichTextRenderer} from '@/lib/markdown';
+import { RichTextRenderer } from '@/lib/markdown';
+
+// Local component imports
+import PageSection from '@/components/Layout/Section/PageSection';
+import Container from '@/components/Layout/Container';
+import GithubData from '@/components/Project/GithubData/GithubData';
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
+import ProjectHeader from '@/components/Project/ProjectHeader/ProjectHeader';
+import TechStacks from  '@/components/Project/TechStacks/TechStacks';
 
 export const dynamicParams = true;
 
@@ -84,77 +90,55 @@ export async function generateMetadata(
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   const { isEnabled } = draftMode();
-  
   const { project, moreProjects } = await getProjectData(params);
   
-  if (!project) {
-    return notFound();
-  }
+  if (!project) return notFound();
 
   const githubApiUrl = convertToApiUrl(project.gitHubLink);
-
-  const [ githubData, latestCommitDetails, latestProject ] = await Promise.all([
+  const [githubData, latestCommitDetails] = await Promise.all([
     fetchGithubData(githubApiUrl),
     fetchLatestCommitDetails(githubApiUrl),
-    getLatestProject(isEnabled)
   ]);
-
-  if (!project) {
-    return notFound();
-  }
 
   return (
     <PageSection id='project'>
       <Container>
-        <header>
-          <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">{project.projectTitle}</h1>
-        </header>
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
-          <div className="col-span-2">
-            <article>
-              <section className="mb-4">
-              
-                <Image 
-                  as={NextImage} 
-                  src={`${project.featuredImage.url}?fit=fill&w=1200&h=630`}
-                  width={1200}
-                  height={630}
-                  ></Image>
-                <RichTextRenderer description={project.description} />
-                <Divider className="my-10" />
-                <div className="flex flex-wrap gap-2">
-                  {project.techStacksCollection.items.map((techStack) => (
-                    <Chip
-                      key={techStack.slug}
-                      variant="bordered"
-                      color="danger"
-                      className="mr-1"
-                    >
-                      <Link color='danger' as={NextLink} href={`/tech-stack/${techStack.slug}`}>{techStack.name}</Link>
-                    </Chip>
-                  ))}
-                </div>
-                <Link
-                  color="danger"
-                  href="/projects"
-                  as={NextLink}
-                  className="mt-10"
-                >
-                  <IconArrowLeft className="mr-2" />
-                  Back to Projects
-                </Link>
-              </section>
-            </article>
-          </div>
-          <div className="col-span-1">
-            <AppSidebar 
-              githubData={githubData} 
-              demoUrl={project.demoUrl} 
-              latestCommit={latestCommitDetails.message}
-              latestCommitUrl={latestCommitDetails.url}
-              latestProject={latestProject} 
+        <ProjectHeader project={project} />
+
+        <Image 
+          as={NextImage} 
+          src={`${project.featuredImage.url}?fit=fill&w=1200&h=630`}
+          width={1200}
+          height={630}
+          alt={`Featured image for ${project.projectTitle}`}
+        />
+
+        <RichTextRenderer description={project.description} />
+        <Divider className="my-10" />
+
+        <GithubData 
+          githubData={githubData} 
+          demoUrl={project.demoUrl} 
+          latestCommit={latestCommitDetails.message}
+          latestCommitUrl={latestCommitDetails.url}
+        />
+        
+        <TechStacks techStacks={project.techStacksCollection.items} />
+
+        <Divider className='my-10' />
+        <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">Related Projects</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+          {moreProjects.map((relatedProject) => (
+            <ProjectCard
+              key={relatedProject.slug}
+              slug={relatedProject.slug}
+              projectTitle={relatedProject.projectTitle}
+              shortDescription={relatedProject.shortDescription}
+              featuredImageUrl={relatedProject.featuredImage.url}
+              techStacks={relatedProject.techStacksCollection.items}
+              projectTags={relatedProject.projectTags}
             />
-          </div>
+          ))}
         </div>
       </Container>
     </PageSection>

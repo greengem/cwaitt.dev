@@ -10,6 +10,9 @@ const TECHSTACK_GRAPHQL_FIELDS = `
 `;
 
 const PROJECT_GRAPHQL_FIELDS = `
+  sys {
+    publishedAt
+  }
   slug
   projectTitle
   date
@@ -260,17 +263,14 @@ export function convertToApiUrl(gitHubUrl: string): string {
 export async function fetchGithubData(apiUrl: string) {
   const res = await fetch(apiUrl, { cache: 'force-cache' });
   if (!res.ok) {
-    throw new Error('Failed to fetch GitHub data');
+    const errorData = await res.json();
+    throw new Error(errorData.message || 'Failed to fetch GitHub data');
   }
   return res.json();
 }
 
 export async function fetchLatestCommitDetails(apiUrl: string, maxLength: number = 150) {
-  const res = await fetch(`${apiUrl}/commits`, { cache: 'force-cache' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch latest commit');
-  }
-  const commits = await res.json();
+  const commits = await fetchGithubData(`${apiUrl}/commits`);
   const commitMessage = commits[0].commit.message;
   const truncatedMessage = commitMessage.length > maxLength 
     ? commitMessage.slice(0, maxLength) + '...'
