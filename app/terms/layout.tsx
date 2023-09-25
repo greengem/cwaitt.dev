@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chris Waitt - Terms of Service',
     description: 'Review the terms and conditions for using Chris Waitt\'s frontend developer portfolio. Understand the guidelines and policies that govern interactions and usage of the site\'s content and resources.',
-    url: 'https://cwaitt.dev/',
+    url: '/terms',
     siteName: 'Chris Waitt - Frontend Developer Portfolio',
     images: [
       {

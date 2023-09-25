@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chris Waitt - Tech Stack Overview: Frontend Technologies',
     description: 'Discover the technologies that empower my frontend projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
-    url: 'https://cwaitt.dev/',
+    url: '/tech-stack/',
     siteName: 'Chris Waitt - Frontend Developer Portfolio',
     images: [
       {

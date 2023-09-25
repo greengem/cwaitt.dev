@@ -35,7 +35,7 @@ export async function generateMetadata(
     openGraph: {
       title: `Projects using ${techStackName}`,
       description: `Browse projects developed using ${techStackName}.`,
-      url: `https://cwaitt.dev/tech-stack/${params.slug}`,
+      url: `/tech-stack/${params.slug}`,
       siteName: 'Chris Waitt - Frontend Developer Portfolio',
       images: [
         {

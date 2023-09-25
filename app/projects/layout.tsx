@@ -4,13 +4,14 @@ export const metadata: Metadata = {
   title: 'Chris Waitt - Featured Projects Showcase',
   description: 'Browse through a curated collection of my frontend development projects. Each piece is a testament to my dedication to crafting user-centric, responsive, and innovative web solutions.',
   openGraph: {
+    
     title: 'Chris Waitt - Featured Projects Showcase',
     description: 'Browse through a curated collection of my frontend development projects. Each piece is a testament to my dedication to crafting user-centric, responsive, and innovative web solutions.',
-    url: 'https://cwaitt.dev/',
+    url: '/projects/',
     siteName: 'Chris Waitt - Frontend Developer Portfolio',
     images: [
       {
-        url: 'myimage.jpg',
+        url: 'https://cwaitt.dev/myimage.jpg',
         width: 1200,
         height: 630,
       },
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Chris Waitt - Featured Projects Showcase',
     description: 'Browse through a curated collection of my frontend development projects. Each piece is a testament to my dedication to crafting user-centric, responsive, and innovative web solutions.',
     creator: '@cwaitt_dev',
-    images: 'image.jpg',
+    images: 'https://cwaitt.dev/myimage.jpg',
   },
 }
 

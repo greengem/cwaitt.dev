@@ -45,7 +45,7 @@ export async function generateMetadata(
     openGraph: {
       title: project.projectTitle,
       description: project.shortDescription,
-      url: `https://cwaitt.dev/projects/${params.slug}`,
+      url: `/projects/${params.slug}`,
       siteName: 'Chris Waitt - Frontend Developer Portfolio',
       images: [
         {
