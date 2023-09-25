@@ -106,15 +106,20 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   return (
     <PageSection id='project'>
       <Container>
+        <header>
+          <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">{project.projectTitle}</h1>
+        </header>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
           <div className="col-span-2">
             <article>
-              <header>
-                <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">{project.projectTitle}</h1>
-              </header>
               <section className="mb-4">
               
-                <Image src={`${project.featuredImage.url}?fit=fill&w=1200&h=630`}></Image>
+                <Image 
+                  as={NextImage} 
+                  src={`${project.featuredImage.url}?fit=fill&w=1200&h=630`}
+                  width={1200}
+                  height={630}
+                  ></Image>
                 <RichTextRenderer description={project.description} />
                 <Divider className="my-10" />
                 <div className="flex flex-wrap gap-2">
