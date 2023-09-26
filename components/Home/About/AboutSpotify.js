@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef } from 'react';
 
 export default function AppAboutSpotify() {
@@ -36,7 +37,6 @@ export default function AppAboutSpotify() {
         src="https://open.spotify.com/embed/playlist/1rSXPXetBMq0J2fkR7Wk9k?utm_source=generator&theme=0" 
         width="100%" 
         height="352" 
-        frameBorder="0" 
         allowFullScreen="" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy">

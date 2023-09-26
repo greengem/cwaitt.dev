@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
     
     <Card className="py-4 h-full" shadow="lg">
       <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">{projectTags}</p>
+        <p className="text-tiny uppercase font-bold text-danger">{projectTags}</p>
         <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
           {projectTitle}
         </h4>
@@ -40,6 +40,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <CardBody className="overflow-visible py-2">
         <Link as={NextLink} href={`/projects/${slug}`}>
           <Image
+            isZoomed
             shadow="sm"
             as={NextImage}
             src={`${featuredImageUrl}?fit=fill&w=1096&h=616`}
@@ -54,12 +55,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <CardFooter className="px-5">
         {techStacks.map((stack) => (
           <Chip
+            radius='sm'
             size='sm'
             key={stack.slug}
-            color="default"
+            color="danger"
             className="mr-2"
+            variant="bordered"
           >
-            <Link className='text-sm' color='foreground' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
+            <Link className='text-xs' color='foreground' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
           </Chip>
         ))}
       </CardFooter>

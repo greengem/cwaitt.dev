@@ -50,7 +50,7 @@ const SidebarGitHub: React.FC<SidebarGitHubProps> = ({ githubData, demoUrl, late
         </p>
       </div>
       
-      <div className="text-right col-span-1">
+      <div className="text-left md:text-right col-span-1">
         <div className="mb-2">
         {
           demoUrl ? (

@@ -1,4 +1,4 @@
-export default function AppAboutText() {
+export default function AboutText() {
   return (
 <div className="about-me">
     <p className="mb-4">
@@ -16,7 +16,6 @@ export default function AppAboutText() {
     <p className="mb-10">
         Outside of coding, I maintain a symphony of hobbies that keep me grounded. Whether I&apos;m penning soulful songs, tickling the ivories on my piano, staying fit, diving into swimming pools, or conquering the latest video games, life is always in tune.
     </p>
-
 </div>
 
   );

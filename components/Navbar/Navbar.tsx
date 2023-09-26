@@ -31,14 +31,15 @@ export default function AppNavbar() {
     <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
       <NavbarBrand>
         <Link color="foreground" href="/" as={NextLink} className="font-semibold tracking-tight uppercase">
-          Chris Waitt <span className="text-secondary ml-1">Portfolio</span>
+          Chris Waitt <span className="text-gray-500 ml-1">Portfolio</span>
         </Link>
       </NavbarBrand>
       
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        {/*<NavbarLink href="/">Home</NavbarLink>*/}
+        <NavbarLink href="/#about">About Me</NavbarLink>
         <NavbarLink href="/projects">Projects</NavbarLink>
         <NavbarLink href="/tech-stack">Tech Stack</NavbarLink>
+        <NavbarLink href="/#social">Contact</NavbarLink>
       </NavbarContent>
       
       <ThemeSwitcher />
