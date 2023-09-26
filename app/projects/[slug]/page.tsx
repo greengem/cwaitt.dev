@@ -5,11 +5,9 @@ import Heading from '@/components/Layout/Heading/Heading';
 import type { Metadata } from 'next';
 import NextImage from "next/image";
 
-// @nextui-org individual imports
 import { Divider } from '@nextui-org/divider';
 import { Image } from "@nextui-org/image";
 
-// Local utility imports
 import {
   getAllProjects,
   getProjectAndMoreProjects,
@@ -19,7 +17,6 @@ import {
 } from '@/lib/api';
 import { RichTextRenderer } from '@/lib/markdown';
 
-// Local component imports
 import PageSection from '@/components/Layout/Section/PageSection';
 import Container from '@/components/Layout/Container';
 import GithubData from '@/components/Project/GithubData/GithubData';
@@ -103,6 +100,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   return (
     <PageSection id='project'>
       <Container>
+
         <ProjectHeader project={project} />
 
         <Image 
@@ -127,22 +125,23 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         <TechStacks techStacks={project.techStacksCollection.items} />
 
         <Divider className='my-10' />
+
         <Heading title='Related Projects' />
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
         {moreProjects.map((relatedProject: ProjectProps) => (
-  <ProjectCard
-    key={relatedProject.slug}
-    slug={relatedProject.slug}
-    projectTitle={relatedProject.projectTitle}
-    shortDescription={relatedProject.shortDescription}
-    featuredImage={relatedProject.featuredImage}
-    techStacksCollection={relatedProject.techStacksCollection}
-    projectTags={relatedProject.projectTags}
-  />
-))}
-
-
+          <ProjectCard
+            key={relatedProject.slug}
+            slug={relatedProject.slug}
+            projectTitle={relatedProject.projectTitle}
+            shortDescription={relatedProject.shortDescription}
+            featuredImage={relatedProject.featuredImage}
+            techStacksCollection={relatedProject.techStacksCollection}
+            projectTags={relatedProject.projectTags}
+          />
+        ))}
         </div>
+
       </Container>
     </PageSection>
   );

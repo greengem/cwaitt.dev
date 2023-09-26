@@ -1,7 +1,7 @@
 import PageSection from '@/components/Layout/Section/PageSection'
 import Container from '@/components/Layout/Container'
 import Heading from '@/components/Layout/Heading/Heading';
-import {Link} from "@nextui-org/react";
+import {Link} from "@nextui-org/link";
 import NextLink from "next/link";
 
 export default function Terms() {
