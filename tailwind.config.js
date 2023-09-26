@@ -9,7 +9,12 @@ const config = {
     './lib/markdown.tsx'
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '15': '3.75rem',
+        '30': '7.5rem'
+      }
+    },
   },
   darkMode: 'class',
   plugins: [nextui({

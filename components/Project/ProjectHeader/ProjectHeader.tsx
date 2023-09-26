@@ -1,4 +1,4 @@
-import Heading from '@/components/Layout/Heading/Heading';
+import PostHeading from '@/components/Layout/Heading/PostHeading';
 import Date from '@/components/Helpers/Date/Date'
 
 interface ProjectHeaderProps {
@@ -12,7 +12,7 @@ interface ProjectHeaderProps {
 
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
   <>
-    <Heading title={project.projectTitle} />
+    <PostHeading title={project.projectTitle} />
     <p className="text-sm text-gray-600 mb-10">
       <span className="mr-1">Posted on:</span>
       <Date dateString={project.date} />
