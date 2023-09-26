@@ -6,10 +6,9 @@
     @apply min-h-[4rem] tracking-tight align-middle font-semibold text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-7 bg-clip-text text-transparent bg-gradient-to-b;
 }
 
-
 #hero {
     position: relative;
-    background-image: url('/images/hero/hero4.jpg');
+    background-image: url('/images/hero/hero1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,13 +24,18 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.5); // Black with 50% transparency
+        
         z-index: 1;
     }
 
-    // If you have other content inside #hero and want it to appear above the overlay
     > *:not(.hero-overlay) {
         position: relative;
         z-index: 2;
     }
 }
+    html.light .hero-overlay {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    html.dark .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }

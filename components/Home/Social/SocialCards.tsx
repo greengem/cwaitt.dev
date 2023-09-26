@@ -15,7 +15,7 @@ const SocialCards: React.FC = () => {
                                 <p className="text-md">{card.title}</p>
                                 <p className="text-small text-default-500">
                                     {card.link
-                                        ? <Link color="danger" isExternal as={NextLink} href={card.link}>{card.username}</Link>
+                                        ? <Link color="secondary" isExternal as={NextLink} href={card.link}>{card.username}</Link>
                                         : card.username
                                     }
                                 </p>

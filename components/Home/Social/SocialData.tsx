@@ -1,4 +1,4 @@
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
 
     const SocialData = [
         {
@@ -12,6 +12,12 @@ import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
             title: "Github",
             link: "https://github.com/greengem",
             username: "@greengem",
+        },
+        {
+            icon: IconBrandX,
+            title: "Twitter / X",
+            link: "https://twitter.com/cwaitt_dev",
+            username: "@cwaitt_dev",
         },
     ];
 

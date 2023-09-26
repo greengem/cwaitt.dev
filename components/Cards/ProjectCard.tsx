@@ -1,3 +1,4 @@
+import { ProjectProps } from '@/types/appTypes';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
 import {
@@ -10,31 +11,23 @@ import { Chip } from '@nextui-org/chip';
 import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
 
-interface ProjectProps {
-  slug: string;
-  projectTitle: string;
-  shortDescription: string;
-  featuredImageUrl: any;
-  projectTags: string;
-  techStacks: { slug: string; name: string }[];
-}
-
 const ProjectCard: React.FC<ProjectProps> = ({
   slug,
   projectTitle,
   shortDescription,
-  featuredImageUrl,
-  techStacks,
+  featuredImage,
+  techStacksCollection,
   projectTags,
 }) => {
 
+  const { items: techStacks } = techStacksCollection;
+
   return (
-    
     <Card className="py-4 h-full" shadow="lg">
       <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold text-danger">{projectTags}</p>
-        <h4 className="font-bold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full">
-          {projectTitle}
+        <p className="text-tiny uppercase font-bold text-secondary">{projectTags}</p>
+        <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
+            {projectTitle}
         </h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
@@ -43,7 +36,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             isZoomed
             shadow="sm"
             as={NextImage}
-            src={`${featuredImageUrl}?fit=fill&w=1096&h=616`}
+            src={`${featuredImage.url}?fit=fill&w=1096&h=616`}
             className="object-cover rounded-xl"
             width={1096}
             height={616}
@@ -58,7 +51,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             radius='sm'
             size='sm'
             key={stack.slug}
-            color="danger"
+            color="secondary"
             className="mr-2"
             variant="bordered"
           >

@@ -1,7 +1,7 @@
-
-// Next.js and external libraries
+import { ProjectProps } from '@/types/appTypes';
 import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
+import Heading from '@/components/Layout/Heading/Heading';
 import type { Metadata } from 'next';
 import NextImage from "next/image";
 
@@ -23,7 +23,7 @@ import { RichTextRenderer } from '@/lib/markdown';
 import PageSection from '@/components/Layout/Section/PageSection';
 import Container from '@/components/Layout/Container';
 import GithubData from '@/components/Project/GithubData/GithubData';
-import ProjectCard from '@/components/ProjectCard/ProjectCard';
+import ProjectCard from '@/components/Cards/ProjectCard';
 import ProjectHeader from '@/components/Project/ProjectHeader/ProjectHeader';
 import TechStacks from  '@/components/Project/TechStacks/TechStacks';
 
@@ -114,6 +114,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         />
 
         <RichTextRenderer description={project.description} />
+
         <Divider className="my-10" />
 
         <GithubData 
@@ -126,19 +127,21 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         <TechStacks techStacks={project.techStacksCollection.items} />
 
         <Divider className='my-10' />
-        <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">Related Projects</h1>
+        <Heading title='Related Projects' />
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
-          {moreProjects.map((relatedProject) => (
-            <ProjectCard
-              key={relatedProject.slug}
-              slug={relatedProject.slug}
-              projectTitle={relatedProject.projectTitle}
-              shortDescription={relatedProject.shortDescription}
-              featuredImageUrl={relatedProject.featuredImage.url}
-              techStacks={relatedProject.techStacksCollection.items}
-              projectTags={relatedProject.projectTags}
-            />
-          ))}
+        {moreProjects.map((relatedProject: ProjectProps) => (
+  <ProjectCard
+    key={relatedProject.slug}
+    slug={relatedProject.slug}
+    projectTitle={relatedProject.projectTitle}
+    shortDescription={relatedProject.shortDescription}
+    featuredImage={relatedProject.featuredImage}
+    techStacksCollection={relatedProject.techStacksCollection}
+    projectTags={relatedProject.projectTags}
+  />
+))}
+
+
         </div>
       </Container>
     </PageSection>

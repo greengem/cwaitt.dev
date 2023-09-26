@@ -4,9 +4,9 @@ import { Button } from "@nextui-org/button";
 
 export default function HeroCta() {
     return (
-        <div className="mb-40">
-            <Link as={NextLink} href="/projects" className="mr-3 block">
-                <Button color="secondary" size="lg">
+        <div>
+            <Link as={NextLink} href="/projects">
+                <Button size="lg" className="bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8] text-white shadow-lg">
                     View My Work
                 </Button>
             </Link>
