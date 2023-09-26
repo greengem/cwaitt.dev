@@ -11,10 +11,10 @@ export default function AppFooter() {
                 <div>
                     <h3 className="text-xl font-semibold mb-4">Links</h3>
                     <ul className="space-y-3">
-                        <li><Link href="#" as={NextLink} className="hover:text-[#FF1CF7]">Back to the top</Link></li>
-                        <li><Link href="/projects" as={NextLink} className="hover:text-[#FF1CF7]">View my Projects</Link></li>
-                        <li><Link href="/tech-stack" as={NextLink} className="hover:text-[#FF1CF7]">Tech Stack</Link></li>
-                        <li><Link href="/terms" as={NextLink} className="hover:text-[#FF1CF7]">Terms & Conditions</Link></li>
+                        <li><Link color='secondary' href="#" as={NextLink} className="hover:text-[#FF1CF7]">Back to the top</Link></li>
+                        <li><Link color='secondary' href="/projects" as={NextLink} className="hover:text-[#FF1CF7]">View my Projects</Link></li>
+                        <li><Link color='secondary' href="/tech-stack" as={NextLink} className="hover:text-[#FF1CF7]">Tech Stack</Link></li>
+                        <li><Link color='secondary' href="/terms" as={NextLink} className="hover:text-[#FF1CF7]">Terms & Conditions</Link></li>
                     </ul>
                 </div>
                 <div>
