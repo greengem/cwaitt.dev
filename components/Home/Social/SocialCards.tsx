@@ -8,7 +8,7 @@ const SocialCards: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SocialData.map((card, index) => (
                 <div key={index} className="w-full">
-                    <Card shadow="lg">
+                    <Card shadow="md">
                         <CardHeader className="flex gap-3">
                             <card.icon stroke={1} height="40" width="40" />
                             <div className="flex flex-col">

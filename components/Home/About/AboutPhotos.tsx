@@ -10,7 +10,6 @@ export default function AboutPhotos() {
                 isZoomed
                 width={1136}
                 height={639}
-                className='shadow-xl'
                 alt="NextUI hero Image"
                 src="/images/about/code.jpeg"
             />
