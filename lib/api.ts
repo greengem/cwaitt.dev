@@ -2,7 +2,7 @@
 const TECHSTACK_GRAPHQL_FIELDS = `
   slug
   name
-  techDescription
+  description
   externalLink
   logo {
     url
