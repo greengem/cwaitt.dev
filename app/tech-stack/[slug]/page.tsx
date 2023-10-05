@@ -5,6 +5,7 @@ import PageSection from '@/components/Layout/Section/PageSection'
 import Container from '@/components/Layout/Container'
 import ProjectCard from '@/components/Cards/ProjectCard';
 import { ProjectProps } from '@/types/appTypes';
+import Heading from '@/components/Layout/Heading/Heading';
 
 export const dynamicParams = true;
 
@@ -80,9 +81,7 @@ export default async function TechStackSlugPage({ params }) {
   return (
     <PageSection id='projects-by-tech'>
       <Container>
-          <h1 className="custom-heading from-[#FF1CF7] to-[#b249f8]">
-            Projects using {params.slug.charAt(0).toUpperCase() + params.slug.slice(1)}
-          </h1>
+      <Heading title={`Projects using ${params.slug}`} />
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
               {projects.map((project) => (
                 <ProjectCard
