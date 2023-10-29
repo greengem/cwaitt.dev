@@ -3,11 +3,17 @@ import type { Metadata } from 'next'
 import { Providers } from "./providers";
 import AppNavbar from "../components/Navbar/Navbar";
 import AppFooter from "../components/Footer/Footer";
+
+export function generateViewport() {
+  return {
+    themeColor: '#000000',
+  };
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://cwaitt.dev'),
   title: 'Chris Waitt - Frontend Developer Portfolio',
   description: 'A showcase of my frontend development projects and expertise.',
-  themeColor: '#000000',
   openGraph: {
     title: 'Chris Waitt - Frontend Developer Portfolio',
     description: 'A showcase of my frontend development projects and expertise.',
