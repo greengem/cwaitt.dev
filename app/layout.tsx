@@ -1,8 +1,11 @@
 import "@/styles/globals.scss";
 import type { Metadata } from 'next'
 import { Providers } from "./providers";
+import { Inter } from 'next/font/google'
 import AppNavbar from "../components/Navbar/Navbar";
 import AppFooter from "../components/Footer/Footer";
+
+const inter = Inter({ subsets: ['latin'] })
 
 export function generateViewport() {
   return {
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <AppNavbar />
               {children}
