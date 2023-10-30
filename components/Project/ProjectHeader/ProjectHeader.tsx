@@ -25,16 +25,19 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
       <span className="mx-1">|</span>
       <span className="ml-1">Category: {project.projectTags}</span>
     </p>
-    <p className='mb-5'>
-      <Link
-        as={NextLink}
-        isExternal
-        href={project.demoUrl}
-        className='text-secondary'
-      >
-        View Live Demo!
-      </Link>
-    </p>
+    {project.demoUrl && (
+      <p className='mb-5'>
+        <Link
+          as={NextLink}
+          isExternal
+          href={project.demoUrl}
+          className='text-secondary'
+        >
+          View Live Demo!
+        </Link>
+      </p>
+    )}
+
   </>
 );
 
