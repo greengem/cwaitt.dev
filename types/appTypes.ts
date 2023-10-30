@@ -2,6 +2,8 @@ export interface ProjectProps {
   slug: string;
   projectTitle: string;
   shortDescription: string;
+  demoUrl?: string;
+  gitHubLink?: string;
   featuredImage: {
     url: string;
   };
