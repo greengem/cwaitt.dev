@@ -1,3 +1,5 @@
+"use client";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import React from "react";
@@ -7,10 +9,12 @@ type SkillsCardProps = {
   icon: React.ReactNode;
   description: string;
   technologies: string[];
+  animation: string;
 };
 
-const SkillCard: React.FC<SkillsCardProps> = ({ title, icon, description, technologies }) => {
+const SkillCard: React.FC<SkillsCardProps> = ({ title, icon, description, technologies, animation }) => {
   return (
+    <AnimationOnScroll animateIn={animation}>
     <Card shadow="md" className="p-4">
       <CardHeader className="text-xl">
         {icon} {title}
@@ -26,6 +30,7 @@ const SkillCard: React.FC<SkillsCardProps> = ({ title, icon, description, techno
         </div>
       </CardBody>
     </Card>
+    </AnimationOnScroll>
   );
 };
 

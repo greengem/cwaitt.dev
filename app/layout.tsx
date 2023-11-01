@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Inter } from 'next/font/google'
 import AppNavbar from "../components/Navbar/Navbar";
 import AppFooter from "../components/Footer/Footer";
+import "animate.css/animate.min.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
