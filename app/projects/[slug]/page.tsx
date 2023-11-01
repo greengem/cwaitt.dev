@@ -109,6 +109,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           width={2400}
           height={1260}
           alt={`Featured image for ${project.projectTitle}`}
+          className='mt-5'
         />
 
         <RichTextRenderer description={project.description} />

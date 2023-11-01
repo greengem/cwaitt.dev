@@ -5,7 +5,7 @@ import SocialData from '@/components/Home/Social/SocialData';
 
 const SocialCards: React.FC = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {SocialData.map((card, index) => (
                 <div key={index} className="w-full">
                     <Card shadow="none" className="shadow-lg">

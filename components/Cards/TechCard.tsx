@@ -26,7 +26,7 @@ interface TechStackProps {
   }: TechStackProps) {
     return (
       <Card key={name} shadow='none' className='shadow-lg'>
-        <CardHeader className="flex gap-3">
+        <CardHeader className="flex gap-3 px-5 pt-4">
           <Image
             as={NextImage}
             alt={`${name} logo`}
@@ -44,10 +44,10 @@ interface TechStackProps {
             </p>
           </div>
         </CardHeader>
-        <CardBody className='pl-3 pt-1 pb-2'>
+        <CardBody className='px-5 pt-0 pb-2'>
           <p className='text-sm'>{description}</p>
         </CardBody>
-        <CardFooter className='pt-0'>
+        <CardFooter className='pt-0 px-5 pb-4'>
           <Link 
             color='secondary'
             className='text-sm' 

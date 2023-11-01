@@ -12,7 +12,7 @@ export default async function TechStacksPage() {
     <PageSection id='tech-stack'>
       <Container>
         <Heading title="Tech Stack" />
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
             {allTechStacks?.map((techStack, index) => (
               <TechCard
                 key={index}

@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
   return (
     <Card className="py-4 h-full shadow-lg" shadow="none">
-      <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
+      <CardHeader className="pb-1 pt-2 px-5 flex-col items-start">
         <p className="text-tiny uppercase font-bold text-secondary">{projectTags}</p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
             {projectTitle}
@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         </Link>
         <p className="card-text mt-5 text-sm">{shortDescription}</p>
       </CardBody>
-      <CardFooter className="px-5">
+      <CardFooter className="px-5 pb-0">
         {techStacks.map((stack) => (
           <Chip
             radius='sm'

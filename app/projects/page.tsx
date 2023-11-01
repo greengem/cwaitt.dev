@@ -14,7 +14,7 @@ export default async function ProjectsPage() {
     <PageSection id='projects'>
       <Container>
         <Heading title="My Projects" />
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {allProjects.map((project) => (
               <ProjectCard
                 key={project.slug}

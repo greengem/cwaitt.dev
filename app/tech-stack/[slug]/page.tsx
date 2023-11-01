@@ -82,7 +82,7 @@ export default async function TechStackSlugPage({ params }) {
     <PageSection id='projects-by-tech'>
       <Container>
       <Heading title={`Projects using ${params.slug}`} />
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
               {projects.map((project) => (
                 <ProjectCard
                   key={project.slug}

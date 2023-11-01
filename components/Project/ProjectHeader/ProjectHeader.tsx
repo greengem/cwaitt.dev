@@ -26,7 +26,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
       <span className="ml-1">Category: {project.projectTags}</span>
     </p>
     {project.demoUrl && (
-      <p className='mb-5'>
+      <p>
         <Link
           as={NextLink}
           isExternal

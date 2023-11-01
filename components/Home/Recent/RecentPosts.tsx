@@ -7,7 +7,7 @@ type RecentPostsProps = {
 
 const RecentPosts: React.FC<RecentPostsProps> = ({ twoProjects }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5">
       {twoProjects.map((project: ProjectProps, index: number) => (
         <ProjectCard
           key={index}
