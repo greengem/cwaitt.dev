@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   const { items: techStacks } = techStacksCollection;
 
   return (
-    <Card className="py-4 h-full" shadow="md">
+    <Card className="py-4 h-full shadow-lg" shadow="none">
       <CardHeader className="pb-1 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold text-secondary">{projectTags}</p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">

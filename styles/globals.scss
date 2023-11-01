@@ -29,12 +29,16 @@
         z-index: 2;
     }
 }
-    html.light .hero-overlay {
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-    html.dark .hero-overlay {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    html.light{
-        background-color: rgb(238, 233, 241);
-    }
+
+html.light .hero-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+html.dark .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+html.light{
+    background-color: rgb(238, 233, 241);
+}
+html.dark{
+    background-color: rgb(16, 15, 16);
+}

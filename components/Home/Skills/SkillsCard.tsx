@@ -15,7 +15,7 @@ type SkillsCardProps = {
 const SkillCard: React.FC<SkillsCardProps> = ({ title, icon, description, technologies, animation }) => {
   return (
     <AnimationOnScroll animateIn={animation}>
-    <Card shadow="md" className="p-4">
+    <Card shadow="none" className="p-4 shadow-lg">
       <CardHeader className="text-xl">
         {icon} {title}
       </CardHeader>

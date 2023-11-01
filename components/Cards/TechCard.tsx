@@ -25,7 +25,7 @@ interface TechStackProps {
     logo,
   }: TechStackProps) {
     return (
-      <Card key={name} shadow='lg'>
+      <Card key={name} shadow='none' className='shadow-lg'>
         <CardHeader className="flex gap-3">
           <Image
             as={NextImage}
