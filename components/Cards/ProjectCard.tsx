@@ -1,6 +1,6 @@
 import { ProjectProps } from '@/types/appTypes';
 import NextLink from 'next/link';
-import NextImage from 'next/image';
+import Image from 'next/image';
 import {
   Card,
   CardHeader,
@@ -8,7 +8,6 @@ import {
   CardFooter,
 } from '@nextui-org/card';
 import { Chip } from '@nextui-org/chip';
-import { Image } from '@nextui-org/image';
 import { Link } from '@nextui-org/link';
 
 const ProjectCard: React.FC<ProjectProps> = ({
@@ -33,11 +32,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <CardBody className="overflow-visible py-2">
         <Link as={NextLink} href={`/projects/${slug}`}>
           <Image
-            isZoomed
-            shadow="sm"
-            as={NextImage}
             src={`${featuredImage.url}?fit=fill&w=1096&h=616`}
-            className="object-cover rounded-xl"
+            className="object-cover rounded-xl shadow-lg"
             width={1096}
             height={616}
             alt={`Image for ${projectTitle}`}
