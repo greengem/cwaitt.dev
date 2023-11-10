@@ -11,8 +11,8 @@ export default async function Home() {
     <>
       <AppHero />
       <AppAbout />
-      <AppSkills />
       <AppHomeRecent twoProjects={twoProjects} />
+      <AppSkills />
       <AppSocial />
     </>
   );
