@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import AppNavbar from "../components/Navbar/Navbar";
 import AppFooter from "../components/Footer/Footer";
 import "animate.css/animate.min.css";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <Toaster />
           <AppNavbar />
               {children}
           <AppFooter />
