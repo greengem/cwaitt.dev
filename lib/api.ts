@@ -109,6 +109,10 @@ function extractProjectEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.projectCollection?.items;
 }
 
+function extractTechStack(fetchResponse: any): any[] {
+  return fetchResponse?.data?.techStackCollection?.items?.[0];
+}
+
 function extractTechStackEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.techStackCollection?.items;
 }
@@ -127,6 +131,7 @@ export async function getPreviewProjectBySlug(slug: string | null): Promise<any>
   )
   return extractProject(entry)
 }
+
 
 export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
@@ -221,6 +226,20 @@ export async function getAllTechStacks(isDraftMode: boolean): Promise<any[]> {
     isDraftMode
   )
   return extractTechStackEntries(entries)
+}
+
+export async function getTechStack(slug: string | null): Promise<any> {
+  const response = await fetchGraphQL(
+    `query {
+      techStackCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
+        items {
+          ${TECHSTACK_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    true
+  );
+  return extractTechStack(response);
 }
 
 export async function getProjectsByTechStack(slug: string, isDraftMode: boolean): Promise<any[]> {
