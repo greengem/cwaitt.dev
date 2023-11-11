@@ -24,8 +24,6 @@ import ProjectCard from '@/components/Cards/ProjectCard';
 import ProjectHeader from '@/components/Project/ProjectHeader/ProjectHeader';
 import TechStacks from  '@/components/Project/TechStacks/TechStacks';
 
-export const dynamicParams = true;
-
 export async function generateStaticParams() {
   const allProjects = await getAllProjects(false);
   return allProjects.map((project) => ({ slug: project.slug }));
