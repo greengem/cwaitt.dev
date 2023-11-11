@@ -1,32 +1,32 @@
 import type { Metadata} from 'next'
 import { notFound } from 'next/navigation'
-import { getProjectsByTechStack, getAllTechStacks } from '@/lib/api';
+import { getProjectsByTechStack, getAllTechStacks, getTechStack } from '@/lib/api';
 import PageSection from '@/components/Layout/Section/PageSection'
 import Container from '@/components/Layout/Container'
 import ProjectCard from '@/components/Cards/ProjectCard';
-import { ProjectProps } from '@/types/appTypes';
 import Heading from '@/components/Layout/Heading/Heading';
-
-export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const allTechStacks = await getAllTechStacks(false);
   return allTechStacks.map((project) => ({ slug: project.slug }));
 }
 
-async function getTechStackData(slug: string) {
+async function getTechStacksData(slug: string) {
   return await getProjectsByTechStack(slug, false);
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata> {
-  const projects = await getTechStackData(params.slug);
+async function getTechStackData(slug: string) {
+  return await getTechStack(slug);
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const projects = await getTechStacksData(params.slug);
+  const currentTechStack = await getTechStackData(params.slug);
+  const techStackName = currentTechStack ? currentTechStack.name : 'Unknown Tech Stack';
+
   if (!projects || projects.length === 0) {
     return {};
   }
-
-  const techStackName = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
 
   const ogImageUrl = `${projects[0].featuredImage.url}?fit=fill&w=1200&h=630`;
 
@@ -71,9 +71,11 @@ export async function generateMetadata(
   };
 }
 
-
 export default async function TechStackSlugPage({ params }) {
-  const projects = await getTechStackData(params.slug);
+  const projects = await getTechStacksData(params.slug);
+  const currentTechStack = await getTechStackData(params.slug);
+  const techStackName = currentTechStack ? currentTechStack.name : 'Unknown Tech Stack';
+
   if (!projects || projects.length === 0) {
     return notFound();
   }
@@ -81,7 +83,7 @@ export default async function TechStackSlugPage({ params }) {
   return (
     <PageSection id='projects-by-tech'>
       <Container>
-      <Heading title={`Projects using ${params.slug}`} />
+      <Heading title={`Projects using ${techStackName}`} />
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
               {projects.map((project) => (
                 <ProjectCard
