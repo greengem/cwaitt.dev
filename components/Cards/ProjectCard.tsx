@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             {projectTitle}
         </h4>
       </CardHeader>
-      <CardBody className="overflow-visible py-2">
+      <CardBody className="overflow-visible py-2 px-5">
         <Link as={NextLink} href={`/projects/${slug}`}>
           <Image
             src={`${featuredImage.url}?fit=fill&w=1096&h=616`}
