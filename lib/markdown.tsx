@@ -47,7 +47,6 @@ const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ 
             width={2400}
             height={1260}
             alt={asset.description}
-            shadow="lg"
             className="my-10"
         />
     );
