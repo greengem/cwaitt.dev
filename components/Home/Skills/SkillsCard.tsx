@@ -21,9 +21,9 @@ const SkillCard: React.FC<SkillsCardProps> = ({ title, icon, description, techno
       </CardHeader>
       <CardBody className="text-default-700 tracking-tight card-body relative">
         <p>{description}</p>
-        <div className="flex flex-wrap mt-6">
+        <div className="flex flex-wrap mt-6 gap-1">
           {technologies.map((tech: string, index: number) => (
-            <Chip key={index} color="secondary" variant="dot" className="mr-2">
+            <Chip size="sm" key={index} color="secondary" variant='bordered'>
               {tech}
             </Chip>
           ))}
