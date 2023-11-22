@@ -28,7 +28,7 @@ export default function AppNavbar() {
   );
 
   return (
-    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen} className='dark:bg-content1'>
+    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen} className='dark:bg-content1 border-b-2 border-secondary'>
       <NavbarBrand>
         <Link color="foreground" href="/" as={NextLink} className="font-semibold tracking-tight uppercase">
           Chris Waitt <span className="text-gray-500 ml-1">Portfolio</span>
