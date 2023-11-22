@@ -137,6 +137,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             featuredImage={relatedProject.featuredImage}
             techStacksCollection={relatedProject.techStacksCollection}
             projectTags={relatedProject.projectTags}
+            isFeatured={relatedProject.isFeatured}
           />
         ))}
         </div>

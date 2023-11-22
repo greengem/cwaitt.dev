@@ -17,6 +17,7 @@ const RecentPosts: React.FC<RecentPostsProps> = ({ twoProjects }) => {
           featuredImage={project.featuredImage}
           techStacksCollection={project.techStacksCollection}
           projectTags={project.projectTags}
+          isFeatured={project.isFeatured}
         />
       ))}
     </div>
