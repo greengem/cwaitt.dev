@@ -150,6 +150,49 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   return extractProjectEntries(entries)
 }
 
+export async function getAllProjectsWip(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      projectCollection(
+        where: { 
+          slug_exists: true, 
+          workInProgress_not: true 
+        }, 
+        order: date_DESC, 
+        preview: ${isDraftMode ? 'true' : 'false'}
+      ) {
+        items {
+          ${PROJECT_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
+  return extractProjectEntries(entries)
+}
+
+export async function getWorkInProgress(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+      projectCollection(
+        where: { 
+          slug_exists: true, 
+          workInProgress: true 
+        }, 
+        order: date_DESC, 
+        preview: ${isDraftMode ? 'true' : 'false'}
+      ) {
+        items {
+          ${PROJECT_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    isDraftMode
+  )
+  return extractProjectEntries(entries)
+}
+
+
 export async function getLatestProject(isDraftMode: boolean): Promise<any> {
   const response = await fetchGraphQL(
     `query {
