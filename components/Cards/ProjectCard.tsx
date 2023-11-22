@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/card';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
-import { IconStarFilled } from '@tabler/icons-react';
+import { IconStarFilled, IconTools } from '@tabler/icons-react';
 
 const ProjectCard: React.FC<ProjectProps> = ({
   slug,
@@ -32,6 +32,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <p className="text-tiny uppercase font-bold text-secondary flex justify-between w-full">
           {projectTags}
           {isFeatured && <IconStarFilled size={16} />}
+          {projectTags.includes('Work In Progress') && <IconTools size={16} />}
+
         </p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
             {projectTitle}
