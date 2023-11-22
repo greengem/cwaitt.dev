@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export function generateViewport() {
   return {
-    themeColor: '#000000',
+    themeColor: '#18181b',
   };
 }
 

@@ -5,6 +5,7 @@ import Container from '@/components/Layout/Container'
 import Heading from '@/components/Layout/Heading/Heading';
 import ProjectCard from '@/components/Cards/ProjectCard';
 import { ProjectProps } from '@/types/appTypes';
+import GitHubCard from '@/components/Cards/GitHubCard';
 
 export default async function ProjectsPage() {
   const { isEnabled } = draftMode();
@@ -27,6 +28,7 @@ export default async function ProjectsPage() {
                 isFeatured={project.isFeatured}
               />
             ))}
+            <GitHubCard />
           </div>
         </Container>
     </PageSection>
