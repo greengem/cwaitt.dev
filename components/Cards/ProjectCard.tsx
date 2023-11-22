@@ -9,6 +9,7 @@ import {
 } from '@nextui-org/card';
 import { Chip } from '@nextui-org/chip';
 import { Link } from '@nextui-org/link';
+import { IconStarFilled } from '@tabler/icons-react';
 
 const ProjectCard: React.FC<ProjectProps> = ({
   slug,
@@ -17,14 +18,21 @@ const ProjectCard: React.FC<ProjectProps> = ({
   featuredImage,
   techStacksCollection,
   projectTags,
+  isFeatured
 }) => {
 
   const { items: techStacks } = techStacksCollection;
 
   return (
-    <Card className="py-4 h-full shadow-lg" shadow="none">
+    <Card 
+      className={`py-4 h-full shadow-lg border-1 my-card ${isFeatured ? 'border-secondary' : 'border-transparent'}`} 
+      shadow="none"
+    >
       <CardHeader className="pb-1 pt-2 px-5 flex-col items-start">
-        <p className="text-tiny uppercase font-bold text-secondary">{projectTags}</p>
+        <p className="text-tiny uppercase font-bold text-secondary flex justify-between w-full">
+          {projectTags}
+          {isFeatured && <IconStarFilled size={16} />}
+        </p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
             {projectTitle}
         </h4>

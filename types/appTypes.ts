@@ -4,6 +4,7 @@ export interface ProjectProps {
   shortDescription: string;
   demoUrl?: string;
   gitHubLink?: string;
+  isFeatured: boolean;
   featuredImage: {
     url: string;
   };

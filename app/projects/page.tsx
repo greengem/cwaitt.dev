@@ -24,6 +24,7 @@ export default async function ProjectsPage() {
                 featuredImage={project.featuredImage}
                 techStacksCollection={project.techStacksCollection}
                 projectTags={project.projectTags}
+                isFeatured={project.isFeatured}
               />
             ))}
           </div>

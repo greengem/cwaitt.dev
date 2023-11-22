@@ -23,6 +23,7 @@ const PROJECT_GRAPHQL_FIELDS = `
   }
   gitHubLink
   demoUrl
+  isFeatured
   techStacksCollection {
     items {
       ... on TechStack {
