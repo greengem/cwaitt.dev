@@ -8,7 +8,7 @@ export default function RecentWork({ twoProjects }) {
   return(
     <HomeSection id='recent'>
       <Container>
-        <Heading title="My Recent Work" />
+        <Heading title="My Featured Projects" />
         <RecentPosts twoProjects={twoProjects} />
         <RecentCta />
       </Container>

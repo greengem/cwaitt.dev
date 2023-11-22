@@ -10,9 +10,9 @@ export default async function Home() {
   return (
     <>
       <AppHero />
-      <AppAbout />
       <AppHomeRecent twoProjects={twoProjects} />
       <AppSkills />
+      <AppAbout />
       <AppSocial />
     </>
   );

@@ -5,7 +5,7 @@ export default function RecentHeading() {
     return (
         <div className="mt-10">
             <Button href="/projects" as={Link} size="lg" className="bg-gradient-to-tr from-[#FF1CF7] to-[#b249f8] text-white shadow-lg">
-                View My Work
+                View All My Work
             </Button>
         </div>
     );
