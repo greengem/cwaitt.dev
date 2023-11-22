@@ -28,7 +28,7 @@ export default function GitHubCard() {
   const hoverScale = 1.2;
 
   return (
-    <Card className='py-4 h-full shadow-lg border-1 border-success' shadow="none">
+    <Card className='py-4 h-full shadow-lg border-1 border-secondary' shadow="none">
       <CardBody className="py-2 px-5 items-center justify-center relative min-h-[350px]">
         <Link href='https://github.com/greengem'><IconFlask size={128} className='text-secondary' /></Link>
         <p className='text-default-500'>

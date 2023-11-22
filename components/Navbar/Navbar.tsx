@@ -1,14 +1,9 @@
 'use client'
-// External libraries
 import React from 'react';
 import NextLink from "next/link";
 import { usePathname } from 'next/navigation';
-
-// NextUI components
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-
-// Local components
 import { ThemeSwitcher } from "@/components/Helpers/DarkModeToggle/DarkModeToggle";
 
 export default function AppNavbar() {
@@ -28,7 +23,7 @@ export default function AppNavbar() {
   );
 
   return (
-    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen} className='dark:bg-content1 border-b-2 border-secondary'>
+    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen} className='dark:bg-content1 border-b-1 border-secondary'>
       <NavbarBrand>
         <Link color="foreground" href="/" as={NextLink} className="font-semibold tracking-tight uppercase">
           Chris Waitt <span className="text-gray-500 ml-1">Portfolio</span>
