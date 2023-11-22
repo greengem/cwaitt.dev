@@ -19,7 +19,7 @@ const SkillsData = [
     title: "Backend Developer",
     icon: <IconServer className='mr-2' />,
     description: "Expert in server-side logic, ensuring smooth data integration and building robust APIs. Proficient in various back-end languages and database management, delivering secure and scalable solutions.",
-    technologies: ["Python", "PHP", "SQL", "Postgres"],
+    technologies: ["Python", "PHP", "Postgres", "ORM"],
     animation: "animate__rotateInDownRight"
   }
 ];
