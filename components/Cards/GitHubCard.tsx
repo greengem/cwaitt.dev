@@ -28,11 +28,11 @@ export default function GitHubCard() {
   const hoverScale = 1.2;
 
   return (
-    <Card className='py-4 h-full shadow-lg border-1 border-transparent' shadow="none">
+    <Card className='py-4 h-full shadow-lg border-1 border-success' shadow="none">
       <CardBody className="py-2 px-5 items-center justify-center relative min-h-[350px]">
         <Link href='https://github.com/greengem'><IconFlask size={128} className='text-secondary' /></Link>
         <p className='text-default-500'>
-            <Link href='https://github.com/greengem' className='text-xs text-foreground'>More Projects on GitHub</Link>
+            <Link href='https://github.com/greengem' className='text-xs font-semibold text-default-500'>Explore My GitHub Repos</Link>
         </p>
 
         {icons.map((IconComponent, index) => {
@@ -58,7 +58,7 @@ export default function GitHubCard() {
                     alignItems: 'center',
                   }}
                 >
-                  <IconComponent size={32} stroke={1} />
+                  <IconComponent size={32} stroke={2} />
                 </motion.div>
               </div>
             </motion.div>
