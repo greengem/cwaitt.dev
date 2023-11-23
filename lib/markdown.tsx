@@ -1,13 +1,14 @@
-import { Image } from "@nextui-org/image";
-import NextImage from "next/image";
+import Image from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import hljs from 'highlight.js';
 import { IconCodeCircle } from '@tabler/icons-react';
+import { CopyButton } from './CopyButton';
 
 import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
 import python from 'highlight.js/lib/languages/python';
+import('highlight.js/styles/github-dark.css');
 
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('php', php);
@@ -39,16 +40,18 @@ const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ 
     const asset = assets?.find(a => a.sys.id === id);
 
     if (!asset?.url) return null;
-
+    console.log(asset);
     return (
-        <Image
-            as={NextImage}
-            src={`${asset.url}?fit=fill&w=2400&h=1260`}
-            width={2400}
-            height={1260}
-            alt={asset.description}
-            className="my-10"
-        />
+        <figure className="my-10">
+            <Image
+                src={`${asset.url}?w=2400&h=1260`}
+                width={2400}
+                height={1260}
+                alt={asset.description}
+                className="w-full max-w-3xl mx-auto drop-shadow-lg"
+            />
+            {asset.description && <figcaption className="mt-3 text-center text-xs text-default-500">{asset.description}</figcaption>}
+        </figure>
     );
 };
 
@@ -81,10 +84,11 @@ export const RichTextRenderer: React.FC<RichTextRendererProps> = ({ description 
                 const highlightedCode = hljs.highlight(entry.code, { language: entry.language }).value;
                 return (
                     <div className="my-10">
-                        <p className="text-tiny uppercase font-bold text-secondary bg-gray-200 dark:bg-gray-900 px-4 pb-2 pt-3 rounded-t-lg">
-                            <IconCodeCircle width={16} height={16} className="inline mr-1" />{entry.language}
-                        </p>
-                        <div className='syntax-custom overflow-x-auto border-x-2 border-b-2 rounded-b-lg dark:border-gray-900'>
+                        <div className="text-xs uppercase font-bold text-secondary bg-default-50 px-4 pb-2 pt-3 rounded-t-lg flex justify-between">
+                            <span><IconCodeCircle size={16} className="inline mr-1" />{entry.language}</span>
+                            <span><CopyButton code={entry.code} /></span>
+                        </div>
+                        <div className='overflow-x-auto border-x-2 border-b-2 rounded-b-lg dark:border-default-50'>
                             <pre className='text-sm p-4'>
                                 <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                             </pre>
