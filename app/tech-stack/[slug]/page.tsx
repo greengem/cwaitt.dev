@@ -95,6 +95,7 @@ export default async function TechStackSlugPage({ params }) {
                   techStacksCollection={project.techStacksCollection}
                   projectTags={project.projectTags}
                   isFeatured={project.isFeatured}
+                  workInProgress={project.workInProgress}
                 />
               ))}
             </div>

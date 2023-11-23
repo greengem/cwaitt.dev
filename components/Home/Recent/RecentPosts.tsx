@@ -21,6 +21,7 @@ const RecentPosts: React.FC<RecentPostsProps> = ({ twoProjects }) => {
             techStacksCollection={project.techStacksCollection}
             projectTags={project.projectTags}
             isFeatured={project.isFeatured}
+            workInProgress={project.workInProgress}
           />
         </AnimationOnScroll>
       ))}
