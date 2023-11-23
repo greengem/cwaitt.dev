@@ -4,7 +4,7 @@ import NextLink from "next/link";
 
 export default function AppFooter() {
   return (
-    <footer className="bg-[#121212] text-white py-20">
+    <footer className="bg-[#121212] text-white pt-20 pb-10">
         <Container>
             <h2 className="custom-heading from-[#5EA2EF] to-[#0072F5] text-3xl mb-8">Discover More</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
