@@ -47,7 +47,7 @@ export async function generateMetadata(
       title: project.projectTitle,
       description: project.shortDescription,
       url: `/projects/${params.slug}`,
-      siteName: 'Chris Waitt - Frontend Developer Portfolio',
+      siteName: 'Chris Waitt - Full Stack Developer Portfolio',
       images: [
         {
           url: ogImageUrl,

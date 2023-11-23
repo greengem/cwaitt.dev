@@ -12,18 +12,22 @@ const inter = Inter({ subsets: ['latin'] })
 export function generateViewport() {
   return {
     themeColor: '#18181b',
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: 'no'
   };
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cwaitt.dev'),
-  title: 'Chris Waitt - Frontend Developer Portfolio',
-  description: 'A showcase of my frontend development projects and expertise.',
+  title: 'Chris Waitt - Full Stack Developer Portfolio',
+  description: 'A showcase of my full stack development projects and expertise.',
   openGraph: {
-    title: 'Chris Waitt - Frontend Developer Portfolio',
-    description: 'A showcase of my frontend development projects and expertise.',
+    title: 'Chris Waitt - Full Stack Developer Portfolio',
+    description: 'A showcase of my full stack development projects and expertise.',
     url: 'https://cwaitt.dev/',
-    siteName: 'Chris Waitt - Frontend Developer Portfolio',
+    siteName: 'Chris Waitt - Full Stack Developer Portfolio',
     images: [
       {
         url: 'myimage.jpg',
@@ -36,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chris Waitt - Frontend Developer Portfolio',
-    description: 'A showcase of my frontend development projects and expertise.',
+    title: 'Chris Waitt - Full Stack Developer Portfolio',
+    description: 'A showcase of my full stack development projects and expertise.',
     creator: '@cwaitt_dev',
     images: 'image.jpg',
   },

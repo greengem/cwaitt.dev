@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `Projects using ${techStackName}`,
       description: `Browse projects developed using ${techStackName}.`,
       url: `/tech-stack/${params.slug}`,
-      siteName: 'Chris Waitt - Frontend Developer Portfolio',
+      siteName: 'Chris Waitt - Full Stack Developer Portfolio',
       images: [
         {
           url: ogImageUrl,

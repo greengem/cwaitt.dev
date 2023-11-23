@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Chris Waitt - Tech Stack Overview: Frontend Technologies',
-  description: 'Discover the technologies that empower my frontend projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
+  title: 'Chris Waitt - Tech Stack Overview: Full Stack Technologies',
+  description: 'Discover the technologies that empower my full stack projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
   openGraph: {
-    title: 'Chris Waitt - Tech Stack Overview: Frontend Technologies',
-    description: 'Discover the technologies that empower my frontend projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
+    title: 'Chris Waitt - Tech Stack Overview: Full Stack Technologies',
+    description: 'Discover the technologies that empower my full stack projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
     url: '/tech-stack/',
-    siteName: 'Chris Waitt - Frontend Developer Portfolio',
+    siteName: 'Chris Waitt - Full Stack Developer Portfolio',
     images: [
       {
         url: 'myimage.jpg',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chris Waitt - Tech Stack Overview: Frontend Technologies',
-    description: 'Discover the technologies that empower my frontend projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
+    title: 'Chris Waitt - Tech Stack Overview: Full Stack Technologies',
+    description: 'Discover the technologies that empower my full stack projects. Get insights into my tech stack choices, ranging from foundational languages to cutting-edge frameworks and tools.',
     creator: '@cwaitt_dev',
     images: 'image.jpg',
   },
