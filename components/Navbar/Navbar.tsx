@@ -31,7 +31,6 @@ export default function AppNavbar() {
       </NavbarBrand>
       
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <NavbarLink href="/#about">About Me</NavbarLink>
         <NavbarLink href="/projects">Projects</NavbarLink>
         <NavbarLink href="/tech-stack">Tech Stack</NavbarLink>
         <NavbarLink href="/#social">Contact</NavbarLink>
@@ -41,13 +40,16 @@ export default function AppNavbar() {
       
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link href="/" as={NextLink} color="foreground" className="w-full" size="lg">Home</Link>
+          <Link href="/" color="foreground" className="w-full" size="lg">Home</Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/projects" as={NextLink} color="foreground" className="w-full" size="lg">Projects</Link>
+          <Link href="/projects"color="foreground" className="w-full" size="lg">Projects</Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/tech-stack" as={NextLink} color="foreground" className="w-full" size="lg">Tech Stack</Link>
+          <Link href="/tech-stack" color="foreground" className="w-full" size="lg">Tech Stack</Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/#social" color="foreground" className="w-full" size="lg">Contact</Link>
         </NavbarMenuItem>
       </NavbarMenu>
       
