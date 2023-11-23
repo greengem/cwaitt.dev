@@ -22,17 +22,17 @@ const counterRotate = {
   },
 };
 
-const icons = [IconMath, IconMathFunction, IconMathFunctionY, IconMathIntegrals, IconMathPi, IconSchool, IconVariableMinus, IconAngle];
+const icons = [IconMath, IconMathFunction, IconMathIntegrals, IconMathPi, IconSchool, IconMathFunctionY, IconVariableMinus, IconAngle];
 
 export default function GitHubCard() {
   const hoverScale = 1.2;
 
   return (
-    <Card className='py-4 h-full shadow-lg border-1 border-secondary' shadow="none">
+    <Card className='py-4 h-full shadow-lg border-1 border-transparent' shadow="none">
       <CardBody className="py-2 px-5 items-center justify-center relative min-h-[350px]">
-        <Link href='https://github.com/greengem'><IconFlask size={128} className='text-secondary' /></Link>
+        <Link target="_blank" rel="noopener noreferrer" href='https://github.com/greengem'><IconFlask size={128} className='text-success' /></Link>
         <p className='text-default-500'>
-            <Link href='https://github.com/greengem' className='text-xs font-semibold text-default-500'>Explore My GitHub Repos</Link>
+            <Link target="_blank" rel="noopener noreferrer" href='https://github.com/greengem' className='text-xs font-semibold text-default-500'>Explore My GitHub Repos</Link>
         </p>
 
         {icons.map((IconComponent, index) => {
@@ -40,23 +40,14 @@ export default function GitHubCard() {
           return (
             <motion.div
               key={index}
-              className='orbit-container'
-              style={{ 
-                position: 'absolute', 
-                top: '50%', 
-                left: '50%',
-              }}
+              className='orbit-container absolute top-1/2 left-1/2'
               animate={circularPath(initialRotation)}
             >
-              <div className='orbit-icon text-success' style={{ position: 'absolute', transform: 'translateX(-160px)' }}>
+              <div className='orbit-icon text-secondary absolute translate-x-30'>
                 <motion.div
                   animate={counterRotate}
                   whileHover={{ scale: hoverScale }}
-                  style={{
-                    display: 'flex', 
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
+                  className='flex justify-center align-middle'
                 >
                   <IconComponent size={32} stroke={2} />
                 </motion.div>
