@@ -27,6 +27,7 @@ export default async function ProjectsPage() {
               techStacksCollection={project.techStacksCollection}
               projectTags={project.projectTags}
               isFeatured={project.isFeatured}
+              workInProgress={project.workInProgress}
             />
           ))}
         </div>
@@ -45,6 +46,7 @@ export default async function ProjectsPage() {
               techStacksCollection={project.techStacksCollection}
               projectTags={project.projectTags}
               isFeatured={project.isFeatured}
+              workInProgress={project.workInProgress}
             />
           ))}
         </div>

@@ -18,7 +18,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   featuredImage,
   techStacksCollection,
   projectTags,
-  isFeatured
+  isFeatured,
+  workInProgress
 }) => {
 
   const { items: techStacks } = techStacksCollection;
@@ -32,7 +33,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <p className="text-tiny uppercase font-bold text-secondary flex justify-between w-full">
           {projectTags}
           {isFeatured && <IconStarFilled size={16} />}
-          {projectTags.includes('Work In Progress') && <IconTools size={16} />}
+          {workInProgress && <IconTools size={16} />}
 
         </p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">

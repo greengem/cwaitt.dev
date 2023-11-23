@@ -24,6 +24,7 @@ const PROJECT_GRAPHQL_FIELDS = `
   gitHubLink
   demoUrl
   isFeatured
+  workInProgress
   techStacksCollection {
     items {
       ... on TechStack {
