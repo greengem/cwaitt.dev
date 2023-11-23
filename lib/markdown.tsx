@@ -40,7 +40,7 @@ const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ 
     const asset = assets?.find(a => a.sys.id === id);
 
     if (!asset?.url) return null;
-    console.log(asset);
+
     return (
         <figure className="my-10">
             <Image
