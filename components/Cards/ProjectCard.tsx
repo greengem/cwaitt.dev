@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
         </p>
         <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
-            {projectTitle}
+          <Link as={NextLink} href={`/projects/${slug}`} className='text-foreground'>{projectTitle}</Link>
         </h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2 px-5">
