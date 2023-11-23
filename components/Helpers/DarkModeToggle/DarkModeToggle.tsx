@@ -38,7 +38,7 @@ export const ThemeSwitcher = () => {
         onValueChange={(isSelected) => {
           const newTheme = isSelected ? "dark" : "light";
           setTheme(newTheme);
-          const themeColor = newTheme === "dark" ? "#181818" : "#ffffff";
+          const themeColor = newTheme === "dark" ? "#18181b" : "#ffffff";
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
         }}
       />
