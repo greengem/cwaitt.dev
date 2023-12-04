@@ -30,7 +30,7 @@ export default function GitHubCard() {
   return (
     <Card className='py-4 h-full shadow-lg border-1 border-transparent' shadow="none">
       <CardBody className="py-2 px-5 items-center justify-center relative min-h-[350px]">
-        <Link target="_blank" rel="noopener noreferrer" href='https://github.com/greengem'><IconFlask size={128} className='text-success' /></Link>
+        <Link target="_blank" rel="noopener noreferrer" href='https://github.com/greengem'><IconFlask size={128} className='text-default-500' /></Link>
         <p className='text-default-500'>
             <Link target="_blank" rel="noopener noreferrer" href='https://github.com/greengem' className='text-xs font-semibold text-default-500'>Explore My GitHub Repos</Link>
         </p>
