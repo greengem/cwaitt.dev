@@ -29,7 +29,8 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@types/node": "^20.6.3",
