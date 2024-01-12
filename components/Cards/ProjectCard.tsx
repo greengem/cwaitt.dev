@@ -36,8 +36,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
           {workInProgress && <IconTools size={16} />}
 
         </p>
-        <h4 className="font-semibold text-large whitespace-nowrap overflow-hidden overflow-ellipsis w-full block">
-          <Link as={NextLink} href={`/projects/${slug}`} className='text-foreground'>{projectTitle}</Link>
+        <h4 className="font-semibold text-large w-full">
+          <Link as={NextLink} href={`/projects/${slug}`} className='text-foreground whitespace-nowrap overflow-hidden overflow-ellipsis w-full block'>{projectTitle}</Link>
         </h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2 px-5">
