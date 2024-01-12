@@ -52,19 +52,21 @@ const ProjectCard: React.FC<ProjectProps> = ({
         </Link>
         <p className="card-text mt-5 text-sm">{shortDescription}</p>
       </CardBody>
-      <CardFooter className="px-5 pb-0">
-        {techStacks.map((stack) => (
-          <Chip
-            radius='sm'
-            size='sm'
-            key={stack.slug}
-            color="secondary"
-            className="mr-2"
-            variant="bordered"
-          >
-            <Link className='text-xs' color='foreground' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
-          </Chip>
-        ))}
+      <CardFooter className="px-5 pb-0 flex flex-col items-start">
+        <div className='flex gap-1 mb-1'>
+          {techStacks.map((stack) => (
+            <Chip
+              radius='sm'
+              size='sm'
+              key={stack.slug}
+              color="secondary"
+              variant="bordered"
+            >
+              <Link className='text-xs' color='foreground' as={NextLink} href={`/tech-stack/${stack.slug}`}>{stack.name}</Link>
+            </Chip>
+          ))}
+        </div>
+
       </CardFooter>
     </Card>
   );
