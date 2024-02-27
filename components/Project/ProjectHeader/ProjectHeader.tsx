@@ -1,8 +1,8 @@
 import PostHeading from '@/components/Layout/Heading/PostHeading';
 import Date from '@/components/Helpers/Date/Date'
 import NextLink from 'next/link';
-import { Link } from '@nextui-org/react';
-
+import Link from 'next/link';
+import { Button } from '@nextui-org/button';
 interface ProjectHeaderProps {
   project: {
     projectTitle: string;
@@ -26,16 +26,14 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
       <span className="ml-1">Category: {project.projectTags}</span>
     </p>
     {project.demoUrl && (
-      <p>
-        <Link
-          as={NextLink}
-          isExternal
+        <Button
+          as={Link}
           href={project.demoUrl}
-          className='text-secondary'
+          color='secondary'
+          className='mb-3'
         >
           View Live Demo!
-        </Link>
-      </p>
+        </Button>
     )}
 
   </>
