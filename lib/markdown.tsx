@@ -48,7 +48,7 @@ const RichTextAsset: React.FC<{ id: string; assets?: DescriptionAsset[] }> = ({ 
                 width={2400}
                 height={1260}
                 alt={asset.description}
-                className="w-full max-w-3xl mx-auto drop-shadow-lg"
+                className="w-full drop-shadow-lg"
             />
             {asset.description && <figcaption className="mt-3 text-center text-xs text-default-500">{asset.description}</figcaption>}
         </figure>
