@@ -16,7 +16,7 @@ interface ProjectHeaderProps {
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
   <>
     <PostHeading title={project.projectTitle} />
-    <p className="text-sm text-gray-600">
+    <p className="text-sm text-gray-600 mb-3">
       <span className="mr-1">Posted on:</span>
       <Date dateString={project.date} />
       <span className="mx-1">|</span>
@@ -31,6 +31,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => (
           href={project.demoUrl}
           color='secondary'
           className='mb-3'
+          size='lg'
         >
           View Live Demo!
         </Button>
