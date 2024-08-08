@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Toaster />
+          <Toaster theme="system" />
           <AppNavbar />
           {children}
           <AppFooter />
