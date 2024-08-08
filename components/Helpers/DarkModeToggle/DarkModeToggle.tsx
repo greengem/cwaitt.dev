@@ -12,23 +12,24 @@ export function ThemeSwitcher() {
 
   useEffect(() => {
     setIsMounted(true);
-    setIsDarkMode(theme === 'dark');
+    setIsDarkMode(theme === "dark");
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(isDarkMode ? 'light' : 'dark');
+    setTheme(isDarkMode ? "light" : "dark");
     setIsDarkMode(!isDarkMode);
   };
 
   if (!isMounted) return null;
 
-  return (    
+  return (
     <Switch
       isSelected={isDarkMode}
       color="secondary"
       startContent={<SunIcon />}
       endContent={<MoonIcon />}
       onChange={toggleTheme}
+      aria-label="Toggle dark mode"
     />
   );
 }
