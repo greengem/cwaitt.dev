@@ -1,11 +1,11 @@
-import "@/styles/globals.scss";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import AppNavbar from "../components/Navbar/Navbar";
 import AppFooter from "../components/Footer/Footer";
 import "animate.css/animate.min.css";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
